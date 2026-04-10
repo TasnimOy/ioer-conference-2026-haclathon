@@ -182,3 +182,41 @@ a.reference.external::after {
     margin-left: 0.2em;
     vertical-align: top;
 }
+
+/* =========================================================
+   GROUP 2 FIXES (Accessibility, Branding, and Layout) 
+   ========================================================= */
+
+/* 1. Square Bullet Points */
+/* Applies IOER branding (square bullets) only to content lists, 
+   ignoring the sidebar navigation lists */
+.bd-article ul {
+    list-style-type: square;
+}
+
+/* 2. Search Bar Contrast (Accessibility) */
+/* The default "Search" text is too faint. This forces a high-contrast dark gray in light mode, and bright white in dark mode. */
+html[data-theme="light"] .search-button__default-text,
+html[data-theme="light"] .search-button-field i,
+html[data-theme="light"] .search-button-field svg {
+    color: #333333 !important; 
+}
+html[data-theme="dark"] .search-button__default-text,
+html[data-theme="dark"] .search-button-field i,
+html[data-theme="dark"] .search-button-field svg {
+    color: #ffffff !important; 
+}
+
+/* 3. Top-Left Logos Cut-off (Firefox/Windows 11) */
+/* Adds breathing room to the logo container and prevents SVG boundary clipping */
+.navbar-brand.logo {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    overflow: visible; /* Prevents the top of the 'L' or shapes from clipping */
+}
+.logo__image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Forces the browser to scale the SVG down proportionally if it hits the bounding box */
+}

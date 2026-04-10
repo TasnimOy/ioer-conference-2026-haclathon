@@ -2,15 +2,15 @@
 
 # Sustainability Transformation Hackathon (IOER Conference 2026)
 
-Welcome to the collaborative workspace for the **Conference Hack**, a dedicated contribution format (F5) of the **4th IOER Conference "Space & Transformation"**.
+Welcome to the digital workspace of the Sustainability Transformation **Hackathon** (Format F5 of the 4th IOER Conference 2026).
 
-This repository hosts the source code and notebooks for the living **Jupyter Book**, available at https://hack.conference.ioer.info/. 
+Internally, we simply call this the **Conference Hack**. Why? Because unlike a traditional hackathon that requires an exhausting overnight coding marathon, this format is designed as a long-term, asynchronous collaborative data challenge running parrallel to the conference.
 
-Unlike traditional hackathons, this project is an **asynchronous, collaborative data challenge**. Participants contribute code, visualizations, and workflows to this repository, which are then compiled into a citable **ioerDATA publication** representing the collective output of the conference format.
-
-All internal collaboration and continuous integration/deployment (CI & CD) takes place in [this Gitlab repository](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/).
+This Jupyter Book serves as our central hub. Here, we bring together spatial data analysts, planners, coders, and domain experts over several months to explore how Artificial Intelligence and Open Data can foster participation and sustainability.
 
 For public collaboration, we set up a [mirror on Github](https://github.com/ioer-dresden/ioer-conference-2026-hackathon).
+
+All IOER internal collaboration and continuous integration/deployment (CI & CD) takes place in [this Gitlab repository](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/).
 
 ## TL;DR: How to Contribute
 

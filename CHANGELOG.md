@@ -7,6 +7,19 @@
 
 
  
+## v0.4.7 (2026-04-10)
+ 
+### Bug fixes
+ 
+
+
+- Corporate layout bullet points; search bar contrast ([`1f46edb`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/1f46edbc1f84f1d099d1740555f427e0da615c68))
+
+
+
+ 
+ 
+ 
 ## v0.4.6 (2026-04-10)
  
 ### Bug fixes

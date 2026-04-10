@@ -5,25 +5,25 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.17.3
+      jupytext_version: 1.18.1
   kernelspec:
     display_name: worker_env
     language: python
     name: worker_env
 ---
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["remove-cell"] -->
+<!-- #region editable=true tags=["remove-cell"] slideshow={"slide_type": ""} -->
 **Install dependencies:** In case this notebook is not running [Carto-Lab Docker](https://cartolab.theplink.org/), the cell below aims to install the needed packages for this notebook. If packages are already available, they will be ignored.
 <!-- #endregion -->
 
-```python editable=true tags=["remove-cell"] slideshow={"slide_type": ""}
+```python tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
 import sys
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
 !../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas matplotlib lxml rasterio dotenv
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 # Data Retrieval: IOER Monitor
 
 <!-- #endregion -->
@@ -47,7 +47,7 @@ The IOER Monitor data can be previewed in the [geo viewer](https://monitor.ioer.
 :name: 094_Verdichtung
 :figclass: fig-no-shadow
 
-Densification of the block development in Berlin Friedrichshain. Photo: Jürgen Hohmuth.
+Densification of the block development in Berlin Friedrichshain. Photo: Jürgen Hohmuth, aus der Reihe "Gestalt des Raumes" (Buch und Ausstellung), © IOER-Media.
 ```
 
 
@@ -101,7 +101,7 @@ To use the API programmatically, you need a personal API key. If you don’t hav
 Before running the workflow, ensure the necessary libraries are installed and imported:
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["hide-input"]
+```python editable=true tags=["hide-input"] slideshow={"slide_type": ""}
 # Standard library imports
 import json
 import os
@@ -124,7 +124,7 @@ from lxml import etree
 
 Load additional tools module
 
-```python editable=true slideshow={"slide_type": ""} tags=["hide-input"]
+```python slideshow={"slide_type": ""} editable=true tags=["hide-input"]
 base_path = Path.cwd().parents[0]
 module_path = str(base_path / "py")
 if module_path not in sys.path:
@@ -141,7 +141,7 @@ To access the IOER Monitor data, we define two key parameters:
 - `IOERMONITOR_WCS_ID`: unique indicator code
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 MONITOR_WCS_BASE = "https://monitor.ioer.de/monitor_api/user" # API base endpoint
 IOERMONITOR_WCS_ID = "S12RG" # Unique indicator code
 ```
@@ -153,7 +153,7 @@ base_path = Path.cwd().parents[0]
 OUTPUT = base_path / "out"
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Secure API Key**
 <!-- #endregion -->
 
@@ -173,7 +173,7 @@ If you don't want to use an `.env` file, leave this step and you will be asked t
    ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 3. Load the key in your script:
 <!-- #endregion -->
 
@@ -210,7 +210,7 @@ if MONITOR_API_KEY is None:
 In order to connect to WCS services from Python, we use `owslib` (see documentation of [owslib.wcs](https://owslib.readthedocs.io/en/latest/usage.html#wcs)).
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 from urllib.parse import urlencode
 
 params = {
@@ -223,7 +223,7 @@ wcs_url = f"{MONITOR_WCS_BASE}?{urlencode(params)}"
 wcs = WebCoverageService(wcs_url, version="1.0.0") # WCS version `1.0.0`
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 :::{tip}
 
 When making requests to web APIs, you often need to pass parameters in a URL. However, some characters (such as spaces, special symbols, or non-ASCII characters) can cause issues if they are not properly encoded. `urlencode` prevents character encoding issues and improves readability. For more information, see [urllib.parse module documentation](https://docs.python.org/3/library/urllib.parse.html) 
@@ -236,31 +236,31 @@ When making requests to web APIs, you often need to pass parameters in a URL. Ho
 Let's first run some checks on the returned `wcs` object and see what data we can access. The data is available for different time intervals and resolutions, as you can see below.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} tags=["hide-output"] editable=true
+```python tags=["hide-output"] editable=true slideshow={"slide_type": ""}
 pd.DataFrame(wcs.contents.keys())
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Select the dataset for `2023` at `200`m raster resolution, which leads us to the key `S12RG_2023_200m`.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 LAYER = 'S12RG_2023_200m'
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Check the supported output formats for this layer.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 if MONITOR_API_KEY: print(wcs.contents[LAYER].supportedFormats)
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 We can also query all additional available metadata for the layer (see dropdown below).
 <!-- #endregion -->
 
-```python tags=["hide-input", "hide-output"] slideshow={"slide_type": ""} editable=true
+```python tags=["hide-input", "hide-output"] editable=true slideshow={"slide_type": ""}
 layer_metadata = wcs.contents[LAYER]
 
 print("Available Attributes for the Layer:")
@@ -285,19 +285,19 @@ else:
 Check the maximum available boundary for this layer. We can see that the limits are available in two different projections. In the following we will use the projected version of the boundary and not the WGS1984 version.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} tags=["hide-output"] editable=true
+```python tags=["hide-output"] editable=true slideshow={"slide_type": ""}
 if MONITOR_API_KEY: print(wcs.contents[LAYER].boundingboxes)
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Check the coordinate reference system (CRS).
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 if MONITOR_API_KEY: print(wcs.contents[LAYER].supportedCRS) # ['EPSG:3035']
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Retrieve and visualize data**
 
 Set up query parameters and request the dataset.
@@ -321,11 +321,11 @@ monitor_param = {
 if MONITOR_API_KEY: response = wcs.getCoverage(**monitor_param)
 ```
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 monitor_param
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Load and display the GeoTiff with [rasterio](https://rasterio.readthedocs.io/en/stable/). If a cache exist, we prefer to load it directly (instead of querying the API again). If it does not exist, write it.
 <!-- #endregion -->
 
@@ -344,11 +344,11 @@ if not cache_file.exists():
             f.write(response.read())
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Visualize response (or cache).
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 with rasterio.open(cache_file) as src:
     fig, ax = plt.subplots(figsize=(8, 8))
     show(src, ax=ax)
@@ -359,7 +359,7 @@ with rasterio.open(cache_file) as src:
 ## Filtering data for Saxony
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 However, we want to restrict the raster data to the following boundaries of the state of Saxony, similar to the way we restricted the responses for the GBIF Occurrence API.
 
 1. Reproject the Saxony boundary to `EPSG:3035`.
@@ -368,7 +368,7 @@ However, we want to restrict the raster data to the following boundaries of the 
 4. Get the grid with the new `bbox` boundary
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Restricting to Saxony boundaries**
 
 Load Saxony boundaries and reproject to match WCS layer.
@@ -380,7 +380,7 @@ BBOX = sachsen_proj.bounds.values.squeeze()
 monitor_param["bbox"] = list(map(str, BBOX))
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Retrieve and visualize clipped data using `rasterio.show()`.
 
 1. Check and retrieve cache
@@ -415,13 +415,13 @@ with rasterio.open(cache_file) as src:
     ax.axis('off')
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Clipping the raster**
 
 Use `rasterio.mask` to clip the raster with the boundaries of `sachsen_proj`. In addition, the `cmap` (a [Matplotlib Colormap](https://matplotlib.org/stable/users/explain/colors/colormaps.html)) is changed to `Reds`.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 with rasterio.open(cache_file) as src:
     out_image, out_transform = mask(
         src, sachsen_proj.geometry, crop=True, filled=False)
@@ -437,17 +437,17 @@ with rasterio.open(cache_file) as src:
     ax.axis('off')
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 :::{seealso}
 For a better understanding of the code, see the [rasterio documentation](https://rasterio.readthedocs.io/en/stable/topics/masking-by-shapefile.html).
 :::
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Save the results to disk as a GeoTIFF. To do this, we first update the clipped raster meta object (`out_meta`) with the transformation information.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 out_meta.update({
     "driver": "GTiff",
     "height": out_image.shape[1],
@@ -456,11 +456,11 @@ out_meta.update({
     })
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Then use `rasterio.open()` to write the clipped raster.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 gtiff_path = OUTPUT / f'saxony_{LAYER}.tif'
 
 with rasterio.open(gtiff_path, "w", **out_meta) as dest:
@@ -472,7 +472,7 @@ file_size = gtiff_path.stat().st_size / (1024 * 1024)
 print(f"GeoTIFF saved successfully. File size: {file_size:.2f} MB.")
 ```
 
-```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+```python tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 import sys
 from pathlib import Path
 

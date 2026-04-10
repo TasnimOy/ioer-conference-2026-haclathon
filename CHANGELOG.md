@@ -7,6 +7,26 @@
 
 
  
+## v0.4.6 (2026-04-10)
+ 
+### Bug fixes
+ 
+
+
+- Missing image credits ([`d21c67e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d21c67e200addb7e86dc3b7dfa65db4c6d861bfb))
+
+
+
+ 
+
+
+- Logo size; missing timeline; hack vs hackathon clarification (intro) ([`7111662`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/71116620e6ec073283ec46d6ab65447db07b5dfc))
+
+
+
+ 
+ 
+ 
 ## v0.4.5 (2026-02-06)
  
 ### Bug fixes

@@ -7,6 +7,29 @@
 
 
  
+## v0.4.8 (2026-04-30)
+ 
+### Bug fixes
+ 
+
+
+- Add zoom to timeline image ([`6e1a408`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/6e1a40817337d033de4eabdae560ecf3da327a91))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Minor rephrasing; added and updated dates ([`9b6741e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/9b6741e3e62e28548f7863dee9a8927b2ce97078))
+
+
+
+ 
+ 
+ 
 ## v0.4.7 (2026-04-10)
  
 ### Bug fixes

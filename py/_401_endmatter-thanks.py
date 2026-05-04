@@ -29,7 +29,7 @@
 #
 # ### To the Community
 #
-# Most importantly, we thank **you**, the participants of the Hackathon. Your code, your ideas, and your contributions turn this technical framework into a living artifact of the conference.
+# Most importantly, we thank **you**, the participants of the HaCLAthon. Your code, your ideas, and your contributions turn this technical framework into a living artifact of the conference.
 #
 # We hope that this Jupyter Book is not a static output, but remains a resource for the community, evolving even after the conference concludes.
 #
@@ -37,25 +37,25 @@
 #
 # ## Contact
 #
-# **Leibniz Institute of Ecological Urban and Regional Development (IOER)**  
-# IOER Research Data Centre (IOER FDZ)  
+# **Leibniz Institute of Ecological Urban and Regional Development (IOER)**
+# IOER Research Data Centre (IOER FDZ)
 # Weberplatz 1, 01217 Dresden, Germany
 #
-# URL: [https://ioer-fdz.de/en](https://ioer-fdz.de/en)  
+# URL: [https://ioer-fdz.de/en](https://ioer-fdz.de/en)
 # E-Mail: fdz@ioer.de
 
 # %% [markdown]
 # ### Contact persons
 #
-# Prof. Dr.-Ing. Martin Behnisch  
-# m.behnisch@ioer.de  
-# phone +49 351 4679 205  
+# Prof. Dr.-Ing. Martin Behnisch
+# m.behnisch@ioer.de
+# phone +49 351 4679 205
 #
-# M.A. Saskia Hofmann  (Conference Organisation Team)  
+# M.A. Saskia Hofmann  (Conference Organisation Team)
 # s.hofmann@ioer.de
 #
-# Dr.-Ing. Alexander Dunkel  (Technical Setup)  
-# a.dunkel@ioer.de  
+# Dr.-Ing. Alexander Dunkel  (Technical Setup)
+# a.dunkel@ioer.de
 # phone +49 351 4679 148
 
 # %%

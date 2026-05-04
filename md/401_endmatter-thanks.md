@@ -29,7 +29,7 @@ We also acknowledge the **Global Biodiversity Information Facility (GBIF)** and 
 
 ### To the Community
 
-Most importantly, we thank **you**, the participants of the Hackathon. Your code, your ideas, and your contributions turn this technical framework into a living artifact of the conference.
+Most importantly, we thank **you**, the participants of the HaCLAthon. Your code, your ideas, and your contributions turn this technical framework into a living artifact of the conference.
 
 We hope that this Jupyter Book is not a static output, but remains a resource for the community, evolving even after the conference concludes.
 

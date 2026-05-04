@@ -1,6 +1,6 @@
 [![version](https://hack.conference.ioer.info/version.svg)][static-gl-url] [![pipeline](https://hack.conference.ioer.info/pipeline.svg)][static-gl-url] [![doi](https://hack.conference.ioer.info/doi.svg)][doi-url]
 
-# Sustainability Transformation Hackathon (IOER Conference 2026)
+# Sustainability Transformation HaCLAthon (IOER Conference 2026)
 
 Welcome to the digital workspace of the Sustainability Transformation **Hackathon** (Format F5 of the 4th IOER Conference 2026).
 

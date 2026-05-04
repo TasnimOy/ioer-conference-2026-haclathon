@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title: Sustainability Transformation Hackathon (IOER Conference 2026)
+title: Sustainability Transformation HaCLAthon (IOER Conference 2026)
 author: TBD
 copyright                   : "2026"  # Copyright year to be placed in the footer
 logo                        : "logo.svg"  # A path to the book logo
@@ -70,7 +70,7 @@ repository:
 # Bibliography
 
 bibtex_bibfiles: ["references.bib"]
-    
+
 #######################################################################################
 # Advanced and power-user settings
 sphinx:
@@ -78,7 +78,7 @@ sphinx:
     custom_bibtex_styles: _ext/
   extra_extensions          :   # A list of extra extensions to load by Sphinx (added to those already used by JB).
     - sphinxcontrib.bibtex
-  config                    :   # key-value pairs to directly over-ride the Sphinx configuration   
+  config                    :   # key-value pairs to directly over-ride the Sphinx configuration
     html_show_copyright     : false
     html_extra_path         : ['resources/html',]
     suppress_warnings       : ['nbsphinx',]

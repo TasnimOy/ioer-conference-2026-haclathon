@@ -7,6 +7,39 @@
 
 
  
+## v0.4.9 (2026-05-04)
+ 
+### Bug fixes
+ 
+
+
+- Rename hackathon to haclathon, to better separate the format from classical 24h-hackathons ([`4e36510`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/4e365100dc87984890ba504fee5d752f42a4aa89))
+
+
+
+ 
+ 
+### Style
+ 
+
+
+- Allow svg to auto-scale to width/height ([`96eb317`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/96eb317c22ca798479370bfbbee47d5d2df8d14f))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Rephrase sentences in intro in regard to registration ([`c402426`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c4024266bdd2bb0fb0d4ce9102dbfe2c5f04f469))
+
+
+
+ 
+ 
+ 
 ## v0.4.8 (2026-04-30)
  
 ### Bug fixes

@@ -7,6 +7,60 @@
 
 
  
+## v0.5.0 (2026-05-05)
+ 
+### Documentation
+ 
+
+
+- Fix more references for haclathon update in svg ([`588b783`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/588b783ae2e4b6ece6da17ad172ad26ce21a09db))
+
+
+
+ 
+
+
+- Fix name haclathon in timeline svg, too ([`554d322`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/554d3221551df0e875324f6e26f3205c03afa223))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add privacy notice for github collaboration ([`1b918d9`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/1b918d93598370d079798469fb24028f91268f5c))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Slight rephrase ([`8af236f`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/8af236f6d76ab36e5a3a802f76060165f62068a1))
+
+
+
+ 
+
+
+- Minor wording fix ([`db0a66d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/db0a66d39b2719fd03d95d5e539021ddb9e7f555))
+
+
+
+ 
+
+
+- Better explain wording cla ([`85ad1a9`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/85ad1a9de6deef4275a508784496118ca3bcfa09))
+
+
+
+ 
+ 
+ 
 ## v0.4.9 (2026-05-04)
  
 ### Bug fixes

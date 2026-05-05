@@ -38,3 +38,5 @@ parts:
   - file: notebooks/401_endmatter-thanks
   - file: CHANGELOG
     title: Changelog
+  - file: legal_notice
+    title: Privacy Notice

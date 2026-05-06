@@ -7,6 +7,19 @@
 
 
  
+## v0.7.1 (2026-05-06)
+ 
+### Bug fixes
+ 
+
+
+- Image reference; style - use image shadows ([`306c9ee`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/306c9ee2035d8dc9443c25610fa71d49ec83abed))
+
+
+
+ 
+ 
+ 
 ## v0.7.0 (2026-05-06)
  
 ### Chores

@@ -7,6 +7,36 @@
 
 
  
+## v0.6.1 (2026-05-06)
+ 
+### Bug fixes
+ 
+
+
+- Edit link ([`01eb647`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/01eb647f1428ce62936e0c4b5ed1999a10df54d1))
+
+
+
+ 
+ 
+### Chores
+ 
+
+
+- Fix yml sveltia cms naming ([`621bf09`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/621bf093bd3db95d272e5d05ea35dc8a1acfd2e0))
+
+
+
+ 
+
+
+- Fix sveltia-cms css loading; add test edit link to notebook 101 ([`50c1e28`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/50c1e28a2d0ee8aa620f521df69064b8ae1bf4c3))
+
+
+
+ 
+ 
+ 
 ## v0.6.0 (2026-05-06)
  
 ### Features

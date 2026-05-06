@@ -1,0 +1,66 @@
+backend:
+  name: github
+  repo: ioer-dresden/ioer-conference-2026-haclathon 
+  branch: main
+  # Our Go-broker (sveltia-cms)
+  base_url: https://cms-auth.fdz.ioer.info
+  auth_endpoint: auth
+
+publish_mode: editorial_workflow
+
+# Legal / UX text displayed on the login screen
+site_url: https://hack.conference.ioer.info
+display_name: "HaCLAthon CMS"
+description: >
+  <p>Welcome! To correctly attribute your contributions in our scientific proceedings, please log in with your GitHub account.</p>
+  
+  <p><strong>🔒 Your Security & Privacy:</strong></p>
+  <ul style="text-align: left; margin-bottom: 15px;">
+    <li>Your login is processed securely by GitHub.</li>
+    <li><strong>We never see or store your password.</strong></li>
+    <li>Our IOER-hosted broker only requests a temporary token to submit your text edits to our repository.</li>
+  </ul>
+  
+  <p>By logging in, you agree to our <a href="/legal_notice.html" target="_blank" style="text-decoration: underline;">Terms of Service and Privacy Policy</a>.</p>
+
+media_folder: "resources"
+public_folder: "../resources"
+
+collections:
+  - name: "chapters"
+    label: "Book Chapters (Markdown)"
+    folder: "md" # Targets the Jupytext paired MD folder!
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false # Disables Sveltia's preview pane (best for MyST markdown)
+    fields:
+      - { label: "Body", name: "body", widget: "markdown" }
+      
+      # This hidden object captures and preserves 
+      # the Jupytext metadata so the CMS doesn't delete it upon saving.
+      - label: "Jupyter Metadata (Do not edit)"
+        name: "jupyter"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Jupytext"
+            name: "jupytext"
+            widget: "object"
+            fields:
+              - label: "Text Representation"
+                name: "text_representation"
+                widget: "object"
+                fields:
+                  - { name: "extension", widget: "string" }
+                  - { name: "format_name", widget: "string" }
+                  - { name: "format_version", widget: "string" }
+                  - { name: "jupytext_version", widget: "string" }
+          - label: "Kernelspec"
+            name: "kernelspec"
+            widget: "object"
+            fields:
+              - { name: "display_name", widget: "string" }
+              - { name: "language", widget: "string" }
+              - { name: "name", widget: "string" }

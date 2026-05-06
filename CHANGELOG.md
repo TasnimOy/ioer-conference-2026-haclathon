@@ -7,6 +7,53 @@
 
 
  
+## v0.8.0 (2026-05-06)
+ 
+### Continuous integration
+ 
+
+
+- Fix missing file issue ([`d49975e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d49975eed0923ad7641216e05134f6a277318be7))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Revise writers chapter ([`843d05b`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/843d05b6180d4a39911796abef7c511ed9fd50db))
+
+
+
+ 
+
+
+- Refactor developers, contributing, and onboarding sections. ([`aac02f6`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/aac02f6e9e4d872dd3030150851ce1455a58b7dd))
+
+
+
+ 
+
+
+- Add step 6, to better emphasize iterative writing workflow ([`e616bc3`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e616bc3557caf027773ebb5df06e1db15ed08af2))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add link to matrix room ([`5478b2b`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/5478b2b93a61dd000185a15cc879429014ee18f0))
+
+
+
+ 
+ 
+ 
 ## v0.7.1 (2026-05-06)
  
 ### Bug fixes

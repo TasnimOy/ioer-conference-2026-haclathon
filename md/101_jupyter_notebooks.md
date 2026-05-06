@@ -21,10 +21,16 @@ jupyter:
 This chapter provides a brief introduction to the key components of the Jupyter. For a more detailed information, please see [jupyter.org](https://docs.jupyter.org/en/latest/).
 ```
 
-```{admonition} Collaborate on this chapter
-:class: tip
-Want to improve this text but unfamiliar with Git? 📝 [Edit this chapter directly in your browser](../editor/index.html#/collections/chapters/entries/101_theory_chapters). Your changes will be submitted as a Pull Request for review.
-```
+<div class="admonition tip">
+<p class="admonition-title">Collaborate on this chapter</p>
+<p>
+Want to improve this text but unfamiliar with Git? 📝 
+<a href="/editor/index.html#/collections/chapters/entries/101_theory_chapters" target="_blank" style="text-decoration: underline; font-weight: bold;">
+Edit this chapter directly in your browser
+</a>. 
+Your changes will be submitted as a Pull Request for review.
+</p>
+</div>
 
 
 **Jupyter** is a software that includes various tools for interactive computing. 

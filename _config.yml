@@ -86,8 +86,9 @@ sphinx:
     bibtex_reference_style  : author_year_round_custom
 
     html_theme_options:
-      # This forces the icon links and header buttons into the same top row
-      navbar_end: ["navbar-icon-links.html", "header-buttons.html"]
+      # 1. Use only valid top-navbar templates
+      # This moves the Matrix icon to the top right next to the search/theme toggle
+      navbar_end: ["version-switcher", "theme-switcher", "navbar-icon-links"]
       
       icon_links:
         - name: Matrix HaCLAthon Chat
@@ -95,17 +96,7 @@ sphinx:
           icon: fas fa-comments
           type: fontawesome
 
-      # 2. GITHUB
+      # 2. GitHub, Download Buttons etc.
       use_repository_button: true
-      repository_url: https://github.com/ioer-dresden/ioer-conference-2026-haclathon
-      repository_branch: main
-
-      # 3. ROCKET (Jupyter4NFDI)
-      # In the theme config, this needs to be explicitly enabled and pointed to the Hub
-      launch_buttons:
-        binderhub_url: "https://hub.nfdi-jupyter.de"
-        notebook_interface: "jupyterlab"
-      
-      # 4. OTHERS
       use_download_button: true
       use_fullscreen_button: true

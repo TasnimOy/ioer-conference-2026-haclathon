@@ -7,6 +7,56 @@
 
 
  
+## v0.8.1 (2026-05-06)
+ 
+### Bug fixes
+ 
+
+
+- Correct formatting of extra icon link to chat ([`b51fbbf`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b51fbbf0d88ab3f0608079b246aee4f351b4ac16))
+
+
+
+ 
+ 
+### Continuous integration
+ 
+
+
+- Fix pandoc issue ([`787604d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/787604d84304813193d7aed24d77bca0f10ca3a3))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Revise style for developer crosslink ([`b316665`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b316665382fc72699ac8e0865fd13e1a17b64408))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Minor changes and updates to phrasing and words ([`b03e167`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b03e167f33d64ffb079861b303a29b8e0b021f8a))
+
+
+
+ 
+
+
+- Use explicit cross ref anchor ([`b3f0bb3`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b3f0bb3e2625a3d95b450e207a7f6fa980081773))
+
+
+
+ 
+ 
+ 
 ## v0.8.0 (2026-05-06)
  
 ### Continuous integration

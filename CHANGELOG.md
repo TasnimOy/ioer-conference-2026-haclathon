@@ -7,6 +7,29 @@
 
 
  
+## v0.6.0 (2026-05-06)
+ 
+### Features
+ 
+
+
+- Add cms-editor (sveltia cms) ([`3f7f0ca`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/3f7f0ca9a73df84336c5c5e21d52188a0abe1b1f))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Rename github repository (hackathon->haclathon) and reference ([`7b3c9cd`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/7b3c9cddccc227cb8fc3cec2762dd82e03fae9f6))
+
+
+
+ 
+ 
+ 
 ## v0.5.0 (2026-05-05)
  
 ### Documentation

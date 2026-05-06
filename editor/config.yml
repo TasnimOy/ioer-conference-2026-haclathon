@@ -23,8 +23,8 @@ description: >
   
   <p>By logging in, you agree to our <a href="/legal_notice.html" target="_blank" style="text-decoration: underline;">Terms of Service and Privacy Policy</a>.</p>
 
-media_folder: "resources"
-public_folder: "../resources"
+media_folder: "resources" # The folder in Git repo
+public_folder: "/resources" # The absolute path on the webserver
 
 collections:
   - name: "chapters"

@@ -12,7 +12,7 @@ jupyter:
     name: worker_env
 ---
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 # Setup & Getting familiar with Jupyter
 <!-- #endregion -->
 
@@ -23,7 +23,7 @@ This chapter provides a brief introduction to the key components of the Jupyter.
 
 ```{admonition} Collaborate on this chapter
 :class: tip
-Want to improve this text but unfamiliar with Git? 📝 **[Edit this chapter directly in your browser](/editor/index.html#/collections/chapters/entries/101_theory_chapters)**. Your changes will be submitted as a Pull Request for review.
+Want to improve this text but unfamiliar with Git? 📝 [Edit this chapter directly in your browser](../editor/index.html#/collections/chapters/entries/101_theory_chapters). Your changes will be submitted as a Pull Request for review.
 ```
 
 
@@ -105,7 +105,7 @@ The [Python Standard Library Documentation](https://docs.python.org/3/library/in
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Installing JupyterLab is relatively easy:
 <!-- #endregion -->
 
@@ -167,7 +167,7 @@ The tradeoff here is that you must install all dependencies before running noteb
 
 ### Carto-Lab Docker
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 
 Carto-Lab Docker includes
@@ -178,7 +178,7 @@ Carto-Lab Docker includes
 All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 <!-- #endregion -->
 
-```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+```python tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -193,7 +193,7 @@ except FileNotFoundError:
 md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 `````{admonition} See the Carto-Lab Docker docs for installation instructions
 :class: dropdown, hint
 
@@ -213,7 +213,7 @@ docker-compose pull && docker-compose up -d
 `````
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 :class: attention
 Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -234,7 +234,7 @@ git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackath
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ``````{admonition} Use the Jupyter Terminal
 :class: hint
 You can use the terminal that is provided by Jupyter. At your Jupyter Dashboard, click the following Icon:
@@ -254,7 +254,7 @@ git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackath
 ``````
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ### Jupyterlab: Basic key commands 
 
 After these steps, you are ready to go. You can find the individual notebooks of the training materials in the subfolder `notebooks/`.
@@ -295,7 +295,7 @@ For **Option 2**, we we provide a summary of the packages used and the specific 
 Example:
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -333,7 +333,7 @@ We do this, for example, for `owslib` in our workflow in [Data Retrieval: IOER M
 You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ```bash
 !pip install owslib
 ```
@@ -343,11 +343,11 @@ You can install packages temporarily by issuing bash commands directly in a code
 We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 <!-- #endregion -->
 
-```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ``````{note}
 This script _should_ work in most environments. Make sure you specify the name of the current kernel environment, e.g:
 ```
@@ -359,7 +359,7 @@ print(f"Current Kernel {pyexec}")
 ``````
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ## How to import Packages and Libraries
 <!-- #endregion -->
 

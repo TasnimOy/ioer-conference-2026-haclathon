@@ -7,6 +7,36 @@
 
 
  
+## v0.7.0 (2026-05-06)
+ 
+### Chores
+ 
+
+
+- Add decap-cms.js locally ([`c449c19`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c449c19822e95b0e32e96a5baf3e79c0d017e5f6))
+
+
+
+ 
+
+
+- Switch to decap-cms atm, due to missing workflow feature in sveltia ([`1236d2f`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/1236d2feafc91cc2561b4cb3c48662a04a030a37))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add guide for writers and guide for developers, add crosslinks and starterkit ([`b06bc4a`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b06bc4ab6c293d2b636884b3b4916db7448fb157))
+
+
+
+ 
+ 
+ 
 ## v0.6.1 (2026-05-06)
  
 ### Bug fixes

@@ -60,4 +60,4 @@ Our Continuous Integration automatically builds versions and changelogs based on
 * **Literature:** Add your references to the `references.bib` file. Cite them in your notebook using `{cite:t}` or `{cite:p}`.
 * **Anchors:** Do not rely on header names for linking. Define explicit targets above your headers `(my-anchor)=` and link to them using `[Link Text](my-anchor)`.
 
-You can read the full contribution guidelines, including formatting style conventions that we try to adhere, in our [Contributing](../CONTRIBUTING) section.
+You can read the full contribution guidelines, including formatting style conventions that we try to adhere, in our [Developers](../DEVELOPERS) section.

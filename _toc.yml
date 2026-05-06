@@ -43,6 +43,8 @@ parts:
   chapters:
   - file: BIBLIOGRAPHY
     title: Bibliography
+  - file: Developers
+    title: Developers
   - file: notebooks/401_endmatter-thanks
     title: Thank You!
   - file: CHANGELOG

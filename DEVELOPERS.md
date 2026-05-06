@@ -1,5 +1,7 @@
 # Developers
 
+This page explains the underlying toolset, rules and style conventions for our Jupyter Book collaboration.
+
 We are open to contributions in any format and we will make sure to harmonize these after submission. However, if you are familiar with Jupyter, you can submit your contributions directly in the `ipynb` format and with the syntax conventions we outline here. 
 
 This project is a collaborative team effort, and we want to make contributing as easy as possible. This page provides a small workthrough for contributing to the [IOER Conference 2026 HaCLAthon](https://hack.conference.ioer.info). Please note that you currently need to request access in order to participate. Please contact the IOER team.
@@ -43,7 +45,7 @@ These two sites help to incrementally improve the training materials:
 - https://stag.hack.conference.ioer.info/ - always up-to-date, see documentation changes immediately. **This page is only visible from the IOER Intranet**
 - https://hack.conference.ioer.info - a "production" version that looks more polished; changes from the staging branch are selectively merged in. This page is **publicly visible**
 
-Start working on the `staging` branch. We pull changes that are ready into the main (production) branch.
+Since this is a public collaboration, we directly work on `main` branch. We pull changes from Github into the main (production) branch selectively.
 
 The process for a single notebook change:
 ```mermaid 

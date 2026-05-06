@@ -21,6 +21,11 @@ jupyter:
 This chapter provides a brief introduction to the key components of the Jupyter. For a more detailed information, please see [jupyter.org](https://docs.jupyter.org/en/latest/).
 ```
 
+```{admonition} Collaborate on this chapter
+:class: tip
+Want to improve this text but unfamiliar with Git? 📝 **[Edit this chapter directly in your browser](/editor/index.html#/collections/chapters/entries/101_theory_chapters)**. Your changes will be submitted as a Pull Request for review.
+```
+
 
 **Jupyter** is a software that includes various tools for interactive computing. 
 These training materials are built using **Jupyter Notebooks**, which are interactive documents that combine explanations, code, and outputs in one place. The notebooks were created using **JupyterLab**, which is a web-based development environment that provides an integrated workspace for notebooks, text editors, terminals, and more. To make navigation easier, individual notebooks have been structured into a **Jupyter Book**, which organizes the content into chapters and pages.
@@ -111,7 +116,7 @@ jupyter lab # run jupyterlab
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 However, from there, Python package management, version conflicts, dependency issues and many other challenges can make it very difficult for beginnings to reproduce the outputs we show here. You have different options that we explain below.
 <!-- #endregion -->
 
@@ -162,7 +167,7 @@ The tradeoff here is that you must install all dependencies before running noteb
 
 ### Carto-Lab Docker
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 
 Carto-Lab Docker includes
@@ -173,7 +178,7 @@ Carto-Lab Docker includes
 All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -208,7 +213,7 @@ docker-compose pull && docker-compose up -d
 `````
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 :class: attention
 Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -263,7 +268,7 @@ These are the most important key commands, to get you started.
 
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Installing dependencies individually
 
 You can also install the packages individually:
@@ -271,7 +276,7 @@ You can also install the packages individually:
 2. or install all packages for each notebook into a separate environment (easier, but more work)
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 For **Option 1**, you can start with the [environment.yml](https://gitlab.vgiscience.de/lbsn/tools/jupyterlab/-/blob/master-latest/environment_default.yml?ref_type=heads) from Carto-Lab Docker and install the environment manually with:
 ```bash
 conda env create -f environment.yaml
@@ -284,13 +289,13 @@ conda install -c conda-forge jupyterlab
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 For **Option 2**, we we provide a summary of the packages used and the specific versions at the end of each notebook chapter,
 
 Example:
 <!-- #endregion -->
 
-```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -334,11 +339,11 @@ You can install packages temporarily by issuing bash commands directly in a code
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 <!-- #endregion -->
 
-```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 ```
 
@@ -354,7 +359,7 @@ print(f"Current Kernel {pyexec}")
 ``````
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## How to import Packages and Libraries
 <!-- #endregion -->
 
@@ -388,7 +393,7 @@ If the installation was successful but still the issue persists, it could be due
 
 
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 
   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

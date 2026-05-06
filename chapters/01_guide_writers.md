@@ -76,6 +76,10 @@ When you are finished writing:
 2. Change the status from **"Draft"** to **"In Review"**.
 3. This alerts the IOER conference curation team. We will review your text, format it into the Jupyter Book, and publish it to the live website!
 
-You can view your changes, after they have been reviewed and merged, at https://hack.conference.ioer.info. Please publish often, even if your chapter is not fully ready. The HaCLAthon is specifically made for live collaboration and we welcome incremental contributions!
+You can view your changes, after they have been reviewed and merged, at https://hack.conference.ioer.info.
 
+### Step 6: Iterate
+
+Please publish often, even if your chapter is not fully ready. The HaCLAthon is specifically made for live collaboration and we welcome incremental contributions!
+When we merged changes, you can re-open the editor and continue where you left. This will create an iterative contribution workflow of incremental steps that will once lead to the final HaCLAthon book.
 

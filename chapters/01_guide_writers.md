@@ -85,5 +85,5 @@ When we merged changes, you can re-open the editor and continue where you left. 
 
 ```{admonition} Style guidelines. 
 :class: tip
-If you want to read more about style conventions that you can use to format your chapter, have a look at our full [Developers](../DEVELOPERS#formatting-conventions) Section.
+If you want to read more about style conventions that you can use to format your chapter, have a look at our full [Developers](content:references:formattingconventions) Section.
 ```

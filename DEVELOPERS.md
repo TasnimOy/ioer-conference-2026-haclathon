@@ -224,6 +224,7 @@ These changes will not result in any version bump, but they will be listed as im
 There are a number of other message types, such as `refactor`, `style`, (etc.). All of these will not cause a version bump and can be used if
 and can be used if it fits.
 
+(content:references:formattingconventions)=
 (heading-target)=
 # 7. Formatting conventions
 

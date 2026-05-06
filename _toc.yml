@@ -1,42 +1,51 @@
 format: jb-book
 root: intro
 parts:
-- caption: Preface
+
+# ---------------------------------------------------------------
+# WELCOME & ONBOARDING
+# The "Fork in the road" for Writers vs. Developers
+# ---------------------------------------------------------------
+- caption: Welcome
   chapters:
-  - file: notebooks/00_toc
+  - file: chapters/00_quickstart
+    title: Quick-Start Guide
+  - file: chapters/01_guide_writers
+    title: Guide for Writers
+  - file: chapters/02_guide_developers
+    title: Guide for Developers
 
 # ---------------------------------------------------------------
 # PART I: STARTER KIT
-# Get people running immediately with environment & data access
+# Jump-start datasets and API tutorials (mostly .ipynb)
 # ---------------------------------------------------------------
 - caption: Part I - Starter Kit
   chapters:
-  - file: notebooks/101_jupyter_notebooks
-    title: Setup & Computing Environment
   - file: notebooks/102_data_retrieval_monitor
     title: Accessing IOER Monitor Data (API)
   - file: notebooks/103_data_retrieval_gbif
     title: Accessing Biodiversity Data (GBIF)
   - file: notebooks/104_more
-    title: "More Jump-Start Datasets"
+    title: More Jump-Start Datasets
 
-# PART III: RESULTS
-# This section grows as people merge their PRs
+# ---------------------------------------------------------------
+# PART II: CONTRIBUTIONS
 # ---------------------------------------------------------------
 - caption: Part II - Contributions
   chapters:
   - file: notebooks/community_index
     title: List of Submitted Hacks
 
-
+# ---------------------------------------------------------------
+# PROJECT INFO
+# ---------------------------------------------------------------
 - caption: Project Info
   chapters:
   - file: BIBLIOGRAPHY
     title: Bibliography
-  - file: CONTRIBUTING
-    title: Developers
   - file: notebooks/401_endmatter-thanks
+    title: Thank You!
   - file: CHANGELOG
     title: Changelog
   - file: legal_notice
-    title: Privacy Notice
+    title: Privacy Notice & Terms

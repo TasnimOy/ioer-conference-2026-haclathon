@@ -27,40 +27,32 @@ media_folder: "resources" # The folder in Git repo
 public_folder: "/resources" # The absolute path on the webserver
 
 collections:
+  # 1. Folder Collection for general chapters
   - name: "chapters"
     label: "Book Chapters (Markdown)"
-    folder: "md" # Targets the Jupytext paired MD folder!
+    folder: "chapters"
     create: true
     extension: "md"
     format: "frontmatter"
     editor:
-      preview: false # Disables Sveltia's preview pane (best for MyST markdown)
+      preview: false
     fields:
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      
-      # This hidden object captures and preserves 
-      # the Jupytext metadata so the CMS doesn't delete it upon saving.
-      - label: "Jupyter Metadata (Do not edit)"
-        name: "jupyter"
-        widget: "object"
-        collapsed: true
+
+  # 2. File Collection for specific root files
+  - name: "system_pages"
+    label: "System Pages (Root)"
+    editor:
+      preview: false
+    files:
+      - label: "Bibliography"
+        name: "bibliography"
+        file: "BIBLIOGRAPHY.md"
         fields:
-          - label: "Jupytext"
-            name: "jupytext"
-            widget: "object"
-            fields:
-              - label: "Text Representation"
-                name: "text_representation"
-                widget: "object"
-                fields:
-                  - { name: "extension", widget: "string" }
-                  - { name: "format_name", widget: "string" }
-                  - { name: "format_version", widget: "string" }
-                  - { name: "jupytext_version", widget: "string" }
-          - label: "Kernelspec"
-            name: "kernelspec"
-            widget: "object"
-            fields:
-              - { name: "display_name", widget: "string" }
-              - { name: "language", widget: "string" }
-              - { name: "name", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Contributing Guide"
+        name: "contributing"
+        file: "CONTRIBUTING.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }

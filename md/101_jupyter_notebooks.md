@@ -21,17 +21,6 @@ jupyter:
 This chapter provides a brief introduction to the key components of the Jupyter. For a more detailed information, please see [jupyter.org](https://docs.jupyter.org/en/latest/).
 ```
 
-<div class="admonition tip">
-<p class="admonition-title">Collaborate on this chapter</p>
-<p>
-Want to improve this text but unfamiliar with Git? 📝 
-<a href="/editor/index.html#/collections/chapters/entries/101_theory_chapters" target="_blank" style="text-decoration: underline; font-weight: bold;">
-Edit this chapter directly in your browser
-</a>. 
-Your changes will be submitted as a Pull Request for review.
-</p>
-</div>
-
 
 **Jupyter** is a software that includes various tools for interactive computing. 
 These training materials are built using **Jupyter Notebooks**, which are interactive documents that combine explanations, code, and outputs in one place. The notebooks were created using **JupyterLab**, which is a web-based development environment that provides an integrated workspace for notebooks, text editors, terminals, and more. To make navigation easier, individual notebooks have been structured into a **Jupyter Book**, which organizes the content into chapters and pages.
@@ -53,7 +42,7 @@ The page is organized into sections called ‘cells,’ which may include text e
 
 To copy a code snippet, click the copy icon in the top-right corner of the code cell.
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 # See the copy button on the right corner when you hover over this text.
 ```
 
@@ -111,7 +100,7 @@ The [Python Standard Library Documentation](https://docs.python.org/3/library/in
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Installing JupyterLab is relatively easy:
 <!-- #endregion -->
 
@@ -199,7 +188,7 @@ except FileNotFoundError:
 md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 `````{admonition} See the Carto-Lab Docker docs for installation instructions
 :class: dropdown, hint
 
@@ -301,7 +290,7 @@ For **Option 2**, we we provide a summary of the packages used and the specific 
 Example:
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
 import sys
 from pathlib import Path
 
@@ -326,7 +315,7 @@ pip install python==3.11.6 dask==2024.12.1 datashader==0.17.0 geopandas==0.14.4 
 ## Temporary package installs
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Sometimes, a default environment exists that already includes many packages. Only some new packages need to be installed for certain notebooks. In these cases, it can be _Ok_ to install packages temporarily directly from within Jupyter. 
 
 ```{admonition} Example notebook
@@ -349,11 +338,11 @@ You can install packages temporarily by issuing bash commands directly in a code
 We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ``````{note}
 This script _should_ work in most environments. Make sure you specify the name of the current kernel environment, e.g:
 ```
@@ -399,7 +388,7 @@ If the installation was successful but still the issue persists, it could be due
 
 
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 
   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

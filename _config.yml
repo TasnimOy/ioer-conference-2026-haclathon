@@ -84,19 +84,3 @@ sphinx:
     suppress_warnings       : ['nbsphinx',]
     myst_heading_anchors    : 3
     bibtex_reference_style  : author_year_round_custom
-
-    html_theme_options:
-      # 1. Use only valid top-navbar templates
-      # This moves the Matrix icon to the top right next to the search/theme toggle
-      navbar_end: ["version-switcher", "theme-switcher", "navbar-icon-links"]
-      
-      icon_links:
-        - name: Matrix HaCLAthon Chat
-          url: https://matrix.to/#/#HaCLAthon:tu-dresden.de
-          icon: fas fa-comments
-          type: fontawesome
-
-      # 2. GitHub, Download Buttons etc.
-      use_repository_button: true
-      use_download_button: true
-      use_fullscreen_button: true

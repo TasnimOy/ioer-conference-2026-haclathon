@@ -70,7 +70,7 @@ build:
       # convert readme to index.html and contributing.md and copy to webroot
       # use intermediate step to include mermaid conversion
       - mmdc -p ./.pandoc/puppeteer-config.json -i README.md -o README.md
-      - mmdc -p ./.pandoc/puppeteer-config.json -i CONTRIBUTING.md -o CONTRIBUTING.md
+      - mmdc -p ./.pandoc/puppeteer-config.json -i DEVELOPERS.md -o DEVELOPERS.md
       - pandoc --standalone --embed-resource -c readme.css --template .pandoc/readme.html -f gfm -t html README.md -o readme.html
       - pandoc --standalone --embed-resource -c readme.css --template .pandoc/readme.html -f gfm -t html CONTRIBUTING.md -o contributing.html
       # patch launch buttons to show Jupyter4NFDI instead of Binder

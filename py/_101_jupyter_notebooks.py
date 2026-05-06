@@ -12,7 +12,7 @@
 #     name: worker_env
 # ---
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # # Setup & Getting familiar with Jupyter
 
 # %% [markdown]
@@ -21,10 +21,16 @@
 # This chapter provides a brief introduction to the key components of the Jupyter. For a more detailed information, please see [jupyter.org](https://docs.jupyter.org/en/latest/).
 # ```
 #
-# ```{admonition} Collaborate on this chapter
-# :class: tip
-# Want to improve this text but unfamiliar with Git? 📝 **[Edit this chapter directly in your browser](/editor/index.html#/collections/chapters/entries/101_theory_chapters)**. Your changes will be submitted as a Pull Request for review.
-# ```
+# <div class="admonition tip">
+# <p class="admonition-title">Collaborate on this chapter</p>
+# <p>
+# Want to improve this text but unfamiliar with Git? 📝 
+# <a href="/editor/index.html#/collections/chapters/entries/101_theory_chapters" target="_blank" style="text-decoration: underline; font-weight: bold;">
+# Edit this chapter directly in your browser
+# </a>. 
+# Your changes will be submitted as a Pull Request for review.
+# </p>
+# </div>
 
 # %% [markdown]
 # **Jupyter** is a software that includes various tools for interactive computing. 
@@ -105,7 +111,7 @@
 # ```
 # <!-- #endregion -->
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Installing JupyterLab is relatively easy:
 
 # %% [markdown]
@@ -165,7 +171,7 @@
 # %% [markdown]
 # ### Carto-Lab Docker
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 #
 # Carto-Lab Docker includes
@@ -175,7 +181,7 @@
 #
 # All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 
-# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+# %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -189,7 +195,7 @@ except FileNotFoundError:
 
 md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # `````{admonition} See the Carto-Lab Docker docs for installation instructions
 # :class: dropdown, hint
 #
@@ -208,7 +214,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # ```
 # `````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 # :class: attention
 # Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -228,7 +234,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackathon.git
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ``````{admonition} Use the Jupyter Terminal
 # :class: hint
 # You can use the terminal that is provided by Jupyter. At your Jupyter Dashboard, click the following Icon:
@@ -247,7 +253,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # - `/home/jovyan/work/` is the path to the default home folder in Jupyter. The home folder is the folder you see in the explorer on the left side when you are logged in to Jupyter.
 # ``````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### Jupyterlab: Basic key commands 
 #
 # After these steps, you are ready to go. You can find the individual notebooks of the training materials in the subfolder `notebooks/`.
@@ -284,7 +290,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 #
 # Example:
 
-# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -317,7 +323,7 @@ tools.package_report(root_packages)
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```bash
 # !pip install owslib
 # ```
@@ -325,10 +331,10 @@ tools.package_report(root_packages)
 # %% [markdown] editable=true slideshow={"slide_type": ""}
 # We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 
-# %% tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ``````{note}
 # This script _should_ work in most environments. Make sure you specify the name of the current kernel environment, e.g:
 # ```
@@ -339,7 +345,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 # ```
 # ``````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## How to import Packages and Libraries
 
 # %% [markdown]

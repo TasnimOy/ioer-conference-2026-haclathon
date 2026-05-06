@@ -83,3 +83,7 @@ You can view your changes, after they have been reviewed and merged, at https://
 Please publish often, even if your chapter is not fully ready. The HaCLAthon is specifically made for live collaboration and we welcome incremental contributions!
 When we merged changes, you can re-open the editor and continue where you left. This will create an iterative contribution workflow of incremental steps that will once lead to the final HaCLAthon book.
 
+```{admonition} Style guidelines. 
+:class: tip
+If you want to read more about style conventions that you can use to format your chapter, have a look at our full [Developers](../DEVELOPERS#formatting-conventions) Section.
+```

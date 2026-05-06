@@ -84,11 +84,3 @@ sphinx:
     suppress_warnings       : ['nbsphinx',]
     myst_heading_anchors    : 3
     bibtex_reference_style  : author_year_round_custom
-
-    # Use 'html_theme_options' to add the Matrix chat link only.
-    html_theme_options:
-      icon_links:
-        - name: Matrix HaCLAthon Chat
-          url: https://matrix.to/#/#HaCLAthon:tu-dresden.de
-          icon: fas fa-comments
-          type: fontawesome

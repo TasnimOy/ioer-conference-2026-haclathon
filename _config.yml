@@ -37,10 +37,6 @@ html:
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : false  # Whether to add an "open an issue" button
-  extra_navbar: |
-    <a href="https://matrix.to/#/#HaCLAthon:tu-dresden.de" target="_blank" class="nav-link">
-      <i class="fas fa-comments"></i> Matrix
-    </a>
   extra_footer              : |
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en">2026 Creative Commons CC BY 4.0</a><br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a> and the OSS Community<br><a href="https://www.ioer.de/en/imprint">Imprint </a> | <a href="https://www.ioer.de/en/data-protection-statement">Data protection </a> | <a href="https://www.ioer.de/en/declaration-on-accessibility">Accessibility </a>
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
@@ -88,3 +84,10 @@ sphinx:
     suppress_warnings       : ['nbsphinx',]
     myst_heading_anchors    : 3
     bibtex_reference_style  : author_year_round_custom
+
+    html_theme_options:
+      icon_links:
+        - name: Matrix HaCLAthon Chat
+          url: https://matrix.to/#/#HaCLAthon:tu-dresden.de
+          icon: fas fa-comments
+          type: fontawesome

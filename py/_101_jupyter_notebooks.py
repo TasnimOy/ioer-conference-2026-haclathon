@@ -20,6 +20,11 @@
 # :class: hint
 # This chapter provides a brief introduction to the key components of the Jupyter. For a more detailed information, please see [jupyter.org](https://docs.jupyter.org/en/latest/).
 # ```
+#
+# ```{admonition} Collaborate on this chapter
+# :class: tip
+# Want to improve this text but unfamiliar with Git? 📝 **[Edit this chapter directly in your browser](/editor/index.html#/collections/chapters/entries/101_theory_chapters)**. Your changes will be submitted as a Pull Request for review.
+# ```
 
 # %% [markdown]
 # **Jupyter** is a software that includes various tools for interactive computing. 
@@ -109,7 +114,7 @@
 # jupyter lab # run jupyterlab
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # However, from there, Python package management, version conflicts, dependency issues and many other challenges can make it very difficult for beginnings to reproduce the outputs we show here. You have different options that we explain below.
 
 # %% [markdown]
@@ -160,7 +165,7 @@
 # %% [markdown]
 # ### Carto-Lab Docker
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 #
 # Carto-Lab Docker includes
@@ -170,7 +175,7 @@
 #
 # All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 
-# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -203,7 +208,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # ```
 # `````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 # :class: attention
 # Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -255,14 +260,14 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # - <kbd>d d (press d twice)</kbd> → Delete selected cells
 #
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Installing dependencies individually
 #
 # You can also install the packages individually:
 # 1. Install all packages for all notebooks in a single environment (harder, but less work)
 # 2. or install all packages for each notebook into a separate environment (easier, but more work)
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # For **Option 1**, you can start with the [environment.yml](https://gitlab.vgiscience.de/lbsn/tools/jupyterlab/-/blob/master-latest/environment_default.yml?ref_type=heads) from Carto-Lab Docker and install the environment manually with:
 # ```bash
 # conda env create -f environment.yaml
@@ -274,12 +279,12 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # conda install -c conda-forge jupyterlab
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # For **Option 2**, we we provide a summary of the packages used and the specific versions at the end of each notebook chapter,
 #
 # Example:
 
-# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -317,10 +322,10 @@ tools.package_report(root_packages)
 # !pip install owslib
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 
-# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+# %% tags=["remove-input"] editable=true slideshow={"slide_type": ""}
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -334,7 +339,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 # ```
 # ``````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## How to import Packages and Libraries
 
 # %% [markdown]
@@ -368,7 +373,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 #
 #
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 #
 #   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

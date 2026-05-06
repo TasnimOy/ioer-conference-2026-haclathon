@@ -78,7 +78,7 @@ When you are finished writing:
 
 You can view your changes, after they have been reviewed and merged, at https://hack.conference.ioer.info.
 
-### Step 6: Iterate
+## Step 6: Iterate
 
 Please publish often, even if your chapter is not fully ready. The HaCLAthon is specifically made for live collaboration and we welcome incremental contributions!
 When we merged changes, you can re-open the editor and continue where you left. This will create an iterative contribution workflow of incremental steps that will once lead to the final HaCLAthon book.

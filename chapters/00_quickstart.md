@@ -1,3 +1,4 @@
+(content:references:quickstartguide)=
 # Quick-Start Guide
 
 Welcome to the **HaCLAthon**! Because we invite an interdisciplinary mix of domain experts, planners, and coders, we offer two distinct ways to collaborate. 

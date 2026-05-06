@@ -86,8 +86,21 @@ sphinx:
     bibtex_reference_style  : author_year_round_custom
 
     html_theme_options:
+      # 1. Matrix Chat Button
       icon_links:
         - name: Matrix HaCLAthon Chat
           url: https://matrix.to/#/#HaCLAthon:tu-dresden.de
           icon: fas fa-comments
           type: fontawesome
+
+      # 2. GitHub Button
+      use_repository_button: true
+      repository_url: https://github.com/ioer-dresden/ioer-conference-2026-haclathon
+      repository_branch: main
+
+      # 3. Binder/NFDI Button 
+      # patched via scripts/patch_binder_links.sh
+      use_binder_button: true
+      
+      # 4. Download Button
+      use_download_button: true

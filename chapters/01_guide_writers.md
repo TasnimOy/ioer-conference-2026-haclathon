@@ -16,7 +16,6 @@ To ensure scientific integrity, our workspace is invite-only.
 
 ```{figure} ../resources/2026-05-06_invitation.webp
 :name: Invitation
-:figclass: fig-no-shadow
 
 Invitation visible when viewing the [Github Repository of the HaCLAthon](https://github.com/ioer-dresden/ioer-conference-2026-haclathon/).
 ```
@@ -43,9 +42,8 @@ This is our "Editorial Inbox".
 * To create a new chapter, click **"New Book Chapter"**.
 * To edit an existing chapter, click on its name in the board.
 
-```{figure} ../resources/workflow.webpp
+```{figure} ../resources/workflow.webp
 :name: Editor Workflow
-:figclass: fig-no-shadow
 
 Editorial Inbox Workflow in Live Editor.
 ```
@@ -56,7 +54,6 @@ The editor uses Markdown, a simple text-formatting language. You can use the for
 
 ```{figure} ../resources/2026-05-06_editor.webp
 :name: Live Editor
-:figclass: fig-no-shadow
 
 Editor for live-editing contributions (Text, Images etc.).
 ```
@@ -68,7 +65,6 @@ You can easily add images to your text.
 
 ```{figure} ../resources/image.webp
 :name: Add Images
-:figclass: fig-no-shadow
 
 Image form (to be filled) after clicking `+` icon in the toolbar.
 ```

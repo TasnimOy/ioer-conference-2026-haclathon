@@ -4,12 +4,61 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HaCLAthon Collaborative Editor</title>
-    <!-- Add this line below to fix the 404 error -->
+    <!-- Map the config since we are in /editor/ -->
     <link rel="cms-config-url" type="text/yaml" href="config.yml" />
+    
+    <style>
+      /* Layout to keep footer at the bottom */
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+      
+      /* The CMS container fills all available space */
+      #nc-root {
+        flex: 1;
+      }
+
+      /* Simple footer styling */
+      footer {
+        background-color: #ffffff;
+        border-top: 1px solid #e1e4e8;
+        padding: 15px 0;
+        z-index: 100; /* Ensure it stays above CMS background elements */
+      }
+
+      footer a {
+        color: #555;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- Important: Load script with 'defer' so it finds the #nc-root div -->
+    <script defer src="decap-cms.js"></script>
   </head>
   <body>
-    <!-- Include the Sveltia CMS script -->
-    <script src="decap-cms.js"></script>
-    <!--<script src="sveltia-cms.js"></script> -->
+    <!-- Decap CMS will mount here -->
+    <div id="nc-root"></div>
+
+    <!-- Your custom footer -->
+    <footer style="width:100%; text-align:right;">
+        <a href="https://www.ioer-fdz.de/">
+            <img alt="IOER-FDZ-Logo" src="hack.conference.ioer.info/_static/images/FDZ-Logo_DE_RGB-blk_bg-tra_mgn-full_h200px_web.svg" style="width:256px; margin-right:10px;">
+        </a>
+        <div class="impressum" style="margin-right: 50px; padding-bottom: 10px;">
+            <a href="https://www.ioer.de/impressum" target="_blank">Impressum</a> |
+            <a href="https://www.ioer.de/datenschutz" target="_blank">Datenschutz</a> |
+            <a href="https://www.ioer.de/barrierefreiheit" target="_blank">Barrierefreiheit</a> |
+            <a href="https://hack.conference.ioer.info/legal_notice.html" target="_blank">HaCLAthon Privacy Notice</a>
+        </div>
+    </footer>
   </body>
 </html>

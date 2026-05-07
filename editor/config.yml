@@ -49,17 +49,17 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Readme (Repository Landing Page)"
+      - label: "README.md | Repository Landing Page"
         name: "readme"
         file: "README.md"
         fields:
           - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Bibliography"
+      - label: "BIBLIOGRAPHY.md | Bibliography"
         name: "bibliography"
         file: "BIBLIOGRAPHY.md"
         fields:
           - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Developers Guide"
+      - label: "DEVELOPERS.md | Developers Guide"
         name: "developers"
         file: "DEVELOPERS.md"
         fields:

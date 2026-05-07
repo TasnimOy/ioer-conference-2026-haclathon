@@ -7,6 +7,39 @@
 
 
  
+## v0.8.2 (2026-05-07)
+ 
+### Bug fixes
+ 
+
+
+- Chapter title not shown in writers cms ([`949924d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/949924d529487571a2f7d1935647e9f70f1d9f16))
+
+
+
+ 
+ 
+### Continuous integration
+ 
+
+
+- Fix build ([`a301482`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/a301482c8fab0f3acbc29d826265288e8d12eb44))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Update readme (landing page) ([`be86f9a`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/be86f9adeb3efb2cf76fcfa861e563b0684821d3))
+
+
+
+ 
+ 
+ 
 ## v0.8.1 (2026-05-06)
  
 ### Bug fixes

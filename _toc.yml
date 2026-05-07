@@ -33,7 +33,7 @@ parts:
 # ---------------------------------------------------------------
 - caption: Part II - Contributions
   chapters:
-  - file: notebooks/community_index
+  - file: chapters/200_community_index
     title: List of Submitted Hacks
 
 # ---------------------------------------------------------------

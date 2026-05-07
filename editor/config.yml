@@ -48,13 +48,18 @@ collections:
     editor:
       preview: false
     files:
+      - label: "Readme Landing Page"
+        name: "readme"
+        file: "README.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
       - label: "Bibliography"
         name: "bibliography"
         file: "BIBLIOGRAPHY.md"
         fields:
           - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Contributing Guide"
-        name: "contributing"
-        file: "CONTRIBUTING.md"
+      - label: "Developers Guide"
+        name: "developers"
+        file: "DEVELOPERS.md"
         fields:
           - { label: "Body", name: "body", widget: "markdown" }

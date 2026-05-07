@@ -1,3 +1,7 @@
+---
+title: List of Submitted Hacks
+---
+
 # List of Submitted Hacks
 
 *This page indexes the community contributions to the Sustainability Transformation HaCLAthon.*

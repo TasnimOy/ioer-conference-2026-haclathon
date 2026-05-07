@@ -23,7 +23,7 @@ Invitation visible when viewing the [Github Repository of the HaCLAthon](https:/
 ## Step 2: Logging In
 
 Once you have accepted the invitation:
-1. Click the **[Collaborative Editor](/editor/)** link.
+1. Click the <strong><a href="/editor/">Collaborative Editor</a></strong> link.
 2. Click **"Sign in with GitHub"** and authorize the IOER application.
 *(Note: We do not see your password. The login is processed securely via our institute broker).*
 

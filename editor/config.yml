@@ -29,13 +29,14 @@ public_folder: "/resources" # The absolute path on the webserver
 collections:
   # 1. Folder Collection for general chapters
   - name: "chapters"
-    label: "Book Chapters (Markdown)"
+    label: "Chapters"
+    label_singular: "Chapter"
     folder: "chapters"
     create: true
     extension: "md"
     format: "frontmatter"
     identifier_field: title
-    summary: "{{title}}"
+    summary: "{{dirname}}/{{slug}}.md | {{title}}"
     editor:
       preview: false
     fields:
@@ -44,11 +45,12 @@ collections:
 
   # 2. File Collection for specific root files
   - name: "system_pages"
-    label: "System Pages (Root)"
+    label: "System Pages"
+    create: false
     editor:
       preview: false
     files:
-      - label: "Readme Landing Page"
+      - label: "Readme (Repository Landing Page)"
         name: "readme"
         file: "README.md"
         fields:

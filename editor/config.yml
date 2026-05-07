@@ -27,7 +27,7 @@ media_folder: "resources" # The folder in Git repo
 public_folder: "/resources" # The absolute path on the webserver
 
 collections:
-  # 1. Folder Collection for general chapters
+  # 1. Folder Collection for general chapters (Markdown only)
   - name: "chapters"
     label: "Chapters"
     label_singular: "Chapter"
@@ -41,8 +41,27 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-  # 2. File Collection for specific root files
+  # 2. Classifcal Jupyter Notebooks (*.ipynb, synced to md files)
+  - name: "notebooks"
+    label: "Jupyter Notebooks (Technical)"
+    folder: "md"
+    extension: "md"
+    format: "frontmatter"
+    summary: "Notebook: {{filename}}.{{extension}} | {{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      
+      # This ensures the CMS reads and writes the 
+      # Jupytext/Kernel metadata back into the file exactly as it was.
+      - label: "Jupyter Metadata"
+        name: "jupyter"
+        widget: "object"
+        fields:
+          - { name: "jupytext", widget: "hidden" }
+          - { name: "kernelspec", widget: "hidden" }
+          
+  # 3. File Collection for specific root files
   - name: "system_pages"
     label: "System Pages"
     create: false

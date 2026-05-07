@@ -35,8 +35,7 @@ collections:
     create: true
     extension: "md"
     format: "frontmatter"
-    identifier_field: title
-    summary: "{{dirname}}/{{slug}}.md | {{title}}"
+    summary: "{{filename}}.{{extension}} | {{title}}"
     editor:
       preview: false
     fields:

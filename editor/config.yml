@@ -41,6 +41,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
   # 2. Classifcal Jupyter Notebooks (*.ipynb, synced to md files)
   - name: "notebooks"
     label: "Jupyter Notebooks (Technical)"

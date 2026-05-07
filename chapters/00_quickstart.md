@@ -1,3 +1,7 @@
+---
+title: Quick-Start Guide
+---
+
 (content:references:quickstartguide)=
 # Quick-Start Guide
 

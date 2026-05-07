@@ -34,6 +34,8 @@ collections:
     create: true
     extension: "md"
     format: "frontmatter"
+    identifier_field: title
+    summary: "{{title}}"
     editor:
       preview: false
     fields:

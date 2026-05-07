@@ -1,3 +1,7 @@
+---
+title: Guide for Writers (Browser Editor)
+---
+
 # Guide for Writers (Browser Editor)
 
 If you want to contribute concepts, text, or data stories to the **HaCLAthon** without worrying about coding environments or Git, this path is for you.

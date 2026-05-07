@@ -1,3 +1,7 @@
+---
+title: Guide for Developers (Jupyter & Git)
+---
+
 # Guide for Developers (Jupyter & Git)
 
 Welcome! If you are contributing Python/R code, spatial analyses, or interactive maps, you will be working directly with **Jupyter Notebooks (`.ipynb`)** and **Git**.

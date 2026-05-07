@@ -48,7 +48,7 @@ collections:
     folder: "md"
     extension: "md"
     format: "frontmatter"
-    summary: "Notebook: {{filename}}.{{extension}} | {{title}}"
+    summary: "Notebook: {{filename}}.{{extension}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

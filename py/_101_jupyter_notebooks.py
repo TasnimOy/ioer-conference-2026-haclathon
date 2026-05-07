@@ -42,7 +42,7 @@
 #
 # To copy a code snippet, click the copy icon in the top-right corner of the code cell.
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 # See the copy button on the right corner when you hover over this text.
 
 # %% [markdown]
@@ -160,7 +160,7 @@
 # %% [markdown]
 # ### Carto-Lab Docker
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 #
 # Carto-Lab Docker includes
@@ -170,7 +170,7 @@
 #
 # All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 
-# %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
+# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -184,7 +184,7 @@ except FileNotFoundError:
 
 md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # `````{admonition} See the Carto-Lab Docker docs for installation instructions
 # :class: dropdown, hint
 #
@@ -242,7 +242,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # - `/home/jovyan/work/` is the path to the default home folder in Jupyter. The home folder is the folder you see in the explorer on the left side when you are logged in to Jupyter.
 # ``````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Jupyterlab: Basic key commands 
 #
 # After these steps, you are ready to go. You can find the individual notebooks of the training materials in the subfolder `notebooks/`.
@@ -255,7 +255,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # - <kbd>d d (press d twice)</kbd> → Delete selected cells
 #
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### Installing dependencies individually
 #
 # You can also install the packages individually:
@@ -274,12 +274,12 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # conda install -c conda-forge jupyterlab
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # For **Option 2**, we we provide a summary of the packages used and the specific versions at the end of each notebook chapter,
 #
 # Example:
 
-# %% tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -298,7 +298,7 @@ tools.package_report(root_packages)
 # pip install python==3.11.6 dask==2024.12.1 datashader==0.17.0 geopandas==0.14.4 matplotlib==3.10.1 pandas==2.2.3
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## Temporary package installs
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
@@ -312,15 +312,15 @@ tools.package_report(root_packages)
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ```bash
 # !pip install owslib
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 
-# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -334,7 +334,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 # ```
 # ``````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## How to import Packages and Libraries
 
 # %% [markdown]
@@ -368,7 +368,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 #
 #
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 #
 #   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

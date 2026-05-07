@@ -52,6 +52,12 @@ This is our "Editorial Inbox".
 Editorial Inbox Workflow in Live Editor.
 ```
 
+```{figure} ../resources/overview.webp
+:name: Editor Overview
+
+List of existing chapters (excluding data notebooks).
+```
+
 ## Step 4: Writing and Formatting
 
 The editor uses Markdown, a simple text-formatting language. You can use the formatting toolbar at the top (for Bold, Italic, Lists) or type Markdown directly.

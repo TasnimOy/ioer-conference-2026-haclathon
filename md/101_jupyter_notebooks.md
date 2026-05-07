@@ -42,7 +42,7 @@ The page is organized into sections called ‘cells,’ which may include text e
 
 To copy a code snippet, click the copy icon in the top-right corner of the code cell.
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 # See the copy button on the right corner when you hover over this text.
 ```
 
@@ -162,7 +162,7 @@ The tradeoff here is that you must install all dependencies before running noteb
 
 ### Carto-Lab Docker
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 
 Carto-Lab Docker includes
@@ -173,7 +173,7 @@ Carto-Lab Docker includes
 All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 <!-- #endregion -->
 
-```python tags=["remove-input"] slideshow={"slide_type": ""} editable=true
+```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -188,7 +188,7 @@ except FileNotFoundError:
 md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 `````{admonition} See the Carto-Lab Docker docs for installation instructions
 :class: dropdown, hint
 
@@ -249,7 +249,7 @@ git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackath
 ``````
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Jupyterlab: Basic key commands 
 
 After these steps, you are ready to go. You can find the individual notebooks of the training materials in the subfolder `notebooks/`.
@@ -263,7 +263,7 @@ These are the most important key commands, to get you started.
 
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ### Installing dependencies individually
 
 You can also install the packages individually:
@@ -284,13 +284,13 @@ conda install -c conda-forge jupyterlab
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 For **Option 2**, we we provide a summary of the packages used and the specific versions at the end of each notebook chapter,
 
 Example:
 <!-- #endregion -->
 
-```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 import sys
 from pathlib import Path
 
@@ -311,7 +311,7 @@ pip install python==3.11.6 dask==2024.12.1 datashader==0.17.0 geopandas==0.14.4 
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Temporary package installs
 <!-- #endregion -->
 
@@ -328,17 +328,17 @@ We do this, for example, for `owslib` in our workflow in [Data Retrieval: IOER M
 You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```bash
 !pip install owslib
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 ```
 
@@ -354,7 +354,7 @@ print(f"Current Kernel {pyexec}")
 ``````
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## How to import Packages and Libraries
 <!-- #endregion -->
 
@@ -388,7 +388,7 @@ If the installation was successful but still the issue persists, it could be due
 
 
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 
   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

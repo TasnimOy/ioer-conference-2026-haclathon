@@ -2,46 +2,48 @@
 
 # Sustainability Transformation HaCLAthon (IOER Conference 2026)
 
-Welcome to the digital workspace of the Sustainability Transformation **Hackathon** (Format F5 of the 4th IOER Conference 2026).
+Welcome to the collaborative workspace for the **Sustainability Transformation HaCLAthon** (Contribution Format F5 of the 4th IOER Conference "Space & Transformation").
 
-Internally, we simply call this the **Conference Hack**. Why? Because unlike a traditional hackathon that requires an exhausting overnight coding marathon, this format is designed as a long-term, asynchronous collaborative data challenge running parrallel to the conference.
+## What is a HaCLAthon?
 
-This Jupyter Book serves as our central hub. Here, we bring together spatial data analysts, planners, coders, and domain experts over several months to explore how Artificial Intelligence and Open Data can foster participation and sustainability.
+Unlike traditional hackathons, this project is a **C**ollaborative, **L**ong-term, and **A**synchronous data challenge. Participants contribute code, visualizations, and workflows over several months. The result is a living **Jupyter Book**, which will be archived as a citable **data publication** with a DOI.
 
-For public collaboration, we set up a [mirror on Github](https://github.com/ioer-dresden/ioer-conference-2026-hackathon).
+**View the Living Book:** [https://hack.conference.ioer.info/](https://hack.conference.ioer.info/)
 
-All IOER internal collaboration and continuous integration/deployment (CI & CD) takes place in [this Gitlab repository](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/).
+---
 
-## TL;DR: How to Contribute
+## How to Participate
 
-The workflow for participants and maintainers is as follows:
+We welcome contributions from both domain experts (text/concepts) and data scientists (code/maps). Please choose the path that fits your background:
 
-1.  **Code:** Edit existing notebooks or add new ones (`*.ipynb` files) in the `notebooks/` directory.
-2.  **Submit:** Commit changes (preferably on a separate branch or fork) and create a **Pull Request**.
-3.  **Build:** The CI/CD pipeline converts notebooks to Markdown and builds the Jupyter Book.
-4.  **Publish:** The updated book is deployed automatically:
-    *   **Staging (Review):** https://stag.hack.conference.ioer.info/
-    *   **Production (Final):** https://hack.conference.ioer.info/
+### Path A: The Writer (No coding required)
+
+Best for text-based stories, conceptual contributions, and data narratives.
+*   **Tool:** Use our browser-based [Collaborative Editor](https://hack.conference.ioer.info/editor/).
+*   **Workflow:** [Read the Guide for Writers](https://hack.conference.ioer.info/chapters/01_guide_writers.html).
+
+### Path B: The Developer (Jupyter & Git)
+
+Best for Python/R analysis, API integration, and interactive visualizations.
+*   **Tool:** Jupyter Notebooks via [Jupyter4NFDI](https://hub.nfdi-jupyter.de/) or [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
+*   **Workflow:** [Read the Guide for Developers](https://hack.conference.ioer.info/chapters/02_guide_developers.html).
+
+---
+
+## Infrastructure & Collaboration
+
+*   **Public Mirror:** This GitHub repository serves as our primary intake for community Pull Requests.
+*   **Single Point of Truth:** Internal collaboration and CI/CD building take place in our [GitLab repository][static-gl-url].
+*   **Versioning:** This project is versioned with [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/).
 
  ```mermaid 
  %%{init: { 'theme':'forest', 'securityLevel': 'loose', 'sequence': {'useMaxWidth':false} } }%%
  flowchart LR;
-    notebooks/01_introduction.ipynb-->01_introduction.md-->HTML-->Gitlab-CI-->Webserver-->'hack.conference.ioer.info'
+    Source[Notebooks/Markdown]-->CI[GitLab-CI]-->Build[Jupyter Book]-->Web[hack.conference.ioer.info]
  ```
 
-See the [Contribution Documentation](https://hack.conference.ioer.info/CONTRIBUTING.html) for a detailed walkthrough of the collaboration process.
+For a detailed walkthrough, see the [Quick-Start Guide](https://hack.conference.ioer.info/chapters/00_quickstart.html).
 
-## Participants & Developers
-
-This infrastructure allows you to focus on the content (Sustainability, Digitalisation, Spatial Analysis) without worrying about web hosting.
-
-*   **Cloud Execution:** You can run the Notebooks directly in your browser via the **Jupyter4NFDI Hub** (link available in the top menu bar of the book).
-*   **Local Execution:** If you prefer working locally, please refer to the instructions for the IOER FDZ [Carto-Lab Docker](https://cartolab.fdz.ioer.info/), provided in the [Setup Chapter][1].
-*   **Versioning:** This repository is versioned with [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/).
-
-For a step-by-step guide on how to make your first Pull Request, see the [Contributing Section](https://hack.conference.ioer.info/CONTRIBUTING.html).
-
-
-[1]: https://hack.conference.ioer.info/notebooks/101_jupyter_notebooks.html#carto-lab-docker
+[1]: https://hack.conference.ioer.info/chapters/02_guide_developers.html#carto-lab-docker
 [static-gl-url]: https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026
 [doi-url]: https://tbd

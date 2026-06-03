@@ -7,6 +7,29 @@
 
 
  
+## v0.8.4 (2026-06-03)
+ 
+### Bug fixes
+ 
+
+
+- Executable bit not set for jupyter4nfdi integration ([`8bd00ab`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/8bd00abc14f3e487fe5f465bf6b580bf94a501eb))
+
+
+
+ 
+ 
+### Chores
+ 
+
+
+- Add jupyter4nfdi cloud runfiles to ignore ([`10782e0`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/10782e0faef2f94fe9a936c128bbd18cceba0a52))
+
+
+
+ 
+ 
+ 
 ## v0.8.3 (2026-06-03)
  
 ### Bug fixes

@@ -13,3 +13,10 @@ temp/
 00_archive/
 TODO.md
 out/
+.cache/
+.local/
+.npm/
+.profile
+data_mounts
+.bashrc
+.bash_logout

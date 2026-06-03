@@ -8,3 +8,18 @@ dependencies:
   - jupytext
   - jupyterlab-git
   - pip
+  - adjusttext
+  - bokeh
+  - geoviews-core
+  - holoviews
+  - datashader
+  - dask
+  - geopandas>=1.0.0
+  - hvplot
+  - numpy
+  - mapclassify
+  - python-dotenv
+  - rasterio
+  - rioxarray
+  - seaborn
+  - shapely

@@ -7,6 +7,19 @@
 
 
  
+## v0.8.5 (2026-06-03)
+ 
+### Bug fixes
+ 
+
+
+- Add missing dependency in sample notebook ([`edc2572`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/edc2572a5952705611812554bd2955d69f361316))
+
+
+
+ 
+ 
+ 
 ## v0.8.4 (2026-06-03)
  
 ### Bug fixes

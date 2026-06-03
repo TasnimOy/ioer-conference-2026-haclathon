@@ -20,3 +20,7 @@ out/
 data_mounts
 .bashrc
 .bash_logout
+.ipython
+.jupyter_ystore.db
+.jupyter-server-log.txt
+.jupyter/

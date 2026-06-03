@@ -7,6 +7,81 @@
 
 
  
+## v0.8.3 (2026-06-03)
+ 
+### Bug fixes
+ 
+
+
+- Jupyter4nfdi integration missing environment specification file ([`7feeb93`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/7feeb93ac4e224937cae775d72fca69b2e7cef16))
+
+
+
+ 
+ 
+### Chores
+ 
+
+
+- Remove title from jupyter cms reference ([`f30ebe8`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/f30ebe8e4ad46d0e09b2189d4b801de8ef2a6b0a))
+
+
+
+ 
+
+
+- Add jupyter notebooks to cms ([`46e9ebc`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/46e9ebc99f02ca9c9ee16241d2789ce2eef0f841))
+
+
+
+ 
+
+
+- Add footer to cms ([`9a07f8a`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/9a07f8a00bad0e9c079f213168648a6f072a3edb))
+
+
+
+ 
+
+
+- Improve names in system pages cms overview ([`eeee621`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/eeee6214506aee7df9a85d982aec20e2f8d2e3a0))
+
+
+
+ 
+
+
+- Use filename in cms ([`a205ebb`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/a205ebb05e68df5024d80447557fa953631b94d9))
+
+
+
+ 
+
+
+- Fix filename shown in cms ([`cb48077`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/cb48077d4bbc4c1b81dd94d9533811de8d4d5e10))
+
+
+
+ 
+
+
+- Improve listing of chapters in cms ([`8dae740`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/8dae740089de2296f4f55ecbcdcbbac03d401ac4))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add overview image to writers guide (cms) ([`ee55409`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/ee5540909896413adc767dee0add2f1c107f7ce1))
+
+
+
+ 
+ 
+ 
 ## v0.8.2 (2026-05-07)
  
 ### Bug fixes

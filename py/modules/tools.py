@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 import mapclassify as mc
 import numpy as np
 import pandas as pd
-import pkg_resources
+import importlib.metadata
 import requests
 from PIL import Image
 from adjustText import adjust_text
@@ -398,9 +398,10 @@ def package_report(root_packages: List[str], python_version = True):
     if python_version:
         pyv = platform.python_version()
         root_packages_list.append(["python", pyv])
-    for m in pkg_resources.working_set:
-        if m.project_name.lower() in root_packages:
-            root_packages_list.append([m.project_name, m.version])
+    for dist in importlib.metadata.distributions():
+        pkg_name = dist.metadata["Name"]
+        if pkg_name.lower() in root_packages:
+            root_packages_list.append([pkg_name, dist.version])
     html_tables = ''
     for chunk in chunks(root_packages_list, 10):
         # get table HTML

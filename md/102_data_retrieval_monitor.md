@@ -5,25 +5,25 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.18.1
+      jupytext_version: 1.19.3
   kernelspec:
     display_name: worker_env
     language: python
     name: worker_env
 ---
 
-<!-- #region editable=true tags=["remove-cell"] slideshow={"slide_type": ""} -->
+<!-- #region tags=["remove-cell"] slideshow={"slide_type": ""} editable=true -->
 **Install dependencies:** In case this notebook is not running [Carto-Lab Docker](https://cartolab.theplink.org/), the cell below aims to install the needed packages for this notebook. If packages are already available, they will be ignored.
 <!-- #endregion -->
 
-```python tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
+```python tags=["remove-cell"] editable=true slideshow={"slide_type": ""}
 import sys
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
 !../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas matplotlib lxml rasterio dotenv
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 # Data Retrieval: IOER Monitor
 
 <!-- #endregion -->
@@ -40,7 +40,7 @@ In this section, we retrieve spatial data from the IOER Monitor using the Web Co
 
 The IOER Monitor data can be previewed in the [geo viewer](https://monitor.ioer.de/?raeumliche_gliederung=raster&zoom=7&lat=51.32717923968566&lng=10.458984375000002&time=2023&ind=S12RG&language=en). The necessary WFS and WCS URLs, along with the unique indicator code (`S12RG`), can be found under <kbd>Export</kbd> → <kbd>OGC Services</kbd>. 
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 
 
 ```{figure} ../resources/094_Verdichtung.jpg
@@ -141,19 +141,19 @@ To access the IOER Monitor data, we define two key parameters:
 - `IOERMONITOR_WCS_ID`: unique indicator code
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 MONITOR_WCS_BASE = "https://monitor.ioer.de/monitor_api/user" # API base endpoint
 IOERMONITOR_WCS_ID = "S12RG" # Unique indicator code
 ```
 
 **Define the base path to store output files in this notebook**
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 base_path = Path.cwd().parents[0]
 OUTPUT = base_path / "out"
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Secure API Key**
 <!-- #endregion -->
 
@@ -173,7 +173,7 @@ If you don't want to use an `.env` file, leave this step and you will be asked t
    ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 3. Load the key in your script:
 <!-- #endregion -->
 
@@ -190,7 +190,7 @@ MONITOR_API_KEY = os.getenv('IOERMONITOR_API_KEY')
 See [Notebook 201](content:references:monitorkey) to register your IOER Monitor key. You can continue without an IOER Monitor API key, in which case you will only be able to view cached results below (e.g. for reproduction). If you want to retrieve new data (another region, etc.), register for a trial IOER Monitor key.
 ```
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 if MONITOR_API_KEY is None:
     import getpass
     MONITOR_API_KEY = getpass.getpass("Please enter your IOER Monitor API key")
@@ -230,7 +230,7 @@ When making requests to web APIs, you often need to pass parameters in a URL. Ho
 :::
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Explore Available Data**
 
 Let's first run some checks on the returned `wcs` object and see what data we can access. The data is available for different time intervals and resolutions, as you can see below.
@@ -252,7 +252,7 @@ LAYER = 'S12RG_2023_200m'
 Check the supported output formats for this layer.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 if MONITOR_API_KEY: print(wcs.contents[LAYER].supportedFormats)
 ```
 
@@ -285,11 +285,11 @@ else:
 Check the maximum available boundary for this layer. We can see that the limits are available in two different projections. In the following we will use the projected version of the boundary and not the WGS1984 version.
 <!-- #endregion -->
 
-```python tags=["hide-output"] editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} tags=["hide-output"] editable=true
 if MONITOR_API_KEY: print(wcs.contents[LAYER].boundingboxes)
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Check the coordinate reference system (CRS).
 <!-- #endregion -->
 
@@ -309,7 +309,7 @@ if MONITOR_API_KEY: BBOX = wcs.contents[LAYER].boundingboxes[1]["bbox"]
 CRS = "EPSG:3035"
 ```
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 monitor_param = {
     "identifier": LAYER,
     "bbox": BBOX,
@@ -368,13 +368,13 @@ However, we want to restrict the raster data to the following boundaries of the 
 4. Get the grid with the new `bbox` boundary
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Restricting to Saxony boundaries**
 
 Load Saxony boundaries and reproject to match WCS layer.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 sachsen_proj = gp.read_file(OUTPUT / 'saxony.gpkg')
 BBOX = sachsen_proj.bounds.values.squeeze()
 monitor_param["bbox"] = list(map(str, BBOX))
@@ -386,7 +386,7 @@ Retrieve and visualize clipped data using `rasterio.show()`.
 1. Check and retrieve cache
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 cache_file = OUTPUT / f"{LAYER}_Saxony.tiff"
 
 if not cache_file.exists():
@@ -437,7 +437,7 @@ with rasterio.open(cache_file) as src:
     ax.axis('off')
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 :::{seealso}
 For a better understanding of the code, see the [rasterio documentation](https://rasterio.readthedocs.io/en/stable/topics/masking-by-shapefile.html).
 :::

@@ -20,7 +20,7 @@ jupyter:
 import sys
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
-!../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas matplotlib lxml rasterio dotenv mapclassify
+!../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas matplotlib lxml rasterio dotenv mapclassify adjustText
 ```
 
 <!-- #region slideshow={"slide_type": ""} editable=true -->

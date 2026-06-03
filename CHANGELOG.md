@@ -7,6 +7,36 @@
 
 
  
+## v0.8.6 (2026-06-03)
+ 
+### Bug fixes
+ 
+
+
+- Missing saxony.gpkg in starter package ([`cff3603`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/cff3603f01d28259db3bfc0ecb66328ca523224a))
+
+
+
+ 
+
+
+- Deprecationn noteice, replace pkg_resources with importlib.metadata ([`de0c61d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/de0c61df11d2fe95f34c526a11341d19ed5483fd))
+
+
+
+ 
+ 
+### Chores
+ 
+
+
+- Add basic packages used in existing notebooks to jupyter4nfdi base environment ([`e5635a2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e5635a2f023dde2d549b078254c09d6dd788ddb0))
+
+
+
+ 
+ 
+ 
 ## v0.8.5 (2026-06-03)
  
 ### Bug fixes

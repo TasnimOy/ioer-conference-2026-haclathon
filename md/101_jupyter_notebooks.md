@@ -5,7 +5,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.17.3
+      jupytext_version: 1.19.3
   kernelspec:
     display_name: worker_env
     language: python
@@ -100,7 +100,7 @@ The [Python Standard Library Documentation](https://docs.python.org/3/library/in
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Installing JupyterLab is relatively easy:
 <!-- #endregion -->
 
@@ -111,7 +111,7 @@ jupyter lab # run jupyterlab
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 However, from there, Python package management, version conflicts, dependency issues and many other challenges can make it very difficult for beginnings to reproduce the outputs we show here. You have different options that we explain below.
 <!-- #endregion -->
 
@@ -173,7 +173,7 @@ Carto-Lab Docker includes
 All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 <!-- #endregion -->
 
-```python editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -208,7 +208,7 @@ docker-compose pull && docker-compose up -d
 `````
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 :class: attention
 Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -229,7 +229,7 @@ git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackath
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ``````{admonition} Use the Jupyter Terminal
 :class: hint
 You can use the terminal that is provided by Jupyter. At your Jupyter Dashboard, click the following Icon:
@@ -315,7 +315,7 @@ pip install python==3.11.6 dask==2024.12.1 datashader==0.17.0 geopandas==0.14.4 
 ## Temporary package installs
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Sometimes, a default environment exists that already includes many packages. Only some new packages need to be installed for certain notebooks. In these cases, it can be _Ok_ to install packages temporarily directly from within Jupyter. 
 
 ```{admonition} Example notebook
@@ -328,7 +328,7 @@ We do this, for example, for `owslib` in our workflow in [Data Retrieval: IOER M
 You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ```bash
 !pip install owslib
 ```
@@ -338,11 +338,11 @@ You can install packages temporarily by issuing bash commands directly in a code
 We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+```python tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ``````{note}
 This script _should_ work in most environments. Make sure you specify the name of the current kernel environment, e.g:
 ```
@@ -354,7 +354,7 @@ print(f"Current Kernel {pyexec}")
 ``````
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ## How to import Packages and Libraries
 <!-- #endregion -->
 

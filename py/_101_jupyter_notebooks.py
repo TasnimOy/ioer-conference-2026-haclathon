@@ -5,7 +5,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.17.3
+#       jupytext_version: 1.19.3
 #   kernelspec:
 #     display_name: worker_env
 #     language: python
@@ -100,7 +100,7 @@
 # ```
 # <!-- #endregion -->
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Installing JupyterLab is relatively easy:
 
 # %% [markdown]
@@ -109,7 +109,7 @@
 # jupyter lab # run jupyterlab
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # However, from there, Python package management, version conflicts, dependency issues and many other challenges can make it very difficult for beginnings to reproduce the outputs we show here. You have different options that we explain below.
 
 # %% [markdown]
@@ -170,7 +170,7 @@
 #
 # All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 
-# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
+# %% tags=["remove-input"] editable=true slideshow={"slide_type": ""}
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -203,7 +203,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # ```
 # `````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 # :class: attention
 # Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -223,7 +223,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackathon.git
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ``````{admonition} Use the Jupyter Terminal
 # :class: hint
 # You can use the terminal that is provided by Jupyter. At your Jupyter Dashboard, click the following Icon:
@@ -301,7 +301,7 @@ tools.package_report(root_packages)
 # %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## Temporary package installs
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Sometimes, a default environment exists that already includes many packages. Only some new packages need to be installed for certain notebooks. In these cases, it can be _Ok_ to install packages temporarily directly from within Jupyter. 
 #
 # ```{admonition} Example notebook
@@ -312,7 +312,7 @@ tools.package_report(root_packages)
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # You can install packages temporarily by issuing bash commands directly in a code cell with a `!`-prefix.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```bash
 # !pip install owslib
 # ```
@@ -320,10 +320,10 @@ tools.package_report(root_packages)
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 
-# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+# %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ``````{note}
 # This script _should_ work in most environments. Make sure you specify the name of the current kernel environment, e.g:
 # ```
@@ -334,7 +334,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 # ```
 # ``````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## How to import Packages and Libraries
 
 # %% [markdown]

@@ -42,7 +42,7 @@
 #
 # To copy a code snippet, click the copy icon in the top-right corner of the code cell.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 # See the copy button on the right corner when you hover over this text.
 
 # %% [markdown]
@@ -100,7 +100,7 @@
 # ```
 # <!-- #endregion -->
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # Installing JupyterLab is relatively easy:
 
 # %% [markdown]
@@ -109,7 +109,7 @@
 # jupyter lab # run jupyterlab
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # However, from there, Python package management, version conflicts, dependency issues and many other challenges can make it very difficult for beginnings to reproduce the outputs we show here. You have different options that we explain below.
 
 # %% [markdown]
@@ -144,11 +144,6 @@
 #
 # - **Jupyter4NFDI Hub**: [https://hub.nfdi-jupyter.de/hub/home](https://hub.nfdi-jupyter.de/hub/home)
 # - **Jupyter4NFDI Documentation**: [https://jupyterjsc.pages.jsc.fz-juelich.de/docs/jupyter4nfdi/](https://jupyterjsc.pages.jsc.fz-juelich.de/docs/jupyter4nfdi/)
-#
-# ```{admonition} Potential dependendy conflicts ahead.
-# :class: note
-# The tradeoff here is that you must install all dependencies before running notebooks. We include a script at the start of notebooks, but the Python ecosystem is always evolving and some dependency conflicts may arise at some point. See below for an alternative solution that guarantees full reproducibility.
-# ```
 
 # %% [markdown]
 # <video controls style="max-width: 100%; height: auto; border: 0px; border-radius: 0px;">
@@ -160,8 +155,8 @@
 # %% [markdown]
 # ### Carto-Lab Docker
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
-# To ensure full reproducibility of the training materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
+# %% [markdown] slideshow={"slide_type": ""} editable=true
+# To ensure full reproducibility of the HaCLAthon materials, we use a prepared system environment called [Carto-Lab Docker](https://cartolab.fdz.ioer.info/).
 #
 # Carto-Lab Docker includes
 # - Jupyter Lab 
@@ -170,7 +165,7 @@
 #
 # All these components are packaged in a Docker container, which is **versioned** and made available through a registry. The version number allows you to pull the correct archive container to run these notebooks. Below we show the version of Carto-Lab Docker used:
 
-# %% tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} tags=["remove-input"] editable=true
 from IPython.display import Markdown as md
 from datetime import date
 
@@ -203,7 +198,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # ```
 # `````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} We only guarantee reproducibility with Carto-Lab Docker
 # :class: attention
 # Due to the wide variety of possible setups, operating systems (Windows, Linux, Mac), software versions and changing environments, we can only guarantee complete reproducibility with the exact Carto-Lab Docker version shown above. You may still be lucky if you use some of the alternatives we show you below.
@@ -215,7 +210,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # ### Clone the training materials
 
 # %% [markdown]
-# In order to use the starter kit, the repository must be cloned. Open a terminal and type the following command:
+# In order to use the starter kit locally or in Carto-Lab, the repository must be cloned. Open a terminal and type the following command:
 
 # %% [markdown]
 # ```bash
@@ -223,7 +218,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # git clone --depth 1 https://github.com/ioer-dresden/ioer-conference-2026-hackathon.git
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ``````{admonition} Use the Jupyter Terminal
 # :class: hint
 # You can use the terminal that is provided by Jupyter. At your Jupyter Dashboard, click the following Icon:
@@ -242,7 +237,7 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # - `/home/jovyan/work/` is the path to the default home folder in Jupyter. The home folder is the folder you see in the explorer on the left side when you are logged in to Jupyter.
 # ``````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### Jupyterlab: Basic key commands 
 #
 # After these steps, you are ready to go. You can find the individual notebooks of the training materials in the subfolder `notebooks/`.
@@ -263,23 +258,15 @@ md(f"Last updated: <kbd>{today.strftime('%b-%d-%Y')}</kbd>{extra}")
 # 2. or install all packages for each notebook into a separate environment (easier, but more work)
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
-# For **Option 1**, you can start with the [environment.yml](https://gitlab.vgiscience.de/lbsn/tools/jupyterlab/-/blob/master-latest/environment_default.yml?ref_type=heads) from Carto-Lab Docker and install the environment manually with:
+# You can start with the [environment.yml](https://raw.githubusercontent.com/ioer-dresden/ioer-conference-2026-haclathon/refs/heads/main/.binder/environment.yaml) that we provide in the `.binder` folder and install the environment manually with:
 # ```bash
 # conda env create -f environment.yaml
 # ```
-#
-# Afterwards, you must install jupyterlab into the above environment manually with:
-# ```bash
-# conda activate worker_env
-# conda install -c conda-forge jupyterlab
-# ```
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
-# For **Option 2**, we we provide a summary of the packages used and the specific versions at the end of each notebook chapter,
-#
-# Example:
+# This will install the packages, but not the exact package versions. We  provide a summary of the package versions used at the end of each notebook chapter. Example:
 
-# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+# %% editable=true tags=["remove-input"] slideshow={"slide_type": ""}
 import sys
 from pathlib import Path
 
@@ -298,7 +285,7 @@ tools.package_report(root_packages)
 # pip install python==3.11.6 dask==2024.12.1 datashader==0.17.0 geopandas==0.14.4 matplotlib==3.10.1 pandas==2.2.3
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## Temporary package installs
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -306,7 +293,7 @@ tools.package_report(root_packages)
 #
 # ```{admonition} Example notebook
 # :class: hint
-# We do this, for example, for `owslib` in our workflow in [Data Retrieval: IOER Monitor](203_data_retrieval_monitor): The Carto-Lab Docker environment does not contain this package and we only need it once to query the IOER Monitor API.
+# We do this, for example, for `owslib` in our workflow in [Data Retrieval: IOER Monitor](102_data_retrieval_monitor): The Carto-Lab Docker environment does not contain this package and we only need it once to query the IOER Monitor API.
 # ```
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
@@ -317,7 +304,7 @@ tools.package_report(root_packages)
 # !pip install owslib
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # We have written a little helper script that comes with the training materials that also checks if the package is already installed.
 
 # %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
@@ -334,7 +321,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 # ```
 # ``````
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## How to import Packages and Libraries
 
 # %% [markdown]
@@ -368,7 +355,7 @@ tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'pkginstall.sh')
 #
 #
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # - Wrong Kernel: Package or Library is not installed in the selected Jupyter kernel.
 #
 #   **Solution:** Switch to the correct kernel via the upper-right menu in Jupyter.

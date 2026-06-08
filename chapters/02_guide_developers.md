@@ -8,7 +8,9 @@ Welcome! If you are contributing Python/R code, spatial analyses, or interactive
 
 ## 1. Setting up your Computing Environment
 
-### Option A: Cloud Execution (Jupyter4NFDI) (Easiest!)
+### Option A: Cloud Start
+
+> Jupyter4NFDI - Easiest!
 
 Run this repository interactively in your browser via the **Jupyter4NFDI Hub**.
 - Click the 🚀 icon in the top menu bar of this book's [start page](https://hack.conference.ioer.info/) and select "Jupyter4NFDI".
@@ -16,7 +18,8 @@ Run this repository interactively in your browser via the **Jupyter4NFDI Hub**.
   *(Note for international participants: Helmholtz AAI allows you to log in using social identities like GitHub, Google, or ORCID if you don't have an institutional account!)*
 - The environment will load with JupyterLab, Git, and all base dependencies pre-installed.
 
-### Option B: Local Execution (Carto-Lab Docker)
+### Option B: Local Start
+> Carto-Lab Docker
 
 For local reproducibility, use the IOER FDZ [Carto-Lab Docker](https://cartolab.fdz.ioer.info/) (or any JupyterLab environment).
 ```bash
@@ -31,7 +34,8 @@ docker compose pull && docker compose up -d
 
 You do not need to be a Git expert to submit your code. Choose the method that works best for you:
 
-### Method 1: Download & Drop (no Git required)
+### Method 1: Download & Drop 
+> no Git required
 
 1. Work in your JupyterLab environment until you are happy with your notebook.
 2. Right-click your `.ipynb` file in the left sidebar and select `Download`.
@@ -50,7 +54,8 @@ If you are comfortable with Git:
 
 Have a look at our [developer notes for working with git](https://hack.conference.ioer.info/DEVELOPERS.html#jupyter-collaborative-editing).
 
-## 3. Integrating External Web-Maps and Dashboards (e.g., MapLibre/Leaflet)
+## 3. Integrating External Web-Maps and Dashboards 
+> e.g., MapLibre/Leaflet
 
 If you have built a custom JavaScript map or Storymap (or a standalone dashboard etc.), you can embed it into a Jupyter Book chapter without causing script conflicts:
 

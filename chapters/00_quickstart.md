@@ -26,13 +26,15 @@ You do not need to be a developer to contribute. Choose the path that fits your 
 
 ::::{grid} 2
 
-:::{grid-item-card} Path A: Download & Drop (No GitHub Required!)
+:::{grid-item-card} Path A: Download & Drop 
+> No GitHub Required
 **Best for:** Everyone! If you don't want to use Git or GitHub, use this path.
 *   **Workflow:** Open our cloud environment, write your code/text, download the file to your PC, and upload it to our secure folder. We handle the integration!
 ➡️ **[See the Download & Drop Instructions](02_guide_developers.md#how-to-submit-your-work)**
 :::
 
-:::{grid-item-card} Path B: The Writer (Browser CMS)
+:::{grid-item-card} Path B: The Writer 
+> Browser <abbr title="Content Management System">CMS</abbr>
 **Best for:** Direct text editing in the browser (Requires a GitHub account).
 *   **Workflow:** Click an edit button, log in with GitHub, make text changes in a visual editor, and click "Save."
 ➡️ **[Read the Guide for Writers](01_guide_writers.md)**
@@ -41,7 +43,8 @@ You do not need to be a developer to contribute. Choose the path that fits your 
 ::::
 ::::{grid} 1
 
-:::{grid-item-card} Path C: The Developer (Jupyter & Git)
+:::{grid-item-card} Path C: The Developer 
+> Jupyter & Git
 **Best for:** Users comfortable with version control.
 *   **Workflow:** Fork the repository, use JupyterLab, and submit a Pull Request via Git.
 ➡️ **[Read the Guide for Developers](02_guide_developers.md)**

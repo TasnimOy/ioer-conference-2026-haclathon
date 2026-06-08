@@ -4,6 +4,7 @@
 html[data-theme="light"],
 html[data-theme="dark"] {
     --pst-color-secondary: black;
+    --pst-color-blockquote-notch: #70A401;
 
     .bd-docs-nav {
         --pst-color-link-hover: white;

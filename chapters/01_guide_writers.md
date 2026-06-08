@@ -4,19 +4,20 @@ title: Guide for Writers (Browser Editor)
 
 # Guide for Writers (Browser Editor)
 
-If you want to contribute concepts, text, or data stories to the **HaCLAthon** without worrying about coding environments or Git, this path is for you.
+If you want to contribute concepts, text, or data stories to the **HaCLAthon** directly in your browser, this path is for you.
 
-We use a visual, browser-based editor. Your changes are automatically converted into Pull Requests and reviewed by our editorial team.
+We use a visual, browser-based editor (Decap CMS). Your changes are automatically converted into Pull Requests and reviewed by our editorial team.
+
+```{admonition} No GitHub account?
+:class: tip
+The visual editor requires a GitHub account. If you prefer not to create one, simply write your text in Microsoft Word, Google Docs, or a raw `.md` file, upload it to our [File Drop Folder](https://datashare.tu-dresden.de/s/XeBH775Pa8L5CiG) and write an Email to us. We will format it and add it to the book for you!
+```
 
 ## Step 1: Getting Access
-
-To ensure scientific integrity, our workspace is invite-only.
-1. If you don't already have one, create a free account on [GitHub.com](https://github.com/).
-2. You need to send us your GitHub username and a brief description of your planned contribution. You can do this through several channels:
-    - Send an email to [fdz@ioer.de](mailto:fdz@ioer.de)
-    - Join our HaCLAthon Matrix Channel (e.g. through Element): [https://matrix.to/#/#HaCLAthon:tu-dresden.de](https://matrix.to/#/#HaCLAthon:tu-dresden.de)
-    - Create an [Issue on Github in our public HaCLAthon Repository](https://github.com/ioer-dresden/ioer-conference-2026-haclathon/issues)
-4. We will add you as a "Collaborator". You will receive an email from GitHub. **You must click "Accept Invitation" in that email.**
+To use the visual editor, we need to add you to the [ioer-conference-2026-haclathon](https://github.com/ioer-dresden/ioer-conference-2026-haclathon/) repository as a contributor.
+1. Create a free account on [GitHub.com](https://github.com/).
+2. Email us at [fdz@ioer.de](mailto:fdz@ioer.de) with your GitHub username.
+3. You will receive an email invitation from GitHub. Click "Accept Invitation".
 
 ```{figure} ../resources/2026-05-06_invitation.webp
 :name: Invitation
@@ -38,7 +39,7 @@ Once you have accepted the invitation:
 Sign-in through our Github integration for live-edit of chapters.
 ```
 
-## Step 3: The Editorial Workflow
+## Step 3: Editorial Workflow
 
 When you log in, you will see a Kanban board with three columns: **Drafts**, **In Review**, and **Ready**.
 This is our "Editorial Inbox". 

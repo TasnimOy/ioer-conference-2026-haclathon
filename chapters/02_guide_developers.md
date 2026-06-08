@@ -4,68 +4,62 @@ title: Guide for Developers (Jupyter & Git)
 
 # Guide for Developers (Jupyter & Git)
 
-Welcome! If you are contributing Python/R code, spatial analyses, or interactive maps, you will be working directly with **Jupyter Notebooks (`.ipynb`)** and **Git**.
+Welcome! If you are contributing Python/R code, spatial analyses, or interactive maps (e.g., MapLibre), you will be working directly with Jupyter Notebooks (`.ipynb`).
 
-The HaCLAthon relies on the **FAIR principles** and reproducibility. This guide outlines our technical setup and contribution workflow.
+## 1. Setting up your Computing Environment
 
-## 1. The Core Workflow
+### Option A: Cloud Execution (Jupyter4NFDI) (Easiest!)
 
-Because we use an automated Continuous Integration (CI) pipeline to build this book, we ask developers to follow a standard "Fork & Pull" workflow:
-
-1. **Fork** the [HaCLAthon GitHub Repository](https://github.com/ioer-dresden/ioer-conference-2026-haclathon).
-2. **Clone** your fork locally or open it in a cloud environment.
-3. **Create a branch** for your feature (e.g., `feat/urban-heat-map`).
-4. **Develop** your `.ipynb` notebook in the `notebooks/` directory.
-5. **Commit and Push** your changes to your fork.
-6. **Open a Pull Request** against our `main` branch.
-
-## 2. Setting up your Computing Environment
-
-To avoid dependency conflicts, we highly recommend using one of our standardized environments.
-
-### Option A: Cloud Execution (Jupyter4NFDI)
-
-You can run this repository interactively in your browser via the **Jupyter4NFDI Hub**.
-* Click the 🚀 icon in the top menu bar of this book and select "Binder".
-* Authenticate using the Helmholtz AAI (IOER members can use "TU Dresden").
-* The environment will load with all base dependencies pre-installed.
+Run this repository interactively in your browser via the **Jupyter4NFDI Hub**.
+- Click the 🚀 icon in the top menu bar of this book's [start page](https://hack.conference.ioer.info/) and select "Jupyter4NFDI".
+- Authenticate using the Helmholtz AAI. 
+  *(Note for international participants: Helmholtz AAI allows you to log in using social identities like GitHub, Google, or ORCID if you don't have an institutional account!)*
+- The environment will load with JupyterLab, Git, and all base dependencies pre-installed.
 
 ### Option B: Local Execution (Carto-Lab Docker)
 
-For full local reproducibility, we use the IOER FDZ [Carto-Lab Docker](https://cartolab.fdz.ioer.info/). This contains a Linux base, JupyterLab, and all major cartographic Python packages.
-
+For local reproducibility, use the IOER FDZ [Carto-Lab Docker](https://cartolab.fdz.ioer.info/) (or any JupyterLab environment).
 ```bash
 git clone https://gitlab.vgiscience.de/lbsn/tools/jupyterlab.git
 cd jupyterlab
 cp .env.example .env
-# Edit .env to set the TAG to our current version
 docker network create lbsn-network
 docker compose pull && docker compose up -d
 ```
 
-## 3. Important: The Jupytext Sync
+## 2. How to Submit Your Work
 
-This repository uses **Jupytext** to maintain a bidirectional sync between `.ipynb` files and `.md` files.
+You do not need to be a Git expert to submit your code. Choose the method that works best for you:
 
-* **Never edit the `.md` version of your notebook manually.** 
-* Write your code in the `.ipynb` file. 
-* Before committing, ensure Jupytext has synced your notebook. Our CI pipeline enforces consistency; if the `.md` and `.ipynb` files are out of sync, the build will fail.
+### Method 1: Download & Drop (no Git required)
 
-## 4. Commit Message Conventions
+1. Work in your JupyterLab environment until you are happy with your notebook.
+2. Right-click your `.ipynb` file in the left sidebar and select `Download`.
+3. Upload your downloaded file to our [File Folder Drop (Datashare)](https://datashare.tu-dresden.de/s/XeBH775Pa8L5CiG).
+4. Send a quick email to `fdz@ioer.de` to let us know it's there. We will integrate it into the book!
 
-Our Continuous Integration automatically builds versions and changelogs based on commit messages. Please use the [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/):
+### Method 2: Git Workflow
 
-* `feat: added interactive folium map to chapter 3` (Creates a minor release)
-* `fix: resolved legend overlay issue in heat map` (Creates a patch release)
-* `docs: fixed typo in API instructions` (No version bump)
+If you are comfortable with Git:
 
-## 5. Cross-References and Citations
+1. **Fork** the [HaCLAthon GitHub Repository](https://github.com/ioer-dresden/ioer-conference-2026-haclathon).
+2. **Develop** your `.ipynb` notebook in the `notebooks/` directory.
+3. Ensure **Jupytext** has synced your `.md` file before committing.
+4. **Push** your changes (Requires a GitHub Personal Access Token if pushing from the cloud).
+5. **Open a Pull Request** against our `main` branch.
 
-* **Literature:** Add your references to the `references.bib` file. Cite them in your notebook using `{cite:t}` or `{cite:p}`.
-* **Anchors:** Do not rely on header names for linking. Define explicit targets above your headers `(my-anchor)=` and link to them using `[Link Text](my-anchor)`.
+Have a look at our [developer notes for working with git](https://hack.conference.ioer.info/DEVELOPERS.html#jupyter-collaborative-editing).
 
-```{admonition} Style guidelines and system design. 
-:class: tip
-You can read the full info on our system design, including contribution guidelines and formatting style conventions that we try to adhere, in our [Developers](../DEVELOPERS) section.
+## 3. Integrating External Web-Maps and Dashboards (e.g., MapLibre/Leaflet)
+
+If you have built a custom JavaScript map or Storymap (or a standalone dashboard etc.), you can embed it into a Jupyter Book chapter without causing script conflicts:
+
+1. Save your map as a standalone HTML file (e.g., `storymap.html`).
+2. Upload it alongside your notebook.
+3. In your Jupyter Notebook, use an `IFrame` to display it:
+
+```python
+from IPython.display import IFrame
+# Display the external map seamlessly inside the book
+IFrame(src="./storymap.html", width="100%", height="700px")
 ```
-

@@ -17,7 +17,7 @@ Go the [Start Page](https://hack.conference.ioer.info/) and select your Launch O
 ```
 
 ### Option A: Jupyter4NFDI
-> Recommended
+_Recommended_
 
 Best for German institutions or users with existing ORCID/Google accounts.
 - Select **Jupyter4NFDI** from the 🚀 menu.
@@ -37,7 +37,7 @@ Best for international users preferring a quick Google login.
 Choose the method that works best for you:
 
 ### Method 1: Download & Drop
-> No Git Required
+_No Git Required_
 
 1. Work in your cloud environment until you are happy with your notebook.
 2. Download the `.ipynb` file to your computer.

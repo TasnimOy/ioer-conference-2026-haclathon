@@ -7,6 +7,36 @@
 
 
  
+## v0.9.1 (2026-06-11)
+ 
+### Bug fixes
+ 
+
+
+- Image path typo ([`e04fce1`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e04fce120bd5b5a8147aad99e49f4d5a6ba4140d))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Simplify quick-start ([`e586796`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e586796f5f2975cd38d7d01d77d7219b85aa09d5))
+
+
+
+ 
+
+
+- Add launch button to start page ([`be7242e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/be7242e40ed6edd39e39c8c9cfb6285b42b9e453))
+
+
+
+ 
+ 
+ 
 ## v0.9.0 (2026-06-11)
  
 ### Style

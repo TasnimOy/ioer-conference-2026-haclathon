@@ -26,28 +26,19 @@ You do not need to be a developer to contribute. Choose the path that fits your 
 
 ::::{grid} 2
 
-:::{grid-item-card} Path A: Download & Drop 
-> No GitHub Required.
-**Best for:** Everyone! 
-*   **Workflow:** Open our cloud environment, write your code/text, download the file, and upload it to our secure folder. We handle the integration!  
-**[See the Download & Drop Instructions](02_guide_developers.md#how-to-submit-your-work)**
+:::{grid-item-card} Path A: Code & Maps
+> Jupyter in the Cloud (No local setup!)
+**Best for:** Working with data, spatial analyses, or interactive maps.
+*   **Workflow:** Click a button to launch a Jupyter Notebook right in your browser (Jupyter4NFDI or Google Colab). Write your code or tweak ours.
+*   **Submission:** Choose your comfort level. Simply download your file and upload it to our drop-folder (**no Git required**), *or* use Git to submit a Pull Request.  
+**[Read the Guide for Code & Maps](02_guide_developers.md)**
 :::
 
-:::{grid-item-card} Path B: Writer 
+:::{grid-item-card} Path B: The Writer 
 > Browser <abbr title="Content Management System">CMS</abbr>.
 **Best for:** Direct text editing in the browser.
-*   **Workflow:** Log in with GitHub, make text changes in a visual editor to chapters, and click "Save."  
+*   **Workflow:** Log in with GitHub, make text changes in a visual editor, and click "Save."  
 **[Read the Guide for Writers](01_guide_writers.md)**
-:::
-
-::::
-::::{grid} 1
-
-:::{grid-item-card} Path C: Developer 
-> Jupyter & Git.
-**Best for:** Code, spatial analysis, and interactive maps.
-*   **Workflow:** Launch notebooks in Jupyter4NFDI or Google Colab, write your code, and submit a Pull Request.  
-**[Read the Guide for Developers](02_guide_developers.md)**
 :::
 
 ::::

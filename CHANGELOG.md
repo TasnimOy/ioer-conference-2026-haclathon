@@ -7,6 +7,29 @@
 
 
  
+## v0.10.0 (2026-06-11)
+ 
+### Style
+ 
+
+
+- Minor visual improvements to launch and quickstart ([`484b99d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/484b99d09056b679829ef8676b9dcfd294c6dc9e))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add topic to community index ([`3416833`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/3416833dd5f4f49cab710cc80979eb81333656de))
+
+
+
+ 
+ 
+ 
 ## v0.9.1 (2026-06-11)
  
 ### Bug fixes

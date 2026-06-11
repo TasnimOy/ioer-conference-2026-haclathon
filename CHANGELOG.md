@@ -7,6 +7,19 @@
 
 
  
+## v0.10.1 (2026-06-11)
+ 
+### Bug fixes
+ 
+
+
+- Missing imports ([`53b1e24`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/53b1e24e0a2baf6e5bdd37954a995cf761e8a1d1))
+
+
+
+ 
+ 
+ 
 ## v0.10.0 (2026-06-11)
  
 ### Style

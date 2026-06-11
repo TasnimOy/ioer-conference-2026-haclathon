@@ -12,10 +12,10 @@
 #     name: worker_env
 # ---
 
-# %% [markdown] slideshow={"slide_type": ""} tags=["remove-cell"] editable=true
+# %% [markdown] tags=["remove-cell"] editable=true slideshow={"slide_type": ""}
 # **Install dependencies:** In case this notebook is not running [Carto-Lab Docker](https://cartolab.theplink.org/), the cell below aims to install the needed packages for this notebook. If packages are already available, they will be ignored.
 
-# %% tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
+# %% slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
 import sys, os
 
 # Colab-specific setup
@@ -32,7 +32,7 @@ print(f"Current Kernel {pyexec}")
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # # Data Retrieval: GBIF & LAND
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Summary
 # :class: hint
 # In this section, we will retrieve biodiversity data from GBIF/LAND. 
@@ -47,7 +47,7 @@ print(f"Current Kernel {pyexec}")
 #     - Format spatial queries using bounding boxes and WKT polygons.
 # ```
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## GBIF API Reference
 #
 #
@@ -58,7 +58,7 @@ print(f"Current Kernel {pyexec}")
 # GBIF API Reference (https://techdocs.gbif.org/en/openapi/).
 # ```
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # LAND uses the [GBIF Application Programming Interface (API)](https://techdocs.gbif.org/en/openapi/) to provide standardized ways to access biodiversity data. 
 #
 # Retrieving data from APIs requires a specific syntax, which varies for each service. Here are two key concepts:
@@ -73,7 +73,7 @@ print(f"Current Kernel {pyexec}")
 # The [GBIF API Reference documentation](https://techdocs.gbif.org/en/openapi/) is well-structured and divided into several sections. GGBIF uses a RESTful API, which can be accessed through structured URLs. A great feature of this documentation is that it’s built using [Swagger](https://swagger.io/), an interactive API framework. Swagger-based API pages allow users to test API queries directly in the browser, making it easier to understand how they work.
 # ```
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## Using the GBIF Species API
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -96,7 +96,7 @@ print(f"Current Kernel {pyexec}")
 #
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Important caveat: The ambiguity of common names in taxonomic mapping
 # :class:warning
 #
@@ -110,11 +110,11 @@ print(f"Current Kernel {pyexec}")
 # [Link iNaturalist observations to TRY](https://sojwolf.github.io/iNaturalist_traits/Chapter_3_Link_iNaturalist_observations_to_TRY.html) by Wolf et al. (2022).
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Retrieving GBIF Species API in Python
 # We can also query the API directly using Python:
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 import requests
 
 # Define search parameters
@@ -130,7 +130,7 @@ query_url = \
 json_text = None
 response = requests.get(url=query_url)
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Understanding the code**
 #
 # - `f'{}'`: This is an f-string, [a handy Python convention](https://realpython.com/python-f-strings/) for concatenating strings and variables. Note: Here it would be _wise_ to prefer `urlencode`, as we did in the [Monitor API query in the following section](content:references:ioermonitor). Have a look at the difference and decide which syntax you prefer! In general, `urlencode` is more robust and safer for building and escaping URLs.
@@ -142,7 +142,7 @@ response = requests.get(url=query_url)
 #
 # The API returns a JSON object containing multiple species matching our search query. We parse it using the `json` module:
 
-# %%
+# %% slideshow={"slide_type": ""} editable=true
 import json
 
 # Load JSON response
@@ -150,40 +150,40 @@ json_data = json.loads(response.text)
 # Print first 1000 characters
 print(json.dumps(json_data, indent=2)[0:1000])
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # The answer, `Passer domesticus`, is hidden in the nested JSON response. 
 # (content:references:nub-id)=
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Extracting the scientific name**
 #
 # To extract only the scientific name, we navigate through the JSON structure. Below, we walk the json path from the `"results"`, which is a list, access the first entry by using `[0]` and the access its key of the name `scientificName`.
 
-# %%
+# %% slideshow={"slide_type": ""} editable=true
 scientific_name = json_data["results"][0]["scientificName"]
 print(scientific_name)
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Getting the taxon ID**
 #
 # Each species in GBIF has a unique taxon ID. The taxon ID uniquely identifies a species in the GBIF database, ensuring precise queries. This is neccessary for retrieving occurrence data.
 # (content:references:passer-id)=
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 taxon_id = json_data["results"][0]["taxonID"]
 print(taxon_id)
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # (content:references:admonition)=
 # ```{admonition} Try it with another species
 # :class: dropdown, attention
 # You can modify the script to search for any species by replacing `English Sparrow` with another common name.
 # ```
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## Using the GBIF Occurrence API
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### Finding species observations
 #
 # Now, we want to find species observations of `Passer domesticus` (English Sparrow). 
@@ -192,14 +192,14 @@ print(taxon_id)
 #
 # Since LAND relies on the GBIF API, we can efficiently access the data programmatically using the GBIF Occurrence API.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Using the GBIF Occurrence API in the browser
 # :class: dropdown, hint
 #
 # The [GBIF Occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence) allows users to test queries directly in a web browser.
 # ```
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 #  ```{admonition} Recommended citation
 # :class: attention
 #
@@ -216,54 +216,55 @@ print(taxon_id)
 #
 # **Load dependencies**
 #
-# ```python tags=["hide-input"] slideshow={"slide_type": ""} editable=true
-# # Standard library imports
-# import json
-# import os
-# import sys
-# import io
-# from pathlib import Path
-# from urllib.parse import urlencode
-#
-# # Third-party imports
-# import requests
-# import geopandas as gp
-# import pandas as pd
-# import geoviews as gv
-# import holoviews as hv
-# import matplotlib.pyplot as plt
-# import shapely
-# from cartopy import crs as ccrs
-# from shapely.geometry import Point, Polygon
-# from shapely.wkt import dumps
-# from IPython.display import display, Markdown
-# import contextily as cx
-# ```
-#
+
+# %% editable=true slideshow={"slide_type": ""}
+# Standard library imports
+import json
+import os
+import sys
+import io
+from pathlib import Path
+from urllib.parse import urlencode
+
+# Third-party imports
+import requests
+import geopandas as gp
+import pandas as pd
+import geoviews as gv
+import holoviews as hv
+import matplotlib.pyplot as plt
+import shapely
+from cartopy import crs as ccrs
+from shapely.geometry import Point, Polygon
+from shapely.wkt import dumps
+from IPython.display import display, Markdown
+import contextily as cx
+
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Load helper tools**
 #
 # To simplify the workflow, we use a set of helper tools stored in `py/modules/tools.py`. The following code snippet loads these tools to improve reusability.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 module_path = str(Path.cwd().parents[0] / "py")
 if module_path not in sys.path:
     sys.path.append(module_path)
 from modules import tools
 
-# %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
+# %% slideshow={"slide_type": ""} editable=true tags=["remove-input"]
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'tools.py')
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # To maintain reproducibility, it's good practice to print the versions of important packages. The following code uses the method `package_report()` from `tools`, which displays currently used package versions as a table.
 
-# %% editable=true slideshow={"slide_type": ""} tags=["remove-input"]
+# %% tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 root_packages = [
     'python', 'requests', 'contextily', 'geoviews', 'holoviews',
     'rasterio', 'geopandas', 'cartopy', 'matplotlib', 'shapely',
     'bokeh','pyproj', 'ipython', 'owslib', 'pandas']
 tools.package_report(root_packages)
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Define parameters**
 #
 # To make Jupyter Notebooks easier to use and share, important parameters affecting processing are defined at the top and written in CAPITAL LETTERS ([a common Python convention](https://peps.python.org/pep-0008/)). 
@@ -273,7 +274,7 @@ tools.package_report(root_packages)
 # - The spatial `FOCUS_STATE` under analysis 
 # - The GBIF dataset key, we use the base [GBIF Backbone Taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) dataset, found in our query above
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 # Common name of the species for which we query occurrence data 
 SPECIES = "English Sparrow"
 # GBIF Dataset key
@@ -281,19 +282,19 @@ GBIF_DATASET_KEY = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
 # Region used to clip LAND species observations
 FOCUS_STATE = "Sachsen"
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Select a different state
 # :class: dropdown, attention
 # You can replace "Sachsen" with another German state (e.g., "Brandenburg") in the parameter definition above. This selection will be used later to retrieve and clip data for the chosen region.
 # ```
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Dynamic Dataset Key
 # :class: info
 # You can also reference the key dynamically (`GBIF_DATASET_KEY = json_data["results"][0]["datasetKey"]`). In this case, however, we have chosen to be explicit about which dataset we used.
 # ```
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Query the GBIF Occurrence API
 #
 # **Species search**:
@@ -322,7 +323,7 @@ nub_key
 #
 # The taxon key for *Passer domesticus* (English Sparrow) is referenced above in the API response as `nubKey`. Since GBIF refers to this as `taxonKey`, we rename it for consistency. For more details, see the [GBIF taxonomic keys](https://discourse.gbif.org/t/understanding-gbif-taxonomic-keys-usagekey-taxonkey-specieskey/3045). For the first test query, we set a limit of `10` observations of occurrence.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 # Rename nub_key as taxon_key
 # and further query params
 taxon_key = nub_key
@@ -341,16 +342,16 @@ base_url = "https://api.gbif.org/v1/occurrence/search"
 query_url = f"{base_url}?{urlencode(params)}"
 response = requests.get(url=query_url)
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # To verify whether our request was successful, we print the HTML status code:
 
 # %% slideshow={"slide_type": ""} editable=true
 print(response.status_code)
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # If the output is `200`, it means the request was successful.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ```{admonition} Common HTML status codes
 # :class: dropdown, hint
 #
@@ -371,14 +372,14 @@ print(response.status_code)
 #
 # To check the returned data, access the `.text` field of the response and parse it as JSON:
 
-# %% slideshow={"slide_type": ""} tags=["hide-output"] editable=true
+# %% tags=["hide-output"] editable=true slideshow={"slide_type": ""}
 json_text = response.text
 json_data = json.loads(json_text)
 
 # Print the first 1000 characters for a preview
 print(json.dumps(json_data, indent=2)[0:1000])
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # The JSON response contains occurrence records, each with various attributes, such as dataset information, taxonomic details, and spatial coordinates.
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
@@ -386,32 +387,32 @@ print(json.dumps(json_data, indent=2)[0:1000])
 #
 # We can also apply a validity check by comparing how many results have been returned. Since we specified a limit of `10` occurrences, we check whether exactly 10 results were returned:
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 len(json_data["results"])
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # If the output is `10`, our query worked as expected.
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Extracting and mapping spatial information
 #
 # After retrieving occurrence data from the GBIF API, we need to extract geographic coordinates, convert them into a structured format, and visualize them on a map. To display species observations, we first extract spatial coordinates from the JSON response and convert them into a GeoDataFrame for mapping.
 #
 # Each occurrence record contains geographic coordinates:
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 json_data["results"][0]["decimalLatitude"]
 
-# %%
+# %% slideshow={"slide_type": ""} editable=true
 json_data["results"][0]["decimalLongitude"]
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # To inspect the first occurrence in detail:
 
 # %% editable=true tags=["hide-output"] slideshow={"slide_type": ""}
 json_data["results"][0]
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # This will output a JSON object containing attributes such as:
 #
 # - Taxonomic details (scientificName, taxonKey)
@@ -419,7 +420,7 @@ json_data["results"][0]
 # - Data source (datasetKey, publishingOrgKey)
 # - Time of observation (eventDate, year, month, day)
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Extracting coordinates**
 #
 # Each occurrence record contains longitude (`decimalLongitude`) and latitude (`decimalLatitude`) values. 
@@ -457,21 +458,21 @@ gdf.set_crs(epsg=4326, inplace=True)
 # Preview results
 gdf.head()
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Reprojecting to Web Mercator Projection**
 #
 # Web Mercator Projection ([EPSG:3857](https://epsg.io/3857)) is the standard coordinate system for web mapping services such as Google Maps and OpenStreetMap. Before visualization, we transform our data into this projection.
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 CRS_PROJ = "epsg:3857"
 gdf.to_crs(CRS_PROJ, inplace=True)
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Visualizing observations on a map**
 #
 # We use the [contextily](https://contextily.readthedocs.io/en/latest/) package to create a static map. This package helps add background map tiles (e.g., from CartoDB) behind our data points.
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 # Create a plot
 ax = gdf.plot(
     figsize=(10, 15),
@@ -503,7 +504,7 @@ ax.set_axis_off()
 # - The query is restricted to Saxony using a geospatial bounding box..
 # - Results are stored as a CSV, a widely used, accessible, and portable format. However, other formats, such as [Python DataFrame pickles](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_pickle.html), can also be used.
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Defining the spatial parameter**
 #
 # Before running the query, we must define the spatial parameter to restrict results to Saxony. The [GBIF Occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence) provides a `geometry` parameter that accepts a Well-Known Text (WKT) geometry format. To create a bounding box, we use a pre-defined method stored in `py/modules/tools.py`, which downloads and extracts the latest [VG2500 administrative boundaries ](https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-2-500-000-stand-31-12-vg2500-12-31.html) from the German Federal Agency for Cartography and Geodesy ([BKG](https://daten.gdz.bkg.bund.de/produkte/vg/vg2500/aktuell/)).
@@ -522,7 +523,7 @@ de_shapes.to_crs(CRS_PROJ, inplace=True)
 sachsen = de_shapes[                        
     de_shapes.index == FOCUS_STATE]         # Saxony
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Visualizing the geometry**
 
 # %% slideshow={"slide_type": ""} editable=true
@@ -537,19 +538,19 @@ plt_kwags["color"] = "red"
 ax = sachsen.plot(ax=ax, **plt_kwags)
 ax.set_axis_off()
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Projecting and saving the shapefile**
 #
 # The shapefile is projected to `EPSG:3035` and saved for later use:
 
-# %%
+# %% slideshow={"slide_type": ""} editable=true
 base_path = Path.cwd().parents[0] # one level up from notebooks/ folder
 OUTPUT = base_path / "out"
 OUTPUT.mkdir(exist_ok=True)
 sachsen_proj = sachsen.to_crs("epsg:3035")
 sachsen_proj.to_file(OUTPUT / 'saxony.gpkg')
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Extracting the bounding box**
 #
 # To define the bounding box for API queries:
@@ -565,7 +566,7 @@ bbox_sachsen = sachsen.to_crs("epsg:4326").bounds.values.squeeze()
 minx, miny = bbox_sachsen[0], bbox_sachsen[1]
 maxx, maxy = bbox_sachsen[2], bbox_sachsen[3]
 
-# %% editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
+# %% editable=true tags=["remove-cell"] slideshow={"slide_type": ""}
 from myst_nb import glue
 bounds_before = sachsen.to_crs("epsg:4326").bounds.values
 glue("bounds_before", Markdown(
@@ -578,7 +579,7 @@ glue("bounds_after", Markdown(
      {bounds_after}
     """))
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ````{admonition} Inspecting the bounding box
 # :class: dropdown, tip
 # Using Jupyter, we can inspect transformations:
@@ -597,14 +598,14 @@ glue("bounds_after", Markdown(
 #
 # ````
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Converting bounding box to WKT**
 #
 # The bounding box is converted into a Well-Known Text (WKT) polygon with four corners. According to the GBIF API documentation, the polygon must be ordered in a specific way:
 #
 # > Polygons must have anticlockwise ordering of points. (A clockwise polygon represents the opposite area: the Earth's surface with a 'hole' in it. Such queries are not supported.)
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 polygon = Polygon([
     (minx, miny),  # Bottom-left
     (minx, maxy),  # Top-left
@@ -619,7 +620,7 @@ polygon_wkt = dumps(polygon_ordered)
 
 print("Polygon WKT:", polygon_wkt)
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ````{admonition} Simpler ways to generate Well-Known Text (WKT)
 # :class: dropdown, tip
 # There are simpler ways to create the Well-Known Text (WKT)
@@ -646,7 +647,7 @@ params = {
     "offset": 0,
     }
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Below, we use `params` parameter of `requests.get()` (instead of `urlencode`). (There are many ways to get to Rome! The choice is yours.)
 
 # %% editable=true slideshow={"slide_type": ""}
@@ -655,22 +656,22 @@ response = requests.get(
 print(response.url)
 response.status_code
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # The generated query can be tested in a browser.
 
-# %% tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
+# %% slideshow={"slide_type": ""} tags=["remove-cell"] editable=true
 map_url = 'https://www.gbif.org/occurrence/map'
 r = requests.Request('GET', map_url, params=params)
 pr = r.prepare()
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 display(Markdown(f"Test the above API query in your browser by clicking on it. You can also preview [the query on a map]({pr.url})."))
 
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Defining a query function**
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 def query_gbif_occurrences(query_url, params):
     """Perform an API call and attach results to dataframe
     
@@ -693,32 +694,32 @@ def query_gbif_occurrences(query_url, params):
     return df, data['endOfRecords']
 
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Checking for existing cache and avoiding API abuse**
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Public APIs must be used with care, as overuse can lead to poor performance for other users. The GBIF API allows 100,000 queries without authentication, which is very generous. Imagine a workshop class where all the students use the same shared code to make 100,000 API calls at the same time. This would result in 1 million API calls in a few minutes.
 #
 # To avoid this, we can
 # 1. Check for a cache file. Only if it does not exist will the API be called again. This prevents a single user having to query the API multiple times because the cache file would exist after the first query.
 # 2. Allow retrieval of a remote cache file for classrooms/workshops (etc). Those who just want to reproduce the results can use the remote cache, which is also faster than querying the original API. Those wishing to use notebooks as parameterised processing templates (e.g. to query GBIF data for another species) can do so by manually disabling the remote cache or overriding the behaviour in some other way.
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # First, if `taxon_key` is `5231190` (English Sparrow), we will fetch a remote cache. The logic here is: If the user has not changed the species to be queried, we will use the existing API cache that was queried once. This will allow anyone to reproduce our final results.
 
-# %%
+# %% slideshow={"slide_type": ""} editable=true
 if taxon_key == 5231190:
     if not Path(OUTPUT / "occurrences_query.zip").exists():
         tools.get_zip_extract(
             output_path=OUTPUT,
             uri_filename="https://datashare.tu-dresden.de/s/AZ98faXX5iN4M5K/download")
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # Next, we check for a cache file:
 # - this either loads the remote cache
 # - or any local cache produced by a previous run by the user
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 cache_file = OUTPUT / "occurrences_query.csv"
 if cache_file.exists():
     # do not query again if already queried;
@@ -754,7 +755,7 @@ else:
             # exit when all available occurrences have been retrieved
             break
 
-# %% [markdown]
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # **Caching results**
 #
 # Before storing, we rename columns to `lat` (Latitude) and `lng` (Longitude).
@@ -764,7 +765,7 @@ else:
 # This is generally a good idea. As described above, it helps both to conserve limited API resources and to develop code faster (since you won't need to repeatedly query results over and over again).
 # :::
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 df.rename(
     columns={"decimalLatitude": "lat", "decimalLongitude": "lng"},
     inplace=True)
@@ -774,12 +775,12 @@ if not cache_file.exists():
 # %% editable=true slideshow={"slide_type": ""}
 df.head()
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### Mapping the data
 #
 # To create a preview map, we keep only latitude (`lat`) and longitude (`lng`).
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 df = df.filter(items=['lat', 'lng'])
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -793,7 +794,7 @@ df = df.filter(items=['lat', 'lng'])
 #
 # In the last step, we combine these layers, together with a tile background, into an `Overlay`. Think of an Overlay as a dataframe in ESRI. The resulting `gv_layers` includes all data, interaction and style information.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 hv.notebook_extension('bokeh')
 
 occurrence_layer = gv.Points(df, kdims=['lng', 'lat'])
@@ -817,7 +818,7 @@ gv_layers = hv.Overlay(
         fill_color='white'))
 
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # **Final adjustments**
 #
 # Before we visualize the Geoviews layer we created above, we apply some further tweaks below:  
@@ -853,13 +854,13 @@ layer_options = {
     "hooks": [set_active_tool] # enable zoom on scroll wheel by default
 }
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 gv_layers.opts(**layer_options)
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
 # Also, it is possible to save this interactive map as a separate standalone HTML (e.g. for archiving purposes or sharing with others). You can view the final map from this step <a href="/geoviews_map.html" title="View the interactive map">here</a>.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 layer_options["data_aspect"] = None
 hv.save(
     gv_layers.opts(**layer_options),
@@ -877,3 +878,5 @@ from modules import tools
 root_packages = [
     'python', 'geopandas', 'pandas', 'matplotlib', 'owslib', 'requests', 'geoviews', 'holoviews', 'shapely', 'cartopy', 'contextily']
 tools.package_report(root_packages)
+
+# %% editable=true slideshow={"slide_type": ""}

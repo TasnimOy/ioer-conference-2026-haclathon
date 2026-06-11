@@ -5,25 +5,33 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.17.3
+      jupytext_version: 1.19.3
   kernelspec:
     display_name: worker_env
     language: python
     name: worker_env
 ---
 
-<!-- #region editable=true tags=["remove-cell"] slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} tags=["remove-cell"] editable=true -->
 **Install dependencies:** In case this notebook is not running [Carto-Lab Docker](https://cartolab.theplink.org/), the cell below aims to install the needed packages for this notebook. If packages are already available, they will be ignored.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} tags=["remove-cell"] editable=true
-import sys
+```python tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
+import sys, os
+
+# Colab-specific setup
+if 'google.colab' in sys.modules:
+    if not os.path.exists("ioer-conference-2026-haclathon"):
+        !git clone -q https://github.com/ioer-dresden/ioer-conference-2026-haclathon.git
+    %cd -q ioer-conference-2026-haclathon/notebooks
+
+# Universal install script
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
-!../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas geoviews holoviews matplotlib shapely cartopy contextily mapclassify adjustText
+!../py/modules/pkginstall.sh "{pyexec}" owslib geopandas geoviews holoviews matplotlib shapely cartopy contextily 
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 # Data Retrieval: GBIF & LAND
 <!-- #endregion -->
 
@@ -92,7 +100,7 @@ We also specify a dataset to check this taxon. In this case, we use the base [GB
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```{admonition} Important caveat: The ambiguity of common names in taxonomic mapping
 :class:warning
 
@@ -107,12 +115,12 @@ For a practical example of how to approach taxonomic reconciliation with more ri
 ```
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ### Retrieving GBIF Species API in Python
 We can also query the API directly using Python:
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 import requests
 
 # Define search parameters
@@ -129,7 +137,7 @@ json_text = None
 response = requests.get(url=query_url)
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Understanding the code**
 
 - `f'{}'`: This is an f-string, [a handy Python convention](https://realpython.com/python-f-strings/) for concatenating strings and variables. Note: Here it would be _wise_ to prefer `urlencode`, as we did in the [Monitor API query in the following section](content:references:ioermonitor). Have a look at the difference and decide which syntax you prefer! In general, `urlencode` is more robust and safer for building and escaping URLs.
@@ -252,13 +260,13 @@ if module_path not in sys.path:
 from modules import tools
 ```
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-input"]
+```python tags=["remove-input"] slideshow={"slide_type": ""} editable=true
 tools.display_file(Path.cwd().parents[0] / 'py' / 'modules' / 'tools.py')
 ```
 
 To maintain reproducibility, it's good practice to print the versions of important packages. The following code uses the method `package_report()` from `tools`, which displays currently used package versions as a table.
 
-```python tags=["remove-input"] editable=true slideshow={"slide_type": ""}
+```python editable=true slideshow={"slide_type": ""} tags=["remove-input"]
 root_packages = [
     'python', 'requests', 'contextily', 'geoviews', 'holoviews',
     'rasterio', 'geopandas', 'cartopy', 'matplotlib', 'shapely',
@@ -277,7 +285,7 @@ In this workflow, we define two key parameters:
 - The GBIF dataset key, we use the base [GBIF Backbone Taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) dataset, found in our query above
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 # Common name of the species for which we query occurrence data 
 SPECIES = "English Sparrow"
 # GBIF Dataset key
@@ -291,7 +299,7 @@ FOCUS_STATE = "Sachsen"
 You can replace "Sachsen" with another German state (e.g., "Brandenburg") in the parameter definition above. This selection will be used later to retrieve and clip data for the chosen region.
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```{admonition} Dynamic Dataset Key
 :class: info
 You can also reference the key dynamically (`GBIF_DATASET_KEY = json_data["results"][0]["datasetKey"]`). In this case, however, we have chosen to be explicit about which dataset we used.
@@ -328,7 +336,7 @@ nub_key
 The taxon key for *Passer domesticus* (English Sparrow) is referenced above in the API response as `nubKey`. Since GBIF refers to this as `taxonKey`, we rename it for consistency. For more details, see the [GBIF taxonomic keys](https://discourse.gbif.org/t/understanding-gbif-taxonomic-keys-usagekey-taxonkey-specieskey/3045). For the first test query, we set a limit of `10` observations of occurrence.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 # Rename nub_key as taxon_key
 # and further query params
 taxon_key = nub_key
@@ -356,7 +364,7 @@ print(response.status_code)
 
 If the output is `200`, it means the request was successful.
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ```{admonition} Common HTML status codes
 :class: dropdown, hint
 
@@ -379,7 +387,7 @@ If the output is `200`, it means the request was successful.
 To check the returned data, access the `.text` field of the response and parse it as JSON:
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true tags=["hide-output"]
+```python slideshow={"slide_type": ""} tags=["hide-output"] editable=true
 json_text = response.text
 json_data = json.loads(json_text)
 
@@ -389,7 +397,7 @@ print(json.dumps(json_data, indent=2)[0:1000])
 
 The JSON response contains occurrence records, each with various attributes, such as dataset information, taxonomic details, and spatial coordinates.
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Validating the number of records**
 
 We can also apply a validity check by comparing how many results have been returned. Since we specified a limit of `10` occurrences, we check whether exactly 10 results were returned:
@@ -418,7 +426,7 @@ json_data["results"][0]["decimalLongitude"]
 
 To inspect the first occurrence in detail:
 
-```python tags=["hide-output"] slideshow={"slide_type": ""} editable=true
+```python editable=true tags=["hide-output"] slideshow={"slide_type": ""}
 json_data["results"][0]
 ```
 
@@ -503,7 +511,7 @@ cx.add_basemap(
 ax.set_axis_off()
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ### Extracting and mapping spatial information for the focus regions (Saxony)
 
 In this example, we map species occurrences in our focus region, Saxony.
@@ -518,7 +526,7 @@ Additionally, we apply the following constraints:
 - Results are stored as a CSV, a widely used, accessible, and portable format. However, other formats, such as [Python DataFrame pickles](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_pickle.html), can also be used.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Defining the spatial parameter**
 
 Before running the query, we must define the spatial parameter to restrict results to Saxony. The [GBIF Occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence#/Searching%20occurrences/searchOccurrence) provides a `geometry` parameter that accepts a Well-Known Text (WKT) geometry format. To create a bounding box, we use a pre-defined method stored in `py/modules/tools.py`, which downloads and extracts the latest [VG2500 administrative boundaries ](https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-2-500-000-stand-31-12-vg2500-12-31.html) from the German Federal Agency for Cartography and Geodesy ([BKG](https://daten.gdz.bkg.bund.de/produkte/vg/vg2500/aktuell/)).
@@ -567,7 +575,7 @@ sachsen_proj = sachsen.to_crs("epsg:3035")
 sachsen_proj.to_file(OUTPUT / 'saxony.gpkg')
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 **Extracting the bounding box**
 
 To define the bounding box for API queries:
@@ -585,7 +593,7 @@ minx, miny = bbox_sachsen[0], bbox_sachsen[1]
 maxx, maxy = bbox_sachsen[2], bbox_sachsen[3]
 ```
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
+```python editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
 from myst_nb import glue
 bounds_before = sachsen.to_crs("epsg:4326").bounds.values
 glue("bounds_before", Markdown(
@@ -619,7 +627,7 @@ This are `sachsen.bounds.values` before using `.squeeze()`:
 ````
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Converting bounding box to WKT**
 
 The bounding box is converted into a Well-Known Text (WKT) polygon with four corners. According to the GBIF API documentation, the polygon must be ordered in a specific way:
@@ -627,7 +635,7 @@ The bounding box is converted into a Well-Known Text (WKT) polygon with four cor
 > Polygons must have anticlockwise ordering of points. (A clockwise polygon represents the opposite area: the Earth's surface with a 'hole' in it. Such queries are not supported.)
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 polygon = Polygon([
     (minx, miny),  # Bottom-left
     (minx, maxy),  # Top-left
@@ -684,7 +692,7 @@ response.status_code
 
 The generated query can be tested in a browser.
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
+```python tags=["remove-cell"] slideshow={"slide_type": ""} editable=true
 map_url = 'https://www.gbif.org/occurrence/map'
 r = requests.Request('GET', map_url, params=params)
 pr = r.prepare()
@@ -696,7 +704,7 @@ display(Markdown(f"Test the above API query in your browser by clicking on it. Y
 
 **Defining a query function**
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 def query_gbif_occurrences(query_url, params):
     """Perform an API call and attach results to dataframe
     
@@ -753,7 +761,7 @@ if cache_file.exists():
     print("Loaded file from cache")
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 **Running the query**
 
 Start the query. Since the API has an upper limit of 100,000 occurrences, we iterate in chunks.
@@ -857,7 +865,7 @@ Before we visualize the Geoviews layer we created above, we apply some further t
 - Ensure the correct projection is used (Web Mercator).
 - Add a title to the map.
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 def set_active_tool(plot, element):
     """Enable wheel_zoom in bokeh plot by default"""
     plot.state.toolbar.active_scroll = plot.state.tools[0]
@@ -893,7 +901,7 @@ gv_layers.opts(**layer_options)
 Also, it is possible to save this interactive map as a separate standalone HTML (e.g. for archiving purposes or sharing with others). You can view the final map from this step <a href="/geoviews_map.html" title="View the interactive map">here</a>.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 layer_options["data_aspect"] = None
 hv.save(
     gv_layers.opts(**layer_options),

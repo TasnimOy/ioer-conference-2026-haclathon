@@ -5,7 +5,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.17.3
+#       jupytext_version: 1.19.3
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
@@ -37,25 +37,25 @@
 #
 # ## Contact
 #
-# **Leibniz Institute of Ecological Urban and Regional Development (IOER)**
-# IOER Research Data Centre (IOER FDZ)
+# **Leibniz Institute of Ecological Urban and Regional Development (IOER)**  
+# IOER Research Data Centre (IOER FDZ)  
 # Weberplatz 1, 01217 Dresden, Germany
 #
-# URL: [https://ioer-fdz.de/en](https://ioer-fdz.de/en)
+# URL: [https://ioer-fdz.de/en](https://ioer-fdz.de/en)  
 # E-Mail: fdz@ioer.de
 
 # %% [markdown]
 # ### Contact persons
 #
-# Prof. Dr.-Ing. Martin Behnisch
-# m.behnisch@ioer.de
-# phone +49 351 4679 205
+# Prof. Dr.-Ing. Martin Behnisch  
+# m.behnisch@ioer.de  
+# phone +49 351 4679 205  
 #
-# M.A. Saskia Hofmann  (Conference Organisation Team)
+# M.A. Saskia Hofmann  (Conference Organisation Team)  
 # s.hofmann@ioer.de
 #
-# Dr.-Ing. Alexander Dunkel  (Technical Setup)
-# a.dunkel@ioer.de
+# Dr.-Ing. Alexander Dunkel  (Technical Setup)  
+# a.dunkel@ioer.de  
 # phone +49 351 4679 148
 
 # %%

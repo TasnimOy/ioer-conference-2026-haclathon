@@ -12,15 +12,23 @@ jupyter:
     name: worker_env
 ---
 
-<!-- #region slideshow={"slide_type": ""} tags=["remove-cell"] editable=true -->
+<!-- #region editable=true tags=["remove-cell"] slideshow={"slide_type": ""} -->
 **Install dependencies:** In case this notebook is not running [Carto-Lab Docker](https://cartolab.theplink.org/), the cell below aims to install the needed packages for this notebook. If packages are already available, they will be ignored.
 <!-- #endregion -->
 
 ```python slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
-import sys
+import sys, os
+
+# Colab-specific setup
+if 'google.colab' in sys.modules:
+    if not os.path.exists("ioer-conference-2026-haclathon"):
+        !git clone -q https://github.com/ioer-dresden/ioer-conference-2026-haclathon.git
+    %cd -q ioer-conference-2026-haclathon/notebooks
+
+# Universal install script
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
-!../py/modules/pkginstall.sh "{pyexec}" myst-nb owslib geopandas matplotlib lxml rasterio dotenv mapclassify adjustText
+!../py/modules/pkginstall.sh "{pyexec}" owslib geopandas matplotlib lxml rasterio dotenv
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -40,7 +48,7 @@ In this section, we retrieve spatial data from the IOER Monitor using the Web Co
 
 The IOER Monitor data can be previewed in the [geo viewer](https://monitor.ioer.de/?raeumliche_gliederung=raster&zoom=7&lat=51.32717923968566&lng=10.458984375000002&time=2023&ind=S12RG&language=en). The necessary WFS and WCS URLs, along with the unique indicator code (`S12RG`), can be found under <kbd>Export</kbd> → <kbd>OGC Services</kbd>. 
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 
 
 ```{figure} ../resources/094_Verdichtung.jpg
@@ -101,7 +109,7 @@ To use the API programmatically, you need a personal API key. If you don’t hav
 Before running the workflow, ensure the necessary libraries are installed and imported:
 <!-- #endregion -->
 
-```python tags=["hide-input"] editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} tags=["hide-input"] editable=true
 # Standard library imports
 import json
 import os
@@ -124,8 +132,8 @@ from lxml import etree
 
 Load additional tools module
 
-```python editable=true slideshow={"slide_type": ""} tags=["hide-input"]
-base_path = Path.cwd().parents[0]
+```python editable=true tags=["hide-input"] slideshow={"slide_type": ""}
+base_path = Path.cwd().parent
 module_path = str(base_path / "py")
 if module_path not in sys.path:
     sys.path.append(module_path)
@@ -173,11 +181,11 @@ If you don't want to use an `.env` file, leave this step and you will be asked t
    ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 3. Load the key in your script:
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 from dotenv import load_dotenv
 load_dotenv(
     Path.cwd().parents[0] / '.env', override=True)
@@ -190,7 +198,7 @@ MONITOR_API_KEY = os.getenv('IOERMONITOR_API_KEY')
 See [Notebook 201](content:references:monitorkey) to register your IOER Monitor key. You can continue without an IOER Monitor API key, in which case you will only be able to view cached results below (e.g. for reproduction). If you want to retrieve new data (another region, etc.), register for a trial IOER Monitor key.
 ```
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 if MONITOR_API_KEY is None:
     import getpass
     MONITOR_API_KEY = getpass.getpass("Please enter your IOER Monitor API key")
@@ -199,7 +207,7 @@ if MONITOR_API_KEY is None:
         print("Monitor API key not provided. Continuing with cached results..")
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Querying WCS Data 
 
 **Configure API request**
@@ -236,7 +244,7 @@ When making requests to web APIs, you often need to pass parameters in a URL. Ho
 Let's first run some checks on the returned `wcs` object and see what data we can access. The data is available for different time intervals and resolutions, as you can see below.
 <!-- #endregion -->
 
-```python tags=["hide-output"] editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} tags=["hide-output"] editable=true
 pd.DataFrame(wcs.contents.keys())
 ```
 
@@ -248,11 +256,11 @@ Select the dataset for `2023` at `200`m raster resolution, which leads us to the
 LAYER = 'S12RG_2023_200m'
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Check the supported output formats for this layer.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 if MONITOR_API_KEY: print(wcs.contents[LAYER].supportedFormats)
 ```
 
@@ -281,15 +289,15 @@ else:
                 print(f"{attr}: Error accessing attribute - {e}")
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Check the maximum available boundary for this layer. We can see that the limits are available in two different projections. In the following we will use the projected version of the boundary and not the WGS1984 version.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true tags=["hide-output"]
+```python tags=["hide-output"] slideshow={"slide_type": ""} editable=true
 if MONITOR_API_KEY: print(wcs.contents[LAYER].boundingboxes)
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Check the coordinate reference system (CRS).
 <!-- #endregion -->
 
@@ -303,13 +311,13 @@ if MONITOR_API_KEY: print(wcs.contents[LAYER].supportedCRS) # ['EPSG:3035']
 Set up query parameters and request the dataset.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 BBOX = None
 if MONITOR_API_KEY: BBOX = wcs.contents[LAYER].boundingboxes[1]["bbox"]
 CRS = "EPSG:3035"
 ```
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 monitor_param = {
     "identifier": LAYER,
     "bbox": BBOX,
@@ -321,15 +329,15 @@ monitor_param = {
 if MONITOR_API_KEY: response = wcs.getCoverage(**monitor_param)
 ```
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 monitor_param
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Load and display the GeoTiff with [rasterio](https://rasterio.readthedocs.io/en/stable/). If a cache exist, we prefer to load it directly (instead of querying the API again). If it does not exist, write it.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 cache_file = OUTPUT / f"{LAYER}_DE.tiff"
 
 if not cache_file.exists():
@@ -374,7 +382,7 @@ However, we want to restrict the raster data to the following boundaries of the 
 Load Saxony boundaries and reproject to match WCS layer.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 sachsen_proj = gp.read_file(OUTPUT / 'saxony.gpkg')
 BBOX = sachsen_proj.bounds.values.squeeze()
 monitor_param["bbox"] = list(map(str, BBOX))
@@ -437,13 +445,13 @@ with rasterio.open(cache_file) as src:
     ax.axis('off')
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 :::{seealso}
 For a better understanding of the code, see the [rasterio documentation](https://rasterio.readthedocs.io/en/stable/topics/masking-by-shapefile.html).
 :::
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Save the results to disk as a GeoTIFF. To do this, we first update the clipped raster meta object (`out_meta`) with the transformation information.
 <!-- #endregion -->
 
@@ -456,11 +464,11 @@ out_meta.update({
     })
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Then use `rasterio.open()` to write the clipped raster.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 gtiff_path = OUTPUT / f'saxony_{LAYER}.tif'
 
 with rasterio.open(gtiff_path, "w", **out_meta) as dest:

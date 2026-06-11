@@ -7,6 +7,19 @@
 
 
  
+## v0.10.2 (2026-06-11)
+ 
+### Bug fixes
+ 
+
+
+- Missing dependencies in colab/jupyter4nfdi ([`3badbd7`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/3badbd759f3969f0dddbb5869f8aa21adbf1b837))
+
+
+
+ 
+ 
+ 
 ## v0.10.1 (2026-06-11)
  
 ### Bug fixes

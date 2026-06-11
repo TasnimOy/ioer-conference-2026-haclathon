@@ -7,6 +7,101 @@
 
 
  
+## v0.9.0 (2026-06-11)
+ 
+### Style
+ 
+
+
+- Use ioer-green for blockquote line ([`5714461`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/5714461cf3b33e7ab4859c516ab862826de6d431))
+
+
+
+ 
+
+
+- Minor formatting improvements ([`a1de972`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/a1de972c97d881d25922a203c5dce6ef3c45cba3))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add update colab/binder screenshot ([`14c9690`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/14c9690de32f656c75ee09fd81eb067a7c3bcad8))
+
+
+
+ 
+
+
+- Update onboarding chapters to include colab option ([`82e388b`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/82e388b2a39d86ce97228ded7b561ecffb5257a8))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Synchronize environment setup between binder and colab ([`31b8ea5`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/31b8ea5376ec5283a1e8961bd39969a25a71e9b1))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Reduce complexity of landing page ([`ed7ab46`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/ed7ab465eff3660c131efaec8f94497a77f9946e))
+
+
+
+ 
+
+
+- Clean style, no icons ([`da77e01`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/da77e01381f041dc15641ca8d4fdd3a872dc8041))
+
+
+
+ 
+
+
+- Missing indentations ([`eaed048`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/eaed048d0e531dc25bfd2902adc2968f397fd8de))
+
+
+
+ 
+
+
+- Improve onboarding chapters ([`711e694`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/711e69436d773f04805608df9b59d5f015b5c8d2))
+
+
+
+ 
+
+
+- Minor improvement to better describe environments ([`59db05b`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/59db05b20b42de0fda0252f582802b81c9f71235))
+
+
+
+ 
+ 
+### Testing
+ 
+
+
+- Enable colab integration ([`332ee15`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/332ee1572ddea6d10d7648ac2ff93dd2af3f72ff))
+
+
+
+ 
+ 
+ 
 ## v0.8.6 (2026-06-03)
  
 ### Bug fixes

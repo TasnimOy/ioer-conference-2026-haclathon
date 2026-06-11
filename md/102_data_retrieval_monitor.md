@@ -28,7 +28,7 @@ if 'google.colab' in sys.modules:
 # Universal install script
 pyexec = sys.executable
 print(f"Current Kernel {pyexec}")
-!../py/modules/pkginstall.sh "{pyexec}" owslib geopandas matplotlib lxml rasterio dotenv
+!../py/modules/pkginstall.sh "{pyexec}" owslib geopandas matplotlib lxml rasterio cartopy dotenv adjustText geoviews
 ```
 
 <!-- #region slideshow={"slide_type": ""} editable=true -->

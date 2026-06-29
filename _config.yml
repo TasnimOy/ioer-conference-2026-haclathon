@@ -76,13 +76,13 @@ bibtex_bibfiles: ["references.bib"]
 sphinx:
   local_extensions:
     custom_bibtex_styles: _ext/
-  extra_extensions          :   # A list of extra extensions to load by Sphinx (added to those already used by JB).
+  extra_extensions            :   # A list of extra extensions to load by Sphinx (added to those already used by JB).
     - sphinxcontrib.bibtex
-  config                    :   # key-value pairs to directly over-ride the Sphinx configuration
-    html_show_copyright     : false
-    html_extra_path         : ['resources/html',]
-    suppress_warnings       : ['nbsphinx',]
-    myst_heading_anchors    : 3
-    bibtex_default_style    : apa
-    bibtex_reference_style  : author_year_round_custom
+  config                      :   # key-value pairs to directly over-ride the Sphinx configuration
+    html_show_copyright       : false
+    html_extra_path           : ['resources/html',]
+    suppress_warnings         : ['nbsphinx',]
+    myst_heading_anchors      : 3
+    bibtex_bibliography_style : apa
+    bibtex_reference_style    : author_year_round_custom
     

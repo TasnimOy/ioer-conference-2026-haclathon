@@ -83,5 +83,6 @@ sphinx:
     html_extra_path         : ['resources/html',]
     suppress_warnings       : ['nbsphinx',]
     myst_heading_anchors    : 3
-    bibtex_reference_style  : author_year_round_custom
     bibtex_default_style    : apa
+    bibtex_reference_style  : author_year_round_custom
+    

@@ -7,6 +7,56 @@
 
 
  
+## v0.11.0 (2026-07-31)
+ 
+### Style
+ 
+
+
+- Use apa style in reference list ([`d46069f`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d46069f2fc19778f219aabb468d4f8472c915055))
+
+
+
+ 
+
+
+- Fix bib formatting (lowercase title) ([`ec6bc93`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/ec6bc93adf5de9df246d279128132d06ed0ebcf4))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add storymap topic contribution ([`c00f629`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c00f629786765578373e313dfdd7ad5fd0ad4d75))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add t.oyshi contribution to community index ([`57dbe7d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/57dbe7dd6ce533c3fb2c6202bec04b1dc05144f9))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add/update bib entries for cited literature; update references ([`b61a790`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b61a7900e16adfb5a77a3d7964594684a6a5f3bd))
+
+
+
+ 
+ 
+ 
 ## v0.10.2 (2026-06-11)
  
 ### Bug fixes

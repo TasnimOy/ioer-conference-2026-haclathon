@@ -7,6 +7,19 @@
 
 
  
+## v0.12.0 (2026-08-10)
+ 
+### Features
+ 
+
+
+- Add m. münzinger contribution abstract ([`1285efd`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/1285efdd2bb48876423813af206c30194264623f))
+
+
+
+ 
+ 
+ 
 ## v0.11.0 (2026-07-31)
  
 ### Style

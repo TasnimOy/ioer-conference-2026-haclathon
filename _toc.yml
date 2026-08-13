@@ -35,6 +35,8 @@ parts:
   chapters:
   - file: chapters/200_community_index
     title: List of Submitted Hacks
+  - file: notebooks/201_digital_landscape_traces
+    title: Digital Landscape Traces
 
 # ---------------------------------------------------------------
 # PROJECT INFO

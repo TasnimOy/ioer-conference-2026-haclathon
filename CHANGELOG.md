@@ -7,6 +7,29 @@
 
 
  
+## v0.14.0 (2026-08-13)
+ 
+### Features
+ 
+
+
+- Add chapter bibliography for 201 ([`38e74f2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/38e74f2228d1bcdd63482bcefafee19a2d7088fb))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Change wording in toc ([`c5bb1c5`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c5bb1c5485d0935c7c2de8d234a7566ac96dcd08))
+
+
+
+ 
+ 
+ 
 ## v0.13.0 (2026-08-13)
  
 ### Features

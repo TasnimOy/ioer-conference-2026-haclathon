@@ -34,7 +34,7 @@ parts:
 - caption: Part II - Contributions
   chapters:
   - file: chapters/200_community_index
-    title: List of Submitted Hacks
+    title: List of Submitted Abstracts
   - file: notebooks/201_digital_landscape_traces
     title: Digital Landscape Traces
 

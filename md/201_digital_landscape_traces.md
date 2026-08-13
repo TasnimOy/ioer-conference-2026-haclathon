@@ -273,7 +273,7 @@ When rendered with standard browser or plot anti-aliasing, these isolated 1-pixe
 But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python editable=true tags=["hide-cell"] slideshow={"slide_type": ""}
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 

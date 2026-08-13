@@ -363,3 +363,16 @@ How was this built?
 3. **Reproducibility**: Run directly in [Jupyter4NFDI](https://base4nfdi.de/projects/jupyter4nfdi) or Google Colab [8].
 ```
 <!-- #endregion -->
+
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+## References
+
+```{bibliography}
+:style: unsrt
+:filter: docname in docnames
+```
+<!-- #endregion -->
+
+```python editable=true slideshow={"slide_type": ""}
+
+```

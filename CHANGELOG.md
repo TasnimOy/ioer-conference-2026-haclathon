@@ -7,6 +7,29 @@
 
 
  
+## v0.13.0 (2026-08-13)
+ 
+### Features
+ 
+
+
+- Add first draft for chapter 201 (digital traces) ([`433d664`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/433d664635d326609bbc629516be499693d2fc9d))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Reduce verbosity ([`a95dbfe`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/a95dbfe933fe4d8115be6d18cdf5cb36602ca92c))
+
+
+
+ 
+ 
+ 
 ## v0.12.0 (2026-08-10)
  
 ### Features

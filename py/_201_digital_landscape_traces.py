@@ -252,7 +252,7 @@ plt.show()
 #
 # But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% editable=true tags=["hide-cell"] slideshow={"slide_type": ""}
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 

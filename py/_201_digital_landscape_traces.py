@@ -336,3 +336,13 @@ plt.show()
 # 2. **Privacy Measures**: Geohash-7 spatial snapping prevents 1:1 reverse matching with public online posts {cite:p}`dunkel_replication_2025`.
 # 3. **Reproducibility**: Run directly in [Jupyter4NFDI](https://base4nfdi.de/projects/jupyter4nfdi) or Google Colab [8].
 # ```
+
+# %% [markdown] editable=true slideshow={"slide_type": ""}
+# ## References
+#
+# ```{bibliography}
+# :style: unsrt
+# :filter: docname in docnames
+# ```
+
+# %% editable=true slideshow={"slide_type": ""}

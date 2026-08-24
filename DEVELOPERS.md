@@ -237,14 +237,14 @@ Please write commit messages following the [Conventional Commits Specification](
 
 ## Figure and Table formatting
 
-```markdown
+````markdown
 ```{figure} ../resources/data-processing.webp
 :name: data-processing
 :figclass: fig-no-shadow
 
 Data Processing Workflow.
 ```
-```
+````
 
 See the [Jupyter Book docs](https://jupyterbook.org/en/stable/content/references.html#reference-section-labels) on how to create Figures and Tables with caption.
 
@@ -279,16 +279,28 @@ See [the docs](https://jupyterbook.org/en/stable/content/references.html#referen
 
 Use MyST admonitions to structure information:
 
-```markdown
+````markdown
+```{admonition} Important Note
+:class: note
+This is a standard callout.
+```
+````
+
 ```{admonition} Important Note
 :class: note
 This is a standard callout.
 ```
 
+````markdown
 ```{admonition} Try it yourself!
 :class: dropdown, attention
 This creates a collapsible orange action box.
 ```
+````
+
+```{admonition} Try it yourself!
+:class: dropdown, attention
+This creates a collapsible orange action box.
 ```
 
 ---
@@ -312,3 +324,4 @@ Citations are managed using [sphinxcontrib-bibtex](https://github.com/mcmtroffae
 :style: unsrt
 :filter: docname in docnames
 ```
+````

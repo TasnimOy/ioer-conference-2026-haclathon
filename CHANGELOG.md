@@ -7,6 +7,39 @@
 
 
  
+## v0.15.3 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Correct order, replace cross-link ([`b1e0eb9`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b1e0eb966d8d0fac91583096263d81369e274023))
+
+
+
+ 
+ 
+### Style
+ 
+
+
+- Adjust table colors, mermaid size ([`adf1c82`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/adf1c82dbcbc5599e83025b69da0dd7ea0446563))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add links to community index for existing chapters ([`8e4c583`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/8e4c5836964077dfc4fc002da67307b03dcdad27))
+
+
+
+ 
+ 
+ 
 ## v0.15.2 (2026-08-24)
  
 ### Bug fixes

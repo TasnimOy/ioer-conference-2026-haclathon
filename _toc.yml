@@ -39,7 +39,11 @@ parts:
     title: "201: Digital Landscape Traces"
   - file: notebooks/202_settlement_delineation_ibtool.ipynb
     title: "202: Settlement Delineation with IBTool"
-    
+  - file: notebooks/203_footprints_to_building_stock_insights
+    sections:
+      - file: notebooks/203a_pipeline_details
+      - file: notebooks/203b_methodology
+      
 # ---------------------------------------------------------------
 # PROJECT INFO
 # ---------------------------------------------------------------

@@ -7,6 +7,19 @@
 
 
  
+## v0.15.2 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Formatting ([`926af23`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/926af233fc1923d25aa6116927261cbf5cb9f659))
+
+
+
+ 
+ 
+ 
 ## v0.15.1 (2026-08-24)
  
 ### Bug fixes

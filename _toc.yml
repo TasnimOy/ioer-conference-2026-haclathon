@@ -36,8 +36,10 @@ parts:
   - file: chapters/200_community_index
     title: List of Submitted Abstracts
   - file: notebooks/201_digital_landscape_traces
-    title: Digital Landscape Traces
-
+    title: "201: Digital Landscape Traces"
+  - file: notebooks/202_settlement_delineation_ibtool.ipynb
+    title: "202: Settlement Delineation with IBTool"
+    
 # ---------------------------------------------------------------
 # PROJECT INFO
 # ---------------------------------------------------------------

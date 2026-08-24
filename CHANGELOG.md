@@ -7,6 +7,53 @@
 
 
  
+## v0.15.0 (2026-08-24)
+ 
+### Style
+ 
+
+
+- Update to final logo design from nicolaas (!) ([`5d7e661`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/5d7e661bde3b804cfef347459ac4f6bdd69b0e73))
+
+
+
+ 
+
+
+- Hide-cell in dropdown ([`3a40622`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/3a40622aa18c1daed0d95be7f74f5978fda91c36))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- 201 - add wip-note ([`52b58e2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/52b58e26f1cf5b7cb703a63da41492eee9ca7870))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add badges to signal chapter focus to audience ([`f3519db`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/f3519db304ca60fd50b48de8c7aa9c72ba656143))
+
+
+
+ 
+
+
+- Add oliver harig chapter ([`f99a7c8`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/f99a7c80bcb7877c89eb5b2b038379b92add297b))
+
+
+
+ 
+ 
+ 
 ## v0.14.0 (2026-08-13)
  
 ### Features

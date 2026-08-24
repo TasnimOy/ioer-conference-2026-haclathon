@@ -7,6 +7,39 @@
 
 
  
+## v0.16.1 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Crosslink ([`d7861f7`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d7861f7df132f807a60063802500e87d09fa5217))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add cross-link for chapter 203 ([`4f072ff`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/4f072ffba910e450c971dafdc62e383ab1cd178c))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add title ([`b185fbe`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b185fbee0f0155f3c5254799b1ff14e0fd66ebde))
+
+
+
+ 
+ 
+ 
 ## v0.16.0 (2026-08-24)
  
 ### Features

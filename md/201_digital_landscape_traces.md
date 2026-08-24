@@ -12,7 +12,7 @@ jupyter:
     name: worker_env
 ---
 
-```python editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
+```python editable=true tags=["remove-cell"] slideshow={"slide_type": ""}
 import sys, os
 from pathlib import Path
 
@@ -27,7 +27,7 @@ pyexec = sys.executable
 !../py/modules/pkginstall.sh "{pyexec}" geopandas matplotlib datashader pygal dotenv pygeohash libpysal contextily duckdb
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 # Digital Landscape Traces: Mapping Visitor Frequentation in Germany
 
 * **Authors**: Alexander Dunkel (IOER) & Dominik Weckmüller (TU Dresden)
@@ -59,7 +59,7 @@ By analyzing such spatial activity patterns over a long time horizon (2007–202
 * **Spatial mismatches** between visitor demand and infrastructure capacity [1, 2].
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ## Replication Test
 
 The fundamental purpose of a "Replication Package" is to allow any researcher to recreate the findings of a published paper. That a dataset might be useful beyond its initial context is an excellent ancillary benefit, but it is not guaranteed. 
@@ -72,13 +72,13 @@ All point coordinates are snapped to a Geohash-7 grid (~153m x 153m), direct use
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Prepare analysis
 
 For easier development in Jupyter, we activate the autoreload of changed Python files. We also set up our local `modules` path and output directory.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 import pandas as pd
 import geopandas as gp
 import matplotlib.pyplot as plt
@@ -110,7 +110,7 @@ We use DuckDB to query the Parquet files directly. This avoids loading all 66 mi
 - Computes the national ratio of locals, tourists, and unclassified users.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 %%time
 parquet_dir = OUTPUT / "de_classified_points.parquet"
 zip_url = "https://datashare.tu-dresden.de/s/XeBH775Pa8L5CiG/download"
@@ -139,11 +139,11 @@ print("National Dataset Overview (2007–2022)")
 display(df_totals)
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Pretty fast! Thanks to the [Parquet](https://parquet.apache.org/) format.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ---
 
 ### User Challenge: Explore Your Region of Interest
@@ -158,7 +158,7 @@ Pretty fast! Thanks to the [Parquet](https://parquet.apache.org/) format.
 The code automatically projects these coordinates to Web Mercator (`EPSG:3857`) to match the dataset projection.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} tags=["hide-input"] editable=true
+```python tags=["hide-input"] slideshow={"slide_type": ""} editable=true
 from datashader.utils import lnglat_to_meters
 
 MY_REGION_NAME = "Dresden & Surroundings"
@@ -189,7 +189,7 @@ display(df_custom)
 ```
 
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 <!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Reproduce original Visualizations
 
@@ -217,13 +217,13 @@ regions_to_plot = {
 }
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 Load the custom visualization module (which includes the complex Datashader code from the original publication) and define our bounding boxes.
 <!-- #endregion -->
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### 2.1 Regional Examples
 <!-- #endregion -->
 
@@ -259,7 +259,7 @@ fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nu
 plt.show()
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 By maintaining a versioned environment, we can guarantee that this output matches the original publication pixel-by-pixel. The cartographic process becomes transparent. Even though it still is and remains complex: see the documentation for the initial processing of the data [here](https://code.ad.ioer.info/digital_traces_map/).
 <!-- #endregion -->
 
@@ -277,7 +277,7 @@ When rendered with standard browser or plot anti-aliasing, these isolated 1-pixe
 But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 <!-- #endregion -->
 
-```python tags=["hide-cell"] editable=true slideshow={"slide_type": ""}
+```python editable=true slideshow={"slide_type": ""} tags=["hide-cell"]
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 
@@ -286,13 +286,13 @@ fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nu
 plt.show()
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 At this zoom level, the data transforms into an illegible matrix. We can no longer distinguish meaningful hotspots from sparse outliers. Even a background map would be of not much help here.
 
 This is a common trade-off in geospatial data science. Strict privacy measures limit the usefulness of raw visualizations at local scales. To extract meaningful insights for regional planning, we cannot rely on point-density alone. We must transition to advanced spatial statistics.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## 3. Beyond Replication
 
 Once a dataset is published openly, it often sparks interest outside the academic sphere. Recently, a journalist from a national news network approached us. She was writing a story about over-tourism and wanted to report on the most popular tourist destinations in her federal state, contrasting them with the "hidden gems" preferred by the local population. 
@@ -368,7 +368,7 @@ How was this built?
 ```
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ## References
 
 ```{bibliography}
@@ -377,6 +377,6 @@ How was this built?
 ```
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 
 ```

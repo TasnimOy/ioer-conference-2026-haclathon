@@ -12,7 +12,7 @@
 #     name: worker_env
 # ---
 
-# %% editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
+# %% editable=true tags=["remove-cell"] slideshow={"slide_type": ""}
 import sys, os
 from pathlib import Path
 
@@ -26,7 +26,7 @@ if 'google.colab' in sys.modules:
 pyexec = sys.executable
 # !../py/modules/pkginstall.sh "{pyexec}" geopandas matplotlib datashader pygal dotenv pygeohash libpysal contextily duckdb
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # # Digital Landscape Traces: Mapping Visitor Frequentation in Germany
 #
 # * **Authors**: Alexander Dunkel (IOER) & Dominik Weckmüller (TU Dresden)
@@ -57,7 +57,7 @@ pyexec = sys.executable
 # * **Local recreational corridors** in suburban and rural green spaces [1, 2].
 # * **Spatial mismatches** between visitor demand and infrastructure capacity [1, 2].
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## Replication Test
 #
 # The fundamental purpose of a "Replication Package" is to allow any researcher to recreate the findings of a published paper. That a dataset might be useful beyond its initial context is an excellent ancillary benefit, but it is not guaranteed. 
@@ -69,12 +69,12 @@ pyexec = sys.executable
 # All point coordinates are snapped to a Geohash-7 grid (~153m x 153m), direct user identifiers and timestamps are removed, and platform sources are obfuscated {cite:p}`dunkel_replication_2025`. This guarantees computational reproducibility while protecting individual privacy {cite:p}`dunkel_replication_2025`. It also _limits_ reuse, to a certain degree. This is a common trade-off in geospatial data science that researchers must navigate. It requires to carefully weight FAIR principles and privacy rights.
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Prepare analysis
 #
 # For easier development in Jupyter, we activate the autoreload of changed Python files. We also set up our local `modules` path and output directory.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 import pandas as pd
 import geopandas as gp
 import matplotlib.pyplot as plt
@@ -104,7 +104,7 @@ OUTPUT.mkdir(exist_ok=True)
 # - Connects DuckDB to the Parquet directory.
 # - Computes the national ratio of locals, tourists, and unclassified users.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 # %%time
 parquet_dir = OUTPUT / "de_classified_points.parquet"
 zip_url = "https://datashare.tu-dresden.de/s/XeBH775Pa8L5CiG/download"
@@ -132,10 +132,10 @@ df_totals = con.execute(query_totals).df()
 print("National Dataset Overview (2007–2022)")
 display(df_totals)
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # Pretty fast! Thanks to the [Parquet](https://parquet.apache.org/) format.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ---
 #
 # ### User Challenge: Explore Your Region of Interest
@@ -149,7 +149,7 @@ display(df_totals)
 #
 # The code automatically projects these coordinates to Web Mercator (`EPSG:3857`) to match the dataset projection.
 
-# %% slideshow={"slide_type": ""} tags=["hide-input"] editable=true
+# %% tags=["hide-input"] slideshow={"slide_type": ""} editable=true
 from datashader.utils import lnglat_to_meters
 
 MY_REGION_NAME = "Dresden & Surroundings"
@@ -179,11 +179,12 @@ print(f"Analysis for: {MY_REGION_NAME}")
 display(df_custom)
 
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # <!-- #region slideshow={"slide_type": ""} editable=true -->
 # ### Reproduce original Visualizations
 #
 # First, we need some geographic context. We copy the exact code from [the original publication](https://code.ad.ioer.info/digital_traces_map/html/03_visualization.html), which *documents* the exact source of base data used. Documentation and analysis go hand in hand here. We fetch the NUTS borders and filter for Germany.
+# %% [markdown]
 # <!-- #endregion -->
 
 # %% editable=true slideshow={"slide_type": ""}
@@ -204,12 +205,13 @@ regions_to_plot = {
     "Leipzig Urban Core":           ((12.20, 12.55), (51.26, 51.37))
 }
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # <!-- #region editable=true slideshow={"slide_type": ""} -->
 # Load the custom visualization module (which includes the complex Datashader code from the original publication) and define our bounding boxes.
+# %% [markdown]
 # <!-- #endregion -->
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### 2.1 Regional Examples
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -241,7 +243,7 @@ df_subset = digitaltraces.query_region(con, parquet_dir, bounds)
 fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nuts1_de, title=name)
 plt.show()
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # By maintaining a versioned environment, we can guarantee that this output matches the original publication pixel-by-pixel. The cartographic process becomes transparent. Even though it still is and remains complex: see the documentation for the initial processing of the data [here](https://code.ad.ioer.info/digital_traces_map/).
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -256,7 +258,7 @@ plt.show()
 #
 # But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 
-# %% tags=["hide-cell"] editable=true slideshow={"slide_type": ""}
+# %% editable=true slideshow={"slide_type": ""} tags=["hide-cell"]
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 
@@ -264,12 +266,12 @@ df_subset = digitaltraces.query_region(con, parquet_dir, bounds)
 fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nuts1_de, title=name)
 plt.show()
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # At this zoom level, the data transforms into an illegible matrix. We can no longer distinguish meaningful hotspots from sparse outliers. Even a background map would be of not much help here.
 #
 # This is a common trade-off in geospatial data science. Strict privacy measures limit the usefulness of raw visualizations at local scales. To extract meaningful insights for regional planning, we cannot rely on point-density alone. We must transition to advanced spatial statistics.
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## 3. Beyond Replication
 #
 # Once a dataset is published openly, it often sparks interest outside the academic sphere. Recently, a journalist from a national news network approached us. She was writing a story about over-tourism and wanted to report on the most popular tourist destinations in her federal state, contrasting them with the "hidden gems" preferred by the local population. 
@@ -341,7 +343,7 @@ plt.show()
 # 3. **Reproducibility**: Run directly in [Jupyter4NFDI](https://base4nfdi.de/projects/jupyter4nfdi) or Google Colab [8].
 # ```
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## References
 #
 # ```{bibliography}
@@ -349,4 +351,4 @@ plt.show()
 # :filter: docname in docnames
 # ```
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}

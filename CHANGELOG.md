@@ -7,6 +7,29 @@
 
 
  
+## v0.15.1 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Clean notebooks, remove %%bash and better use badges ([`52db064`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/52db064f16addb4a28575113dd057d3dc4f85599))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Update developer section (general overhaul, github contributor merge flow) ([`e452ba8`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e452ba8873217f2a2c20fd85ec62b576e0dee516))
+
+
+
+ 
+ 
+ 
 ## v0.15.0 (2026-08-24)
  
 ### Style

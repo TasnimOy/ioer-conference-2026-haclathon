@@ -222,17 +222,12 @@ html[data-theme="dark"] .search-button-field svg {
     object-fit: contain; /* Forces the browser to scale the SVG down proportionally if it hits the bounding box */
 }
 
-/* Restrict the maximum vertical height of Mermaid diagrams */
-div.mermaid {
-    max-height: 500px; /* Adjust this value as needed */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-div.mermaid svg {
-    height: 100% !important;
-    max-height: 500px !important;
-    width: auto !important; /* Prevents squishing/distortion */
+/* Limit static Mermaid SVG images maxy height */
+img[alt="diagram"][src*="_images/"] {
+    max-height: 450px;  /* Adjust your desired height here */
+    width: auto;        /* Maintains aspect ratio so text doesn't distort */
+    display: block;
+    margin: 0 auto;     /* Centers the diagram */
 }
 
 /* Tabellen-Hover im IÖR-Blau  */

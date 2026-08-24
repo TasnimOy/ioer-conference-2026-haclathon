@@ -7,6 +7,19 @@
 
 
  
+## v0.16.0 (2026-08-24)
+ 
+### Features
+ 
+
+
+- Add markus m. contribution ([`32852c6`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/32852c6caeb5b36dc4756f7bf0386382b195a5d9))
+
+
+
+ 
+ 
+ 
 ## v0.15.4 (2026-08-24)
  
 ### Bug fixes

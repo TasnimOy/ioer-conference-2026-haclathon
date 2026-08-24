@@ -103,10 +103,10 @@ All three are licensed **GPL-2.0-or-later**.
 If IBTool shows a red message bar right after loading, `scipy` or `networkx` are missing. Install them once into QGIS's own Python:
 
 ```bash
-# Windows: Start Menu → OSGeo4W → OSGeo4W Shell
+Windows: Start Menu → OSGeo4W → OSGeo4W Shell
 pip install scipy networkx
 
-# Linux / macOS: a terminal in which QGIS's Python is active
+Linux / macOS: a terminal in which QGIS's Python is active
 pip install scipy networkx
 ```
 

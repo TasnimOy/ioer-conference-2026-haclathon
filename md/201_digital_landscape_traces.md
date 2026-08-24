@@ -12,7 +12,7 @@ jupyter:
     name: worker_env
 ---
 
-```python slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
+```python editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
 import sys, os
 from pathlib import Path
 
@@ -39,6 +39,10 @@ pyexec = sys.executable
 This chapter explores how openly published replication packages can bridge the gap between academic research and public data journalism. We use a dataset of 66 million social media posts ({cite:alp}`dunkel_replication_2025`) that was recently published as a 'Replication Package' for a peer-reviewed publication ({cite:alp}`Dunkel2025DigitaleSpuren`). We will first reproduce a published scientific map, and repurpose the data to explore local vs. tourist hotspots for a regional planning review.
 ```
 
+```{warning}
+This chapter is a work in progress.
+```
+
 ---
 
 ## 1. Introduction
@@ -55,7 +59,7 @@ By analyzing such spatial activity patterns over a long time horizon (2007–202
 * **Spatial mismatches** between visitor demand and infrastructure capacity [1, 2].
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Replication Test
 
 The fundamental purpose of a "Replication Package" is to allow any researcher to recreate the findings of a published paper. That a dataset might be useful beyond its initial context is an excellent ancillary benefit, but it is not guaranteed. 
@@ -74,7 +78,7 @@ All point coordinates are snapped to a Geohash-7 grid (~153m x 153m), direct use
 For easier development in Jupyter, we activate the autoreload of changed Python files. We also set up our local `modules` path and output directory.
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 import pandas as pd
 import geopandas as gp
 import matplotlib.pyplot as plt
@@ -96,7 +100,7 @@ OUTPUT = base_path / "out"
 OUTPUT.mkdir(exist_ok=True)
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Preview dataset
 
 We use DuckDB to query the Parquet files directly. This avoids loading all 66 million points into memory. The following code:
@@ -135,7 +139,7 @@ print("National Dataset Overview (2007–2022)")
 display(df_totals)
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 Pretty fast! Thanks to the [Parquet](https://parquet.apache.org/) format.
 <!-- #endregion -->
 
@@ -182,10 +186,10 @@ df_custom = con.execute(query_custom).df()
 
 print(f"Analysis for: {MY_REGION_NAME}")
 display(df_custom)
-
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 <!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Reproduce original Visualizations
 
@@ -193,7 +197,7 @@ First, we need some geographic context. We copy the exact code from [the origina
 <!-- #endregion -->
 <!-- #endregion -->
 
-```python slideshow={"slide_type": ""} editable=true
+```python editable=true slideshow={"slide_type": ""}
 NUTS_GPKG_FILE = "NUTS_RG_01M_2024_4326.gpkg"
 if not Path(OUTPUT / NUTS_GPKG_FILE).exists():
     tools.get_stream_file(
@@ -203,7 +207,7 @@ nuts = gp.read_file(OUTPUT / NUTS_GPKG_FILE)
 nuts1_de = nuts[nuts['LEVL_CODE'] == 0]
 ```
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 from modules import digitaltraces
 
 regions_to_plot = {
@@ -213,13 +217,13 @@ regions_to_plot = {
 }
 ```
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 Load the custom visualization module (which includes the complex Datashader code from the original publication) and define our bounding boxes.
 <!-- #endregion -->
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ### 2.1 Regional Examples
 <!-- #endregion -->
 
@@ -229,7 +233,7 @@ Let's render two major tourist and recreational regions. We pull only the necess
 * `border`: The geographic boundaries for context.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 from modules import digitaltraces
 
 regions_to_plot = {
@@ -255,7 +259,7 @@ fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nu
 plt.show()
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 By maintaining a versioned environment, we can guarantee that this output matches the original publication pixel-by-pixel. The cartographic process becomes transparent. Even though it still is and remains complex: see the documentation for the initial processing of the data [here](https://code.ad.ioer.info/digital_traces_map/).
 <!-- #endregion -->
 
@@ -273,7 +277,7 @@ When rendered with standard browser or plot anti-aliasing, these isolated 1-pixe
 But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 <!-- #endregion -->
 
-```python editable=true tags=["hide-cell"] slideshow={"slide_type": ""}
+```python tags=["hide-cell"] editable=true slideshow={"slide_type": ""}
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 
@@ -282,13 +286,13 @@ fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nu
 plt.show()
 ```
 
-<!-- #region slideshow={"slide_type": ""} editable=true -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 At this zoom level, the data transforms into an illegible matrix. We can no longer distinguish meaningful hotspots from sparse outliers. Even a background map would be of not much help here.
 
 This is a common trade-off in geospatial data science. Strict privacy measures limit the usefulness of raw visualizations at local scales. To extract meaningful insights for regional planning, we cannot rely on point-density alone. We must transition to advanced spatial statistics.
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ## 3. Beyond Replication
 
 Once a dataset is published openly, it often sparks interest outside the academic sphere. Recently, a journalist from a national news network approached us. She was writing a story about over-tourism and wanted to report on the most popular tourist destinations in her federal state, contrasting them with the "hidden gems" preferred by the local population. 
@@ -298,7 +302,7 @@ While she found our published dataset on the ioerDATA repository, she faced a fo
 Her request perfectly highlights the secondary goal of open science: data re-usability. To help her tell her story, we need to move beyond rendering static national maps. We need to filter the data for specific regions, aggregate the points, and identify statistically significant clusters of activity.
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": ""} editable=true -->
 ### Extracting Hotspots
 
 To find areas with unusually high visitor frequentation, we cannot simply rely on raw point density. A highly populated city center will naturally have more social media posts than a remote forest. Instead, we use a spatial statistic called the **Getis-Ord Gi\*** (pronounced G-i-star). 
@@ -373,6 +377,6 @@ How was this built?
 ```
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""}
+```python slideshow={"slide_type": ""} editable=true
 
 ```

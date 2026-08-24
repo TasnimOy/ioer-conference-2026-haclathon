@@ -9,6 +9,7 @@
 # * **Author**: Oliver Harig
 # * **Topics**: Settlement Monitoring, Urban & Regional Planning, Open Source Tooling, QGIS
 # * **Skill profile**: QGIS users and domain experts — **no programming knowledge required**
+# *  **Badges**: ![Tutorial](https://img.shields.io/badge/Type-Workflow_Tutorial-green?style=flat-square) ![QGIS](https://img.shields.io/badge/Software-QGIS_3.x-589632?style=flat-square&logo=qgis&logoColor=white) ![No Python](https://img.shields.io/badge/Execution-Hands--on_Guide-lightgrey?style=flat-square)
 #
 # ```{admonition} Summary
 # :class: hint

@@ -221,3 +221,30 @@ html[data-theme="dark"] .search-button-field svg {
     height: auto;
     object-fit: contain; /* Forces the browser to scale the SVG down proportionally if it hits the bounding box */
 }
+
+/* Restrict the maximum vertical height of Mermaid diagrams */
+div.mermaid {
+    max-height: 500px; /* Adjust this value as needed */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+div.mermaid svg {
+    height: 100% !important;
+    max-height: 500px !important;
+    width: auto !important; /* Prevents squishing/distortion */
+}
+
+/* Tabellen-Hover im IÖR-Blau  */
+:root,
+[data-theme="light"] {
+  --pst-color-table-row-hover: rgba(9, 112, 185, 0.08) !important;
+}
+
+/* Direkter Selektor für Tabellenzeilen (überschreibt Bootstrap-Vorgaben) */
+.bd-content table tbody tr:hover,
+.bd-content table tbody tr:hover td,
+.bd-content table tbody tr:hover th {
+  background-color: rgba(9, 112, 185, 0.1) !important;
+  transition: background-color 0.15s ease-in-out;
+}

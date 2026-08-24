@@ -54,7 +54,7 @@ The HaCLAthon infrastructure connects **GitHub** (public community hub for issue
 ```mermaid 
 %%{init: { 'theme':'forest', 'securityLevel': 'loose', 'sequence': {'useMaxWidth':false} } }%%
 flowchart TD
-   A[External Contributor] -->|PR / Push| B(GitHub 'staging')
+   A[Contributor] -->|PR / Push| B(GitHub 'staging')
    B -->|Fetch & Review| C[Local Maintainer Environment]
    C -->|Cherry-pick / Merge| D(Local 'main')
    D -->|Push| E[GitLab 'main']

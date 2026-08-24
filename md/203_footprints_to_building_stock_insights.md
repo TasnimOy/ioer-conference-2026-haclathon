@@ -16,7 +16,7 @@ jupyter:
 
 * **Authors:** Markus Münzinger & Martin Behnisch (IOER)
 * **Badges:** ![Interactive](https://img.shields.io/badge/Type-Interactive_Code-blue?style=flat-square) ![Colab](https://img.shields.io/badge/Colab-Tested-yellow?style=flat-square&logo=googlecolab&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter4NFDI-Ready-orange?style=flat-square&logo=jupyter) ![Data](https://img.shields.io/badge/ioerDATA-doi%3A10.71830%2F9CBBWV-0970B9?style=flat-square)
-* 
+
 ## Background
 This notebook presents the core analysis from the Jupyter Book *"From Footprints to Building Stock Insights"* – a spatial decision-support pipeline for sustainable transformation. The work transforms **57 million building footprints** across Germany into comparable building stock characteristics for evidence-based decision-making.
 

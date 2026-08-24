@@ -12,7 +12,7 @@
 #     name: worker_env
 # ---
 
-# %% slideshow={"slide_type": ""} editable=true tags=["remove-cell"]
+# %% editable=true slideshow={"slide_type": ""} tags=["remove-cell"]
 import sys, os
 from pathlib import Path
 
@@ -38,6 +38,10 @@ pyexec = sys.executable
 # This chapter explores how openly published replication packages can bridge the gap between academic research and public data journalism. We use a dataset of 66 million social media posts ({cite:alp}`dunkel_replication_2025`) that was recently published as a 'Replication Package' for a peer-reviewed publication ({cite:alp}`Dunkel2025DigitaleSpuren`). We will first reproduce a published scientific map, and repurpose the data to explore local vs. tourist hotspots for a regional planning review.
 # ```
 #
+# ```{warning}
+# This chapter is a work in progress.
+# ```
+#
 # ---
 #
 # ## 1. Introduction
@@ -53,7 +57,7 @@ pyexec = sys.executable
 # * **Local recreational corridors** in suburban and rural green spaces [1, 2].
 # * **Spatial mismatches** between visitor demand and infrastructure capacity [1, 2].
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ## Replication Test
 #
 # The fundamental purpose of a "Replication Package" is to allow any researcher to recreate the findings of a published paper. That a dataset might be useful beyond its initial context is an excellent ancillary benefit, but it is not guaranteed. 
@@ -70,7 +74,7 @@ pyexec = sys.executable
 #
 # For easier development in Jupyter, we activate the autoreload of changed Python files. We also set up our local `modules` path and output directory.
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 import pandas as pd
 import geopandas as gp
 import matplotlib.pyplot as plt
@@ -91,7 +95,7 @@ from modules import tools
 OUTPUT = base_path / "out"
 OUTPUT.mkdir(exist_ok=True)
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Preview dataset
 #
 # We use DuckDB to query the Parquet files directly. This avoids loading all 66 million points into memory. The following code:
@@ -128,7 +132,7 @@ df_totals = con.execute(query_totals).df()
 print("National Dataset Overview (2007–2022)")
 display(df_totals)
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # Pretty fast! Thanks to the [Parquet](https://parquet.apache.org/) format.
 
 # %% [markdown] slideshow={"slide_type": ""} editable=true
@@ -175,14 +179,14 @@ print(f"Analysis for: {MY_REGION_NAME}")
 display(df_custom)
 
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # <!-- #region slideshow={"slide_type": ""} editable=true -->
 # ### Reproduce original Visualizations
 #
 # First, we need some geographic context. We copy the exact code from [the original publication](https://code.ad.ioer.info/digital_traces_map/html/03_visualization.html), which *documents* the exact source of base data used. Documentation and analysis go hand in hand here. We fetch the NUTS borders and filter for Germany.
 # <!-- #endregion -->
 
-# %% slideshow={"slide_type": ""} editable=true
+# %% editable=true slideshow={"slide_type": ""}
 NUTS_GPKG_FILE = "NUTS_RG_01M_2024_4326.gpkg"
 if not Path(OUTPUT / NUTS_GPKG_FILE).exists():
     tools.get_stream_file(
@@ -191,7 +195,7 @@ if not Path(OUTPUT / NUTS_GPKG_FILE).exists():
 nuts = gp.read_file(OUTPUT / NUTS_GPKG_FILE)
 nuts1_de = nuts[nuts['LEVL_CODE'] == 0]
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 from modules import digitaltraces
 
 regions_to_plot = {
@@ -200,12 +204,12 @@ regions_to_plot = {
     "Leipzig Urban Core":           ((12.20, 12.55), (51.26, 51.37))
 }
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # <!-- #region editable=true slideshow={"slide_type": ""} -->
 # Load the custom visualization module (which includes the complex Datashader code from the original publication) and define our bounding boxes.
 # <!-- #endregion -->
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # ### 2.1 Regional Examples
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -213,7 +217,7 @@ regions_to_plot = {
 # * `bounds`: The spatial extent of the region.
 # * `border`: The geographic boundaries for context.
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true
 from modules import digitaltraces
 
 regions_to_plot = {
@@ -237,7 +241,7 @@ df_subset = digitaltraces.query_region(con, parquet_dir, bounds)
 fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nuts1_de, title=name)
 plt.show()
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # By maintaining a versioned environment, we can guarantee that this output matches the original publication pixel-by-pixel. The cartographic process becomes transparent. Even though it still is and remains complex: see the documentation for the initial processing of the data [here](https://code.ad.ioer.info/digital_traces_map/).
 
 # %% [markdown] editable=true slideshow={"slide_type": ""}
@@ -252,7 +256,7 @@ plt.show()
 #
 # But what happens if a local planner wants to analyze a specific urban core. For example, for Leipzig? Expand the code cell below to see what happens when we over-zoom into snapped data.
 
-# %% editable=true tags=["hide-cell"] slideshow={"slide_type": ""}
+# %% tags=["hide-cell"] editable=true slideshow={"slide_type": ""}
 name = "Leipzig Urban Core"
 bounds = regions_to_plot[name]
 
@@ -260,12 +264,12 @@ df_subset = digitaltraces.query_region(con, parquet_dir, bounds)
 fig = digitaltraces.render_datashader_map(df=df_subset, bounds=bounds, border=nuts1_de, title=name)
 plt.show()
 
-# %% [markdown] slideshow={"slide_type": ""} editable=true
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # At this zoom level, the data transforms into an illegible matrix. We can no longer distinguish meaningful hotspots from sparse outliers. Even a background map would be of not much help here.
 #
 # This is a common trade-off in geospatial data science. Strict privacy measures limit the usefulness of raw visualizations at local scales. To extract meaningful insights for regional planning, we cannot rely on point-density alone. We must transition to advanced spatial statistics.
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ## 3. Beyond Replication
 #
 # Once a dataset is published openly, it often sparks interest outside the academic sphere. Recently, a journalist from a national news network approached us. She was writing a story about over-tourism and wanted to report on the most popular tourist destinations in her federal state, contrasting them with the "hidden gems" preferred by the local population. 
@@ -274,7 +278,7 @@ plt.show()
 #
 # Her request perfectly highlights the secondary goal of open science: data re-usability. To help her tell her story, we need to move beyond rendering static national maps. We need to filter the data for specific regions, aggregate the points, and identify statistically significant clusters of activity.
 
-# %% [markdown] editable=true slideshow={"slide_type": ""}
+# %% [markdown] slideshow={"slide_type": ""} editable=true
 # ### Extracting Hotspots
 #
 # To find areas with unusually high visitor frequentation, we cannot simply rely on raw point density. A highly populated city center will naturally have more social media posts than a remote forest. Instead, we use a spatial statistic called the **Getis-Ord Gi\*** (pronounced G-i-star). 
@@ -345,4 +349,4 @@ plt.show()
 # :filter: docname in docnames
 # ```
 
-# %% editable=true slideshow={"slide_type": ""}
+# %% slideshow={"slide_type": ""} editable=true

@@ -32,6 +32,7 @@ pyexec = sys.executable
 
 * **Authors**: Alexander Dunkel (IOER) & Dominik Weckmüller (TU Dresden)
 * **Topics**: Transformative Governance, Urban & Regional Planning, Open Data Re-use
+*  **Badges**: ![Interactive](https://img.shields.io/badge/Type-Interactive_Code-blue?style=flat-square) ![Colab](https://img.shields.io/badge/Colab-Tested-yellow?style=flat-square&logo=googlecolab&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter4NFDI-Ready-orange?style=flat-square&logo=jupyter)
 
 ```{admonition} Summary
 :class: hint

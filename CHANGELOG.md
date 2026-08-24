@@ -7,6 +7,19 @@
 
 
  
+## v0.15.4 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Relative link ([`67b60bd`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/67b60bd972e8ab842ae5139eea98b2750ab6d389))
+
+
+
+ 
+ 
+ 
 ## v0.15.3 (2026-08-24)
  
 ### Bug fixes

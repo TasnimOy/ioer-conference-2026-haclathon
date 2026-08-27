@@ -43,43 +43,27 @@
     }
 
     /* ==========================================================================
-       HaCLAthon CMS: Publish-Button & Ready-Status ausblenden
-       ========================================================================== */
+     Decap CMS: Publish-Button & Dropdown komplett ausblenden
+     ========================================================================== */
 
-    /* 1. Den "Publish" / "Publish now" Button in der oberen Editor-Leiste verstecken */
-    [data-testid="publish-button"],
-    [aria-label="Publish"],
-    [aria-label="Publish changes"],
-    [aria-label="Publish now"],
-    button[class*="Publish"],
-    button[class*="publish"],
-    .css-1t6h57x-StyledDropdownButton-button {
+    /* 1. Den gesamten Publish-Button in der Leiste oben verstecken (ist ein <span role="button">) */
+    [class*="PublishButton"],
+    span[class*="PublishButton"],
+    button[class*="PublishButton"],
+    .e1d2l9mo5 {
       display: none !important;
     }
 
-    /* 2. Die Auswahl-Option 'Ready' im Status-Dropdown verstecken */
-    [data-status="ready"],
-    [value="ready"],
-    option[value="ready"],
-    li:has([data-status="ready"]) {
+    /* 2. Alle evtl. noch aufpoppenden Publish-Dropdown-Items verstecken */
+    [class*="PublishDropDownItem"],
+    div[class*="PublishDropDownItem"] {
       display: none !important;
     }
 
-    /* 3. Auf dem Workflow-Board (Kanban) die 'Ready'-Spalte ausblenden */
-    section[data-column-id="ready"],
-    div[data-status="ready"],
+    /* 3. Optional: Auf dem Kanban/Workflow-Board die 'Ready'-Spalte verstecken */
+    [class*="WorkflowList"]:last-child,
     [data-testid="column-ready"] {
       display: none !important;
-    }
-
-    /* 4. Optional: Einen kleinen, dezenten Hinweistext oben einblenden */
-    .editor-notice {
-      background: #e8f4fd;
-      border-left: 4px solid #0970B9;
-      color: #0c4a6e;
-      padding: 8px 12px;
-      font-size: 13px;
-      margin-bottom: 10px;
     }
   </style>
 

@@ -4,7 +4,7 @@ title: Authors & Contributors
 
 # Authors & Contributors
 
-The **Sustainability Transformation HaCLAthon** is a collaborative, open-science initiative. Unlike traditional conference proceedings that separate authors into isolated papers, this living Jupyter Book is a shared, citable data artifact ({cite:p}`haclathon_ioer_2026`).
+The **Sustainability Transformation HaCLAthon** is a collaborative, open-science initiative. Unlike traditional conference proceedings that separate authors into isolated papers, this living Jupyter Book is a shared, citable data artifact {cite:p}`haclathon_ioer_2026`.
 
 Every accepted contributor is recognized as a co-author of the final published publication with a permanent DOI.
 

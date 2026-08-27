@@ -7,6 +7,29 @@
 
 
  
+## v0.17.0 (2026-08-27)
+ 
+### Features
+ 
+
+
+- Add sujit/sukando abstract ([`44e60f2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/44e60f2f61de2170d0faa2c73fa63cafd0c8d820))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Move starter kit to background; increase visibility of contributions ([`c916e6e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c916e6e6b1faf063956c4a36700387d141cd529b))
+
+
+
+ 
+ 
+ 
 ## v0.16.1 (2026-08-24)
  
 ### Bug fixes

@@ -79,7 +79,7 @@ flowchart TD
 
 When integrating a contribution from GitHub's `staging` into `main`, preserve **author attribution** (so the contributor is recognized as the author in git history and GitHub graphs) by following these steps:
 
-### Step 1: Fetch all remotes
+**Step 1: Fetch all remotes**
 ```bash
 git fetch origin
 git fetch github
@@ -87,14 +87,15 @@ git checkout main
 git pull origin main
 ```
 
-### Step 2: Inspect incoming commits
+**Step 2: Inspect incoming commits**
 Create a temporary inspection branch tracking GitHub's `staging`:
 ```bash
 git checkout -b review-incoming github/staging
 git log --oneline main..HEAD
 ```
 
-### Step 3: Cherry-pick the contributor's commits onto a clean branch
+**Step 3: Cherry-pick the contributor's commits onto a clean branch**
+
 Rather than merging a potentially outdated `staging` branch, create a fresh branch from `main` and cherry-pick only the contributor's commits:
 ```bash
 git checkout main
@@ -106,12 +107,12 @@ git cherry-pick <COMMIT_HASH_1> <COMMIT_HASH_2>
 `git cherry-pick` preserves the original **Author** metadata automatically.*
 ```
 
-### Step 4: Resolve conflicts & verify formatting
+**Step 4: Resolve conflicts & verify formatting**
 * Verify `_toc.yml` and `references.bib`.
 * Ensure Jupytext sync is run if `.md` was added: `jupytext --sync md/<chapter>.md`.
 * Check that relative image paths point to `resources/`.
 
-### Step 5: Merge into `main` and push to GitLab
+**Step 5: Merge into `main` and push to GitLab**
 ```bash
 git checkout main
 git merge --no-ff feature/contribution-name -m "feat(community): add chapter by <Author Name>"

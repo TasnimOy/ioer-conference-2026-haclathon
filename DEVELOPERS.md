@@ -75,6 +75,7 @@ flowchart TD
 ---
 
 ## 2.2 Maintainer Runbook: Integrating External Submissions
+### 2.2.1 Integrating Direct GitHub Contributions
 
 When integrating a contribution from GitHub's `staging` into `main`, preserve **author attribution** (so the contributor is recognized as the author in git history and GitHub graphs) by following these steps:
 
@@ -117,6 +118,37 @@ git merge --no-ff feature/contribution-name -m "feat(community): add chapter by 
 git push origin main
 ```
 
+### 2.2.2 Integrating External GitHub Pull Requests (PRs)
+
+When a contributor submits a contribution via a GitHub Pull Request (e.g., via the Decap CMS or a fork), use this workflow to fetch the PR locally, test it, and merge it with full author attribution (preserving the purple "Merged" status on GitHub):
+
+```bash
+# 1. Fetch the PR into a local review branch (replace '4' with the PR number)
+git fetch github pull/4/head:pr-4
+
+# 2. Inspect the incoming changes
+git checkout pr-4
+git log -1 --stat
+git diff main..HEAD
+
+# 3. Switch to main and merge with a merge commit (preserves Author and commit graph)
+git checkout main
+git pull origin main
+git merge --no-ff pr-4 -m "feat(community): merge PR #4 by @contributor_username"
+
+# 4. Push to GitLab (deploys website & bumps semantic release)
+git push origin main
+
+# 5. Push to GitHub (automatically marks the PR as Merged/Purple on GitHub!)
+git push github main
+
+# 6. Fast-forward GitHub staging to the latest main
+git push --force-with-lease github main:staging
+
+# 7. Clean up local review branch
+git branch -D pr-4
+```
+
 ---
 
 ## 2.3 Syncing the GitHub Staging Branch
@@ -124,7 +156,7 @@ git push origin main
 After merging to `main` and verifying the CI/CD pipeline, bring GitHub's `staging` branch up to date with `main` so subsequent contributors work from the latest baseline:
 
 ```bash
-git push github main:staging
+git push --force-with-lease github main:staging
 ```
 
 ```{note}

@@ -7,6 +7,313 @@
 
 
  
+## v0.17.0 (2026-08-27)
+ 
+### Features
+ 
+
+
+- Add sujit/sukando abstract ([`44e60f2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/44e60f2f61de2170d0faa2c73fa63cafd0c8d820))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Move starter kit to background; increase visibility of contributions ([`c916e6e`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c916e6e6b1faf063956c4a36700387d141cd529b))
+
+
+
+ 
+ 
+ 
+## v0.16.1 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Crosslink ([`d7861f7`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d7861f7df132f807a60063802500e87d09fa5217))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add cross-link for chapter 203 ([`4f072ff`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/4f072ffba910e450c971dafdc62e383ab1cd178c))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add title ([`b185fbe`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b185fbee0f0155f3c5254799b1ff14e0fd66ebde))
+
+
+
+ 
+ 
+ 
+## v0.16.0 (2026-08-24)
+ 
+### Features
+ 
+
+
+- Add markus m. contribution ([`32852c6`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/32852c6caeb5b36dc4756f7bf0386382b195a5d9))
+
+
+
+ 
+ 
+ 
+## v0.15.4 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Relative link ([`67b60bd`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/67b60bd972e8ab842ae5139eea98b2750ab6d389))
+
+
+
+ 
+ 
+ 
+## v0.15.3 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Correct order, replace cross-link ([`b1e0eb9`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b1e0eb966d8d0fac91583096263d81369e274023))
+
+
+
+ 
+ 
+### Style
+ 
+
+
+- Adjust table colors, mermaid size ([`adf1c82`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/adf1c82dbcbc5599e83025b69da0dd7ea0446563))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add links to community index for existing chapters ([`8e4c583`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/8e4c5836964077dfc4fc002da67307b03dcdad27))
+
+
+
+ 
+ 
+ 
+## v0.15.2 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Formatting ([`926af23`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/926af233fc1923d25aa6116927261cbf5cb9f659))
+
+
+
+ 
+ 
+ 
+## v0.15.1 (2026-08-24)
+ 
+### Bug fixes
+ 
+
+
+- Clean notebooks, remove %%bash and better use badges ([`52db064`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/52db064f16addb4a28575113dd057d3dc4f85599))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Update developer section (general overhaul, github contributor merge flow) ([`e452ba8`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/e452ba8873217f2a2c20fd85ec62b576e0dee516))
+
+
+
+ 
+ 
+ 
+## v0.15.0 (2026-08-24)
+ 
+### Style
+ 
+
+
+- Update to final logo design from nicolaas (!) ([`5d7e661`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/5d7e661bde3b804cfef347459ac4f6bdd69b0e73))
+
+
+
+ 
+
+
+- Hide-cell in dropdown ([`3a40622`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/3a40622aa18c1daed0d95be7f74f5978fda91c36))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- 201 - add wip-note ([`52b58e2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/52b58e26f1cf5b7cb703a63da41492eee9ca7870))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add badges to signal chapter focus to audience ([`f3519db`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/f3519db304ca60fd50b48de8c7aa9c72ba656143))
+
+
+
+ 
+
+
+- Add oliver harig chapter ([`f99a7c8`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/f99a7c80bcb7877c89eb5b2b038379b92add297b))
+
+
+
+ 
+ 
+ 
+## v0.14.0 (2026-08-13)
+ 
+### Features
+ 
+
+
+- Add chapter bibliography for 201 ([`38e74f2`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/38e74f2228d1bcdd63482bcefafee19a2d7088fb))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Change wording in toc ([`c5bb1c5`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c5bb1c5485d0935c7c2de8d234a7566ac96dcd08))
+
+
+
+ 
+ 
+ 
+## v0.13.0 (2026-08-13)
+ 
+### Features
+ 
+
+
+- Add first draft for chapter 201 (digital traces) ([`433d664`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/433d664635d326609bbc629516be499693d2fc9d))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Reduce verbosity ([`a95dbfe`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/a95dbfe933fe4d8115be6d18cdf5cb36602ca92c))
+
+
+
+ 
+ 
+ 
+## v0.12.0 (2026-08-10)
+ 
+### Features
+ 
+
+
+- Add m. münzinger contribution abstract ([`1285efd`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/1285efdd2bb48876423813af206c30194264623f))
+
+
+
+ 
+ 
+ 
+## v0.11.0 (2026-07-31)
+ 
+### Style
+ 
+
+
+- Use apa style in reference list ([`d46069f`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/d46069f2fc19778f219aabb468d4f8472c915055))
+
+
+
+ 
+
+
+- Fix bib formatting (lowercase title) ([`ec6bc93`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/ec6bc93adf5de9df246d279128132d06ed0ebcf4))
+
+
+
+ 
+ 
+### Documentation
+ 
+
+
+- Add storymap topic contribution ([`c00f629`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/c00f629786765578373e313dfdd7ad5fd0ad4d75))
+
+
+
+ 
+ 
+### Features
+ 
+
+
+- Add t.oyshi contribution to community index ([`57dbe7d`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/57dbe7dd6ce533c3fb2c6202bec04b1dc05144f9))
+
+
+
+ 
+ 
+### Refactoring
+ 
+
+
+- Add/update bib entries for cited literature; update references ([`b61a790`](https://gitlab.hrz.tu-chemnitz.de/ioer/fdz/training/hackathon-ioer-conference-2026/-/commit/b61a7900e16adfb5a77a3d7964594684a6a5f3bd))
+
+
+
+ 
+ 
+ 
 ## v0.10.2 (2026-06-11)
  
 ### Bug fixes
